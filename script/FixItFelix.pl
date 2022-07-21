@@ -6,9 +6,13 @@ use ALX::EN81346;
 
 use Log::Log4perl;
 
-Log::Log4perl->init("conf/log_test.ini");
+Log::Log4perl->init("conf/log.ini");
+my $logger = Log::Log4perl->get_logger();
 
-#my $interpreter = ALX::EN81346->new();
-print(ALX::EN81346::segments("==200=A1.23=100+200-300"));
+my $input_string = "==200=A1.23=100==ABC+200-300";
+$logger->info("Segmenting string value: [$input_string]");
+my $identifier = ALX::EN81346::segments($input_string);
+my $id_string = ALX::EN81346::to_string($identifier);
+$logger->info("Resulting string value: [$id_string]");
 
 exit(0);
