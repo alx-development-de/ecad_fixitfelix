@@ -1,22 +1,18 @@
 .PHONY : all clean clean-temp
-filename=ECAD-Export
 
 all: pdf
 
-pdf: ${filename}.tex aux toc bbl
+pdf: ECAD-Export.tex aux toc
 	pdflatex $<
 	# Run it twice to handle the page numbers correctly
 	pdflatex $<
 
-aux: ${filename}.tex
+aux: ECAD-Export.tex
 	pdflatex $<
 
-toc: ${filename}.tex
+toc: ECAD-Export.tex
 	pdflatex $<
 
-bbl: aux bib
-	bibtex $*
-	
 clean: clean-temp
 	-rm *.pdf
 
