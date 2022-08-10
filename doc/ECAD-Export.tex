@@ -4,15 +4,18 @@
 	listof=numbered,
 	parskip=half,
 	headsepline=true,
-	footsepline=true,
+	footsepline=false,
+	normalheadings,
+	0.7headlines,
+	headexclude,
 	]{scrbook}
 
 \usepackage{scrlayer-scrpage}
 
-\usepackage[ngerman]{babel}
+\usepackage[english]{babel}
 \usepackage{csquotes}
 \usepackage[fixlanguage]{babelbib}
-\selectbiblanguage{german}
+\selectbiblanguage{english}
 
 \usepackage{graphicx}
 \usepackage{xcolor}
@@ -25,6 +28,12 @@
 \usepackage{scrhack}
 \usepackage{listings}
 
+\usepackage{tikz}
+\usetikzlibrary{shapes,positioning}
+
+\usepackage{typearea}
+\areaset[1cm]{15cm}{23cm} % selbst setzen
+
 % Style-Definition für die Code-Listings
 \lstdefinestyle{mystyle}{
      basicstyle=\ttfamily\footnotesize,
@@ -36,27 +45,43 @@
      numbers=left,
      numbersep=5pt,
      showspaces=false,
-     showstringspaces=true,
+     showstringspaces=false,
      showtabs=false,
-     tabsize=2
+     tabsize=2,
+     columns=fullflexible,
 }
 \lstset{style=mystyle}
 
-% Title head with phoenix contact signal line
-%\titlehead{%
-%	\adjustimage{%
-%		valign=B,
-%		pagerightalign,
-%		raise=20ex,
-%		}{img/phoenix-signalline}
-%	}
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
 
-%\pagestyle{scrheadings}
+\lstdefinelanguage{XML}
+{
+  morestring=[b]",
+  morestring=[s]{>}{<},
+  morecomment=[s]{<?}{?>},
+  stringstyle=\color{black},
+  identifierstyle=\color{darkblue},
+  keywordstyle=\color{cyan},
+  morekeywords={xmlns,version,type,name,id,rid,index}% list your attributes here
+}
+
+\titlehead{%
+	\adjustimage{%
+		width=\paperwidth,
+		pagecenter,
+		valign=B,
+		raise=20ex,
+		}{ECAD-Export-Headline}
+	}
+
+\pagestyle{scrheadings}
 
 \begin{document}
 % --------------------------------------------------------------
-\title{ECAD Interchange Format for CLIP PROJECT}
-\subtitle{CLIP PROJECT Version 6.5}
+\title{ECAD Interchange Format}
+\subtitle{Phoenix Contact CLIP PROJECT Version 6.5}
 
 \subject{ALX-Development}
 \author{Dipl.-Ing. (FH) Alexander Thiel M.Sc.}
@@ -71,30 +96,74 @@
 
 \chapter{Introduction}
 
-CLIP PROJECT has different methods for exchanging data between different ECAD systems:
+This document is not an official documentation of the ECAD Exchange file format used by Phoenix Contacts
+CLIP PROJECT software, it is based upon researches and reengineering of exchange files by myself. So there is no warrenty, that this documentation is complete or correct in all cases. 
 
-\begin{itemize}
-	\item CSV file for import of terminal strips 
-	\item EPLAN ECAD data exchange – full exchange of all relevant information, integration into EPLAN workflow 
-	\item Generic ECAD data exchange – full exchange of all relevant information via PIB based on XML, no integration into ECAD workflow 
-\end{itemize}
+The generic ECAD data exchange format provides full exchange of all relevant information based on a XML structured file. The objective of this document is to describe this XML format.
 
-The objective of this document is to describe the XML file format for exchanging full data between ECAD and CLIP PROJECT. 
+\section{XML node structure}
 
-\section{Structure of ECAD file}
+The ECAD exchange file format is XML based. One ECAD file contains only one project with unlimited number of mounting rails and terminal strips.
 
-ECAD file is XML based format. One ECAD file contains only one project with unlimited number of terminal strips.
+The structure starts with the root object \verb|<pbf>| and it contains exact one single project object \verb|<o type='clipprj.project'>|. The project object may contain multiple other objects which are surrounded by the \verb|<ol>| (object list) tag. Based on this structure a project according the hierarchy as shown on the diagram in figure \ref{pict:structure_erm} can be created.
 
-Structure starts with root object \verb|<pbf>| and it contains hierarchy of objects \verb|<o>|. Each object contains other objects, properties and references. Based on this a project hierarchy can be created as shown on the diagram below:
+\tikzset{branode/.style={midway,font=\scriptsize}}
 
 \begin{figure}[!ht]
- \centering
- \includegraphics[width=\textwidth]{img/ECAD-XML-structure}
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}[>=stealth]
+
+\node[](pbf){\begin{tabular}{|c|} \hline
+	\textbf{Root Object}\\ \hline
+	<pbf>\\ \hline
+	\end{tabular}};
+
+\node[below=of pbf](prj){\begin{tabular}{|c|} \hline
+	\textbf{Project Object}\\ \hline
+	<o type='clipprj.project'>\\ \hline
+	\end{tabular}};
+
+\node[below left=of prj](loc){\begin{tabular}{|c|} \hline
+	\textbf{Location Object}\\ \hline
+	<o type='clipprj.location'>\\ \hline
+	\end{tabular}};
+
+\node[below right=of prj](ref){\begin{tabular}{|c|} \hline
+	\textbf{Table of References}\\ \hline
+	<refs>, <ref>\\ \hline
+	\end{tabular}};
+
+\node[below=3cm of prj](rail){\begin{tabular}{|c|} \hline
+	\textbf{Rail Objects}\\ \hline
+	<o type='clipprj.rail'>\\ \hline
+	\end{tabular}};
+
+\node[below left=of rail](onrail){\begin{tabular}{|c|} \hline
+	\textbf{On-rail Objects}\\ \hline
+	<o type='clipprj.terminal'>\\
+	<o type='clipprj.plc'>\\ \hline
+	\end{tabular}};
+
+\node[below right=of rail](acc){\begin{tabular}{|c|} \hline
+	\textbf{Accessory Objects}\\ \hline
+	<o type='clipprj.accessory'>\\
+	<o type='clipprj.bridge'>\\ \hline
+	\end{tabular}};
+
+\draw[->](pbf)--(prj)node[branode,left=1mm]{[$1$]};
+\draw[->](prj)--(rail)node[branode,left=1mm]{[$0..n$]};
+\draw[->](prj)--(loc)node[branode,left,anchor=south east]{[$0..n$]};
+\draw[->](loc)--(rail)node[branode,left,anchor=south west]{[$0..n$]};
+\draw[->](rail)--(onrail)node[branode,left,anchor=south east]{[$0..n$]};
+\draw[->](rail)--(acc)node[branode,left,anchor=south west]{[$0..n$]};
+
+\end{tikzpicture}}
 \caption{Structure of the ECAD file}
-\label{wireassist}
+\label{pict:structure_erm}
 \end{figure}
 
-An exampleheader of the ECAD file is shown in listing \ref{code:xml_example_header}.
+An example header of the ECAD file is shown in listing \ref{code:xml_example_header}.
 
 \lstinputlisting[%
 	label={code:xml_example_header},
@@ -102,7 +171,6 @@ An exampleheader of the ECAD file is shown in listing \ref{code:xml_example_head
 	language=XML,
 	firstline=1,
 	lastline=10,
-	%firstnumber=82,
 ]{ECAD-Export-ExampleProject.xml}
 
 The ECAD file format bases on limited tag elements. Below there is full list of allowed tag elements.
@@ -1283,7 +1351,7 @@ It does mean that any character or characters after semicolon is treated like on
 \listoftables
 \lstlistoflistings
 
-\bibliographystyle{babplain}
-\bibliography{phoenix}
+%\bibliographystyle{babplain}
+%\bibliography{phoenix}
 
 \end{document}

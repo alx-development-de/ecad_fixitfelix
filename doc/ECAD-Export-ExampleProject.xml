@@ -10,76 +10,76 @@
 		<p name="clipprj.endCap">1206560</p>  
 		<p name="clipprj.spaceLeft">20</p>  
 	</pl> 
-<ol> 
-	<o id="2" name="" type="clipprj.endBracket"> 
-	<pl> 
-		<p name="clipprj.articleNumber">3022276</p>  
-		<p name="clipprj.width">5.2</p>  
-	</pl> 
-	<rl> 
-		<r index="0" name="clipprj.accessory" rid="0" />  
-	</rl> 
-	</o> 
-	<o id="3" name="" type="clipprj.terminal"> 
-	<pl> 
-		<p name="clipprj.articleNumber">2715966</p>  
-		<p name="clipprj.width">6.2</p>  
-		<p name="clipprj.rotated">0</p>  
-	</pl> 
-	<rl> 
-		<r index="0" name="clipprj.accessory" rid="1" />  
-	</rl> 
-	</o> 
-	<o id="4" name="" type="clipprj.terminal"> 
-	<pl> 
-		<p name="clipprj.articleNumber">2715966</p>  
-		<p name="clipprj.width">6.2</p>  
-		<p name="clipprj.rotated">0</p>  
-	</pl> 
-	<rl> 
-		<r index="0" name="clipprj.accessory" rid="1" />  
-	</rl> 
-	</o> 
+	<ol> 
+		<o id="2" name="" type="clipprj.endBracket"> 
+		<pl> 
+			<p name="clipprj.articleNumber">3022276</p>  
+			<p name="clipprj.width">5.2</p>  
+		</pl> 
+		<rl> 
+			<r index="0" name="clipprj.accessory" rid="0" />  
+		</rl> 
+		</o> 
+		<o id="3" name="" type="clipprj.terminal"> 
+		<pl> 
+			<p name="clipprj.articleNumber">2715966</p>  
+			<p name="clipprj.width">6.2</p>  
+			<p name="clipprj.rotated">0</p>  
+		</pl> 
+		<rl> 
+			<r index="0" name="clipprj.accessory" rid="1" />  
+		</rl> 
+		</o> 
+		<o id="4" name="" type="clipprj.terminal"> 
+		<pl> 
+			<p name="clipprj.articleNumber">2715966</p>  
+			<p name="clipprj.width">6.2</p>  
+			<p name="clipprj.rotated">0</p>  
+		</pl> 
+		<rl> 
+			<r index="0" name="clipprj.accessory" rid="1" />  
+		</rl> 
+		</o> 
 	</ol> 
 	</o> 
- <o id="5" name="KLM 2" type="clipprj.accessory"> 
- <pl> 
- <p name="clipprj.articleNumber">0807575</p>  
- <p name="clipprj.coordinates">2.60;27.80</p>  
- <p name="clipprj.description">XX;0;0;-X1;U;1.6;1</p>  
- </pl> 
- </o> 
- <o id="6" name="FB 2- 6" type="clipprj.bridge"> 
- <pl> 
- <p name="clipprj.articleNumber">0201197</p>  
- <p name="clipprj.coordinates">3.10;36.70;3.10;36.70</p>  
- </pl> 
- </o> 
+	<o id="5" name="KLM 2" type="clipprj.accessory"> 
+	<pl> 
+		<p name="clipprj.articleNumber">0807575</p>  
+		<p name="clipprj.coordinates">2.60;27.80</p>  
+		<p name="clipprj.description">XX;0;0;-X1;U;1.6;1</p>  
+	</pl> 
+	</o> 
+	<o id="6" name="FB 2- 6" type="clipprj.bridge"> 
+	<pl> 
+		<p name="clipprj.articleNumber">0201197</p>  
+		<p name="clipprj.coordinates">3.10;36.70;3.10;36.70</p>  
+	</pl> 
+	</o> 
 	<o id="7" name="Shopping cart 1" type="clipprj.shoppingCart"> 
-  <pl> 
- <p name="clipprj.articleNumber">0123456</p>  
- <p name="clipprj.name">-X1</p>  
- <p name="clipprj.customer">XYZ</p>  
-  </pl> 
-  <ol> 
- <o id="8" name="X" type="clipprj.terminal"> 
- <pl> 
- <p name="clipprj.articleNumber">2715966</p>  
- <p name="clipprj.width">6.2</p>  
- <p name="clipprj.rotated">0</p>  
- </pl> 
-                      </o> 
-     <o id="9" name="XYZ" type="clipprj.bridge"> 
-         <pl> 
-<p name="clipprj.articleNumber">0123</p> 
-</pl> 
-   </o> 
-  </ol> 
-</o> 
+	<pl> 
+		<p name="clipprj.articleNumber">0123456</p>  
+		<p name="clipprj.name">-X1</p>  
+		<p name="clipprj.customer">XYZ</p>  
+	</pl> 
+	<ol> 
+		<o id="8" name="X" type="clipprj.terminal"> 
+		<pl> 
+			<p name="clipprj.articleNumber">2715966</p>  
+			<p name="clipprj.width">6.2</p>  
+			<p name="clipprj.rotated">0</p>  
+		</pl> 
+		</o> 
+		<o id="9" name="XYZ" type="clipprj.bridge"> 
+		<pl> 
+			<p name="clipprj.articleNumber">0123</p> 
+		</pl> 
+		</o> 
+	</ol> 
+	</o> 
 </ol> 
 </o> 
 <refs> 
-<ref id="0" oid="5" />  
-<ref id="1" oid="6" />  
+	<ref id="0" oid="5" />  
+	<ref id="1" oid="6" />  
 </refs> 
 </pbf>
