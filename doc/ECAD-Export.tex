@@ -1,0 +1,1514 @@
+\documentclass[%
+	a4paper,
+	oneside,
+	listof=numbered,
+	parskip=half,
+	headsepline=true,
+	footsepline=false,
+	normalheadings,
+	0.7headlines,
+	headexclude,
+	]{scrbook}
+
+\usepackage{scrlayer-scrpage}
+
+\usepackage[english]{babel}
+\usepackage{csquotes}
+\usepackage[fixlanguage]{babelbib}
+\selectbiblanguage{english}
+
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{xltabular}
+\usepackage{wrapfig}
+\usepackage{adjustbox}
+\usepackage{rest-api}
+% listings package requires the scrhack to
+% work properly and ommit a warning message
+\usepackage{scrhack}
+\usepackage{listings}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,positioning}
+
+\usepackage{typearea}
+\areaset[1cm]{15cm}{23cm} % selbst setzen
+
+% Style-Definition für die Code-Listings
+\lstdefinestyle{mystyle}{
+     basicstyle=\ttfamily\footnotesize,
+     breakatwhitespace=false,
+     breaklines=true,
+     captionpos=t,
+     frame=lines,
+     keepspaces=true,
+     numbers=left,
+     numbersep=5pt,
+     showspaces=false,
+     showstringspaces=false,
+     showtabs=false,
+     tabsize=2,
+     columns=fullflexible,
+}
+\lstset{style=mystyle}
+
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+
+\lstdefinelanguage{XML}
+{
+  morestring=[b]",
+  morestring=[s]{>}{<},
+  morecomment=[s]{<?}{?>},
+  stringstyle=\color{black},
+  identifierstyle=\color{darkblue},
+  keywordstyle=\color{cyan},
+  morekeywords={xmlns,version,type,name,id,rid,index}% list your attributes here
+}
+
+\titlehead{%
+	\adjustimage{%
+		width=\paperwidth,
+		pagecenter,
+		valign=B,
+		raise=20ex,
+		}{ECAD-Export-Headline}
+	}
+
+\pagestyle{scrheadings}
+
+\begin{document}
+% --------------------------------------------------------------
+\title{ECAD Interchange Format}
+\subtitle{Phoenix Contact CLIP PROJECT Version 6.5}
+
+\subject{ALX-Development}
+\author{Dipl.-Ing. (FH) Alexander Thiel M.Sc.}
+
+% Mit diesem Kommando kann das Datum festgelegt werden. Das ist sinnvoll, wenn dieser Bericht fertig ist und sich das Datum nicht immer, wenn er neu generiert wird wieder ändern soll.
+%\date{30. Februar 2022}
+%\publishers{...}
+
+\maketitle
+\tableofcontents
+% --------------------------------------------------------------
+
+\chapter{Introduction}
+
+This document is not an official documentation of the ECAD Exchange file format used by Phoenix Contacts
+CLIP PROJECT software, it is based upon researches and reengineering of exchange files by myself.
+So there is no warranty, that this documentation is complete or correct in all cases.
+
+The generic ECAD data exchange format provides full exchange of all relevant information based on a XML structured file.
+The objective of this document is to describe this XML format.
+
+\section{XML node structure}
+
+The ECAD exchange file format is XML based.
+One ECAD file contains only one project with unlimited number of mounting rails and terminal strips.
+
+The structure starts with the root object \verb|<pbf>| and it contains exact one single project object \verb|<o type='clipprj.project'>|.
+The project object may contain multiple other objects which are surrounded by the \verb|<ol>| (object list) tag.
+Based on this structure a project according the hierarchy as shown on the diagram in figure~\ref{fig:structure_erm} can be created.
+
+\tikzset{branode/.style={midway,font=\scriptsize}}
+
+\begin{figure}[!ht]
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}[>=stealth]
+
+\node[](pbf){\begin{tabular}{|c|} \hline
+	\textbf{Root Object}\\ \hline
+	<pbf>\\ \hline
+	\end{tabular}};
+
+\node[below=of pbf](prj){\begin{tabular}{|c|} \hline
+	\textbf{Project Object}\\ \hline
+	<o type='clipprj.project'>\\ \hline
+	\end{tabular}};
+
+\node[below left=of prj](loc){\begin{tabular}{|c|} \hline
+	\textbf{Location Object}\\ \hline
+	<o type='clipprj.location'>\\ \hline
+	\end{tabular}};
+
+\node[below right=of prj](ref){\begin{tabular}{|c|} \hline
+	\textbf{Table of References}\\ \hline
+	<refs>, <ref>\\ \hline
+	\end{tabular}};
+
+\node[below=3cm of prj](rail){\begin{tabular}{|c|} \hline
+	\textbf{Rail Objects}\\ \hline
+	<o type='clipprj.rail'>\\ \hline
+	\end{tabular}};
+
+\node[below left=of rail](onrail){\begin{tabular}{|c|} \hline
+	\textbf{On-rail Objects}\\ \hline
+	<o type='clipprj.terminal'>\\
+	<o type='clipprj.plc'>\\ \hline
+	\end{tabular}};
+
+\node[below right=of rail](acc){\begin{tabular}{|c|} \hline
+	\textbf{Accessory Objects}\\ \hline
+	<o type='clipprj.accessory'>\\
+	<o type='clipprj.bridge'>\\ \hline
+	\end{tabular}};
+
+\draw[->](pbf)--(prj)node[branode,left=1mm]{[$1$]};
+\draw[->](prj)--(rail)node[branode,left=1mm]{[$0..n$]};
+\draw[->](prj)--(loc)node[branode,left,anchor=south east]{[$0..n$]};
+\draw[->](loc)--(rail)node[branode,left,anchor=south west]{[$0..n$]};
+\draw[->](rail)--(onrail)node[branode,left,anchor=south east]{[$0..n$]};
+\draw[->](rail)--(acc)node[branode,left,anchor=south west]{[$0..n$]};
+
+\end{tikzpicture}}
+\caption{Structure of the ECAD file}
+\label{fig:structure_erm}
+\end{figure}
+
+An example header of the ECAD file is shown in listing~\ref{lst:xml_example_header}.
+
+\lstinputlisting[%
+	label={lst:xml_example_header},
+	caption={Example header of the ECAD file},
+	language=XML,
+	firstline=1,
+	lastline=10,
+]{ECAD-Export-ExampleProject.xml}
+
+The ECAD file format bases on limited tag elements.
+Below there is full list of allowed tag elements.
+
+\subsection{Tag description}
+
+\subsubsection{Root object}
+
+Root object of the XML file which provide information about version, format and schema.
+
+\begin{description}
+	\item[Tag] \verb|<pbf>|
+	\item[Attributes]:
+	
+	\begin{description}
+		\item[version] version of ECAD file.
+		Current version is 2.0
+		\item[format] defines namespace for the file.
+		Must be \verb|clipprj|
+	\end{description}
+\end{description}
+
+\subsubsection{List of objects}
+
+Contain collection of objects.
+
+\begin{description}
+	\item[Tag] \verb|<ol>|
+\end{description}
+
+\subsubsection{Objects}
+
+Creates object of given type.
+Object may contain other objects (list of objects), properties (list of properties) and reference object (list of reference objects)
+
+\begin{description}
+	\item[Tag] \verb|<o>|
+	\item[Attributes]:
+	
+	\begin{description}
+		\item[type] type name of the object
+		\item[name] name of the object
+		\item[id] unique id of the object
+	\end{description}
+\end{description}
+
+Name attribute is ignored if name property is added in list of properties additionally.
+
+\subsubsection{List of properties}
+
+Contains collection of properties
+
+\begin{description}
+	\item[Tag] \verb|<pl>|
+\end{description}
+
+\subsubsection{Property}
+
+Represent one property of the object with the value.
+
+\begin{description}
+	\item[Tag] \verb|<p>|
+	\item[Attributes]:
+	
+	\begin{description}
+		\item[name] name of property
+	\end{description}
+\end{description}
+
+Example: \verb|<p name="clipprj.articleNumber">0801681</p>|
+
+\subsubsection{List of reference objects}
+
+Contain list of reference objects
+
+\begin{description}
+	\item[Tag] \verb|<rl>|
+\end{description}
+
+\subsubsection{Reference object}
+
+Create reference object that refers to the table of references by rid value.
+It allows to create relation between 2 objects in ECAD file (see also example listing~\ref{lst:xml_example_reference}.
+
+\begin{description}
+	\item[Tag] \verb|<r>|
+	\item[Attributes]:
+	
+	\begin{description}
+		\item[rid] reference id that refers to table of references entries.
+		\item[name] name of reference object.
+		Can be omitted.
+	\end{description}
+\end{description}
+
+\begin{lstlisting}[%
+	label={lst:xml_example_reference},
+	caption={Example of referencing objects},
+	language=XML,
+]
+<pbf>
+	<o type="clipprj.terminal" id="1">
+		<rl>
+			<r name="accessory" rid="4"/>
+		</rl>
+	</o>
+
+	<o type="clipprj.accessory" id="2">
+		<rl>
+			<r name="accessory" rid="4"/>
+		</rl>
+	</o>
+
+	<refs>
+		<ref id="4" oid="2"/>
+	</refs>
+</pbf>
+\end{lstlisting}
+
+\subsubsection{Table of references}
+
+Contain collection of references.
+
+\begin{description}
+	\item[Tag] \verb|<refs>|
+\end{description}
+
+\subsubsection{Reference}
+
+Represent one reference to any object.
+Together with reference object, it allows to create relation between 2 objects in ECAD file.
+
+\begin{description}
+	\item[Tag] \verb|<ref>|
+	\item[Attributes]:
+	
+	\begin{description}
+		\item[id] id of reference
+		\item[oid] id of referenced object
+	\end{description}
+\end{description}
+
+\chapter{Specification}
+
+\section{General XML definitions}
+
+\begin{itemize}
+	\item The ECAD uses the clipprj namespace and it has to be specified in it’s \verb|<pbf>| format attribute: \verb|<pbf format="clipprj" …| 
+	\item clipprj namespace has to be use in every <p>name and <o>type attribute. 
+	\item  First \verb|<o>| object has to be defined as project with attribute \verb|type=clipprj.project|
+	\verb|<o id="0" name="ClipProject1" type="clipprj.project">|
+	\item Attribute name is project name. 
+	\item In a single file only one project can be defined. 
+	\item Project can include any kind of locations and rails.
+\end{itemize}
+
+\section{XML tags}
+
+The ECAD has a very limited number of used tags.
+These are:
+
+\begin{itemize}
+	\item pbf [version, format] 
+	\item o [name, type, id] 
+	\item ol 
+	\item pl 
+	\item p [name] 
+	\item rl 
+	\item r [index, name, rid] 
+	\item refs 
+	\item ref [id, oid] 
+\end{itemize}
+
+\section{Tag attributes}
+
+The strings in brackets indicate the allowed attributes for the given tags. 
+
+\begin{description}
+	\item[<pbf>] is the root object of the file and contain a version number, format name and the schema information. 
+	\item[<o>] is object and has a name, a type and id as xml attributes.
+	Every id number has to be unique in a project and it identifies every unambiguous <o> element.
+	id attributes are used in references.
+	\item[<ol>] is object list.
+	Object list element can contain any number of <o> child objects, thus allowing a tree structure of objects to be create.
+	\item[<pl>] is attribute list.
+	In \verb|<pl>| it is possibility to store any number of \verb|<p>| elements.
+	\item[<p>] is attribute and has a name as xml attributes and a value as xml text. 
+	\item[<rl>] is reference list.
+	In \verb|<rl>| there may be any number of <r> elements.
+	The rid is an indirect reference to another object in the tree via the \verb|<ref>| table.
+	\item[<r>] is reference object. \verb|<r>| has a name, a index and a rid as xml attributes.
+	For every \verb|<rl>| index attribute has to be a unique value.
+	\item[<refs>] is table of reference.
+	In <refs> there may be any number of <ref> elements.
+	\item[<ref>] is reference with two xml attributes: a id and oid. \verb|<ref>| is only needed if the object structure uses references.
+	For each object referenced there will be one \verb|<ref>| object which maps the rid to the corresponding oid of the object in the tree.
+\end{description}
+
+\section{Object types}
+
+CLIP PROJECT ECAD defined following object types ( <o>type ): 
+ 
+\subsection{clipprj.project}
+ 
+clipprj.project – is project.
+
+There can be only one project defined in file.
+Project contains locations (optionally) and rails.
+
+The following attributes may be used:
+
+\begin{description}
+	\item[type] must be clipprj.project
+	\item[name] name of the project
+	\item[id] unique id of the object
+\end{description}
+ 
+Project describes the following \verb|<p>| attributes: \emph{no properties}
+
+\subsection{clipprj.location}
+ 
+clipprj.location – is location. 
+
+Define location.
+There can be unlimited number of location objects which create hierarchical structure.
+Location contains other locations (optionally) and rails.
+
+The following attributes may be used:
+
+\begin{description}
+	\item[type] must be clipprj.location
+	\item[name] name of the location
+	\item[id] unique id of the object
+\end{description}
+
+Location describes the following \verb|<p>| attributes:
+
+\begin{description}
+	\item[{NO\textunderscore SELECTED\textunderscore RAIL}] Not yet analysed, function is currently still unknown
+	\item[clipprj.type] Themes to be always $110$
+	\item[p8.locationId] EPLAN defines some numerical property identifier.
+	A complete list containing the identifier can be found at \verb|https://www.eplan.help/help/platform/2.5/de-DE/help/Content/htm/properties_o_main.htm|.
+	The property identifier used to specify location information as also described in the section \ref{sec:p8_properties}.
+\end{description}
+
+\subsection{clipprj.rail}
+
+Define rail to assembly terminal strip.
+There can be unlimited number of rails created directly under project object or under location.
+Rail contains on-rail elements like terminals.
+Default article number for rail if not specified is: 0801733 and length 2000 mm.
+
+The following attributes may be used:
+
+\begin{description}
+	\item[type] must be clipprj.rail
+	\item[name] name of the rail
+	\item[id] unique id of the object
+\end{description}
+
+Rail describes the following \verb|<p>| attributes: 
+
+\begin{description}
+	\item[clipprj.articleNumber] article number, default 0801733 
+	\item[clipprj.name] name 
+	\item[clipprj.length] length [mm], default 2000 
+	\item[clipprj.edgeOfCut] edge of cut [mm], default 0.
+	Allowed range of value is between –5 and 5.
+	\item[clipprj.spaceLeft] space between left edge of the rail and first element on the rail 
+	\item[clipprj.comment] comment 
+	\item[clipprj.drillHoles] list of holes.
+	Every hole use four fields separated by semicolon as: distance from left edge of the rail;x – size;y – size;type of the hole e.g. \verb|200;2;3;0;230;2;2;1|.
+	Type of the hole is 0 for hole, 1 for nut and 2 for screw.
+	\item[clipprj.drillType] 0 for every type of holes or 1 for types defined in ClipProject. 
+	\item[clipprj.endCap] End cap article number if have to be add. 
+\end{description}
+
+\subsection{clipprj.shoppingCart} 
+
+Define a shopping cart.
+There can be unlimited number of shopping carts created directly under project object or under location.
+Shopping cart may contain any product but there is no links, no relations or logic.
+
+The following attributes may be used:
+
+\begin{description}
+	\item[type] must be clipprj.shoppingCart
+	\item[name] name of the shopping cart
+	\item[id] unique id of the object
+\end{description}
+
+Shopping cart describe following <p> attributes: 
+
+\begin{description}
+	\item[clipprj.articleNumber] article number 
+	\item[clipprj.name] name 
+	\item[clipprj.customer] customer 
+\end{description}
+ 
+Shopping cart in contrast to the Rail must have flat structure of elements.
+All elements have to lie directly on the Shopping cart (elements as well as extras).
+It follows that elements lie on the Shopping cart can’t have any references to extras (e.g.\ bridge).
+
+\subsection{clipprj.terminal} 
+ 
+Terminal describes the following \verb|<p>| attributes: 
+
+\begin{description}
+	\item[clipprj.articleNumber] article number 
+	\item[clipprj.rotated] 1 if rotated otherwise 0 (rotate 180°) 
+	\item[clipprj.comment] comment 
+	\item[clipprj.closed] use for some terminals, 0 for open or 1 for close. 
+	\item[clipprj.description] list of descriptions.
+	Every description use seven fields separated by semicolon as: Level;x-coord;y-coord;description;direction;height of text;align;color x and y are coordinates in mm.
+	Description is to display text.\\
+	Direction text allowed following values: 
+	\verb|L| – left, \verb|R| – right, \verb|U| – up, \verb|D| – down.\\
+	Height is font size.\\
+	Align is: 0 for align to left or 1 for center text.\\
+	Colors: 0 - White, 1 - Red, 2 - Blue, 3 - Yellow, 4 - Green, 5 - Violet, 6 - Orange.
+	e.g. \verb|O1;3.10;2.20;txt;R;3.00;1;0...|\\
+	It is possible to omit the x and y coordinates.
+	In this case every next level description will be add to next occurrence of the same level from DB coordinates.
+	e.g. \verb|O1;;;txt;R;3.00;1;0...|
+	\item[clipprj.ECADdescription] can be used as alternative to clipprj.description.
+	Every description use two fields separate by semicolon as: Level;description and levels are represent by numbers (e.g.\ 1 instead of O1)
+	\item[clipprj.connectionId] id use by bridges in clipprj.connectionpoints attribute. 
+	\item[clipprj.objId] external ID (use by external programs to recognize element) 
+	\item[clipprj.doNotCorrect] 1 if auto-correction should ignore this element during check otherwise 0 
+\end{description}
+
+\subsection{clipprj.svp}
+ 
+\verb|svp| (Surge voltage protection) describes the following \verb|<p>| attributes: 
+
+\begin{description}
+	\item[clipprj.articleNumber] article number 
+	\item[clipprj.rotated] 1 if rotated, otherwise 0. 
+	\item[clipprj.comment] comment 
+	\item[clipprj.description] list of descriptions (see Terminal) 
+	\item[clipprj.ECADdescription] list of descriptions (see Terminal) 
+	\item[clipprj.doNotCorrect] 1 if auto-correction should ignore this element during check otherwise 0
+	\item[clipprj.objId] external ID (use by external programs to recognize element)
+\end{description}
+
+\subsection{clipprj.safetySwitch}
+ 
+Safety switch describes the following \verb|<p>| attributes: 
+
+\begin{description}
+	\item[clipprj.articleNumber] article number
+	\item[ clipprj.rotated] 1 if rotated, otherwise 0
+	\item[clipprj.comment] comment
+	\item[clipprj.description] list of descriptions (see Terminal)
+	\item[clipprj.ECADdescription] list of descriptions (see Terminal)
+	\item[clipprj.doNotCorrect] 1 if auto-correction should ignore this element during check otherwise 0
+	\item[clipprj.objId] external ID (use by external programs to recognize element)
+\end{description}
+
+\subsection{clipprj.automation}
+ 
+Automation describes the following \verb|<p>| attributes: 
+
+\begin{description}
+	\item[clipprj.articleNumber] article number 
+	\item[clipprj.rotated] 1 if rotated, otherwise 0. 
+	\item[clipprj.comment] comment 
+	\item[clipprj.description] list of descriptions (see Terminal) 
+	\item[clipprj.ECADdescription] list of descriptions (see Terminal) 
+	\item[clipprj.doNotCorrect] 1 if auto-correction should ignore this element during check otherwise 0 
+	\item[clipprj.objId] external ID (use by external programs to recognize element)
+\end{description}
+
+\subsection{clipprj.socket}
+ 
+Socket describes the following \verb|<p>| attributes: 
+
+\begin{description}
+	\item[clipprj.articleNumber] article number 
+	\item[clipprj.description] list of descriptions (see Terminal). 
+	\item[ clipprj.ECADdescription] list of descriptions (see Terminal) 
+	\item[clipprj.rotated] 1 if rotated, otherwise 0. 
+	\item[clipprj.comment] comment 
+	\item[clipprj.doNotCorrect] 1 if auto-correction should ignore this element during check otherwise 0 
+	\item[clipprj.objId] external ID (use by external programs to recognize element) 
+\end{description}
+
+\subsection{clipprj.powerSupply}
+ 
+Power Supply describes the following \verb|<p>| attributes: 
+
+\begin{description}
+	\item[clipprj.articleNumber] article number
+	\item[clipprj.rotated] 1 if rotated, otherwise 0
+	\item[clipprj.rotated90] 1 if rotated, otherwise 0 (rotate $90^\circ$) 
+	\item[clipprj.comment] comment
+	\item[clipprj.doNotCorrect] 1 if auto-correction should ignore this element during check otherwise 0
+	\item[clipprj.objId] external ID (use by external programs to recognize element) Rotate combination allow rotate element $90^\circ$, $180^\circ$ or $270^\circ$
+\end{description}
+
+\subsection{clipprj.plcRelais}
+ 
+PLC Relais describes the following \verb|<p>| attributes: 
+
+\begin{description}
+	\item[clipprj.articleNumber] article number 
+	\item[clipprj.rotated] 1 if rotated, otherwise 0. 
+	\item[clipprj.comment] comment 
+	\item[clipprj.description] list of descriptions (see Terminal). 
+	\item[clipprj.ECADdescription] list of descriptions (see Terminal) 
+	\item[clipprj.optionText] text to be displayed in properties dialog. 
+	\item[clipprj.doNotCorrect] 1 if auto-correction should ignore this element during check otherwise 0 
+	\item[clipprj.objId] external ID (use by external programs to recognize element)
+\end{description}
+
+\subsection{clipprj.blackbox}
+ 
+Black box describes the following \verb|<p>| attributes: 
+
+\begin{description}
+	\item[clipprj.articleNumber] article number 
+	\item[clipprj.rotated] 1 if rotated, otherwise 0. 
+	\item[clipprj.comment] comment 
+	\item[clipprj.width] width [mm], default 20 mm 
+	\item[clipprj.height] height [mm], default 30 mm 
+	\item[clipprj.depth] depth [mm], default 40 mm 
+	\item[clipprj.insertPoint] Y-coordinate [mm], default 2.5 mm 
+	\item[clipprj.bmpFile] bitmap element for Graphics viewer, default \verb|BB_standard.bmp|
+	\item[clipprj.objId] external ID (use by external programs to recognize element) 
+\end{description}
+
+\subsection{clipprj.cabeling}
+ 
+Cabeling describes the following \verb|<p>| attributes: 
+
+\begin{description}
+	\item[clipprj.articleNumber] article number 
+	\item[clipprj.rotated] 1 if rotated, otherwise 0. 
+	\item[clipprj.comment] comment 
+	\item[clipprj.doNotCorrect] 1 if auto-correction should ignore this element during check otherwise 0 
+	\item[clipprj.objId] external ID (use by external programs to recognize element) 
+\end{description}
+
+\subsection{clipprj.signalConverter}
+ 
+Signal Converter describes the following \verb|<p>| attributes: 
+
+\begin{description}
+	\item[clipprj.articleNumber] article number 
+	\item[clipprj.rotated] 1 if rotated, otherwise 0. 
+	\item[clipprj.comment] comment 
+	\item[clipprj.doNotCorrect] 1 if auto-correction should ignore this element during check otherwise 0 
+	\item[clipprj.objId] external ID (use by external programs to recognize element) 
+\end{description}
+
+\subsection{clipprj.safetyRelais}
+ 
+Safety Relais describes the following \verb|<p>| attributes: 
+
+\begin{description}
+	\item[clipprj.articleNumber] article number 
+	\item[clipprj.rotated] 1 if rotated, otherwise 0. 
+	\item[clipprj.comment] comment 
+	\item[clipprj.doNotCorrect] 1 if auto-correction should ignore this element during check otherwise 0 
+	\item[clipprj.objId] external ID (use by external programs to recognize element) 
+\end{description}
+
+\subsection{clipprj.generic}
+ 
+Generic is a generic type.
+A Generic type can be used when given article number is existing in CLIP PROJECT database (article number is known by CLIP PROJECT).
+More attributes can be either applied or ignored in dependence on type of the element.
+
+\subsection{clipprj.endBracket}
+ 
+End Bracket describes the following \verb|<p>| attributes: 
+
+\begin{description}
+	\item[clipprj.articleNumber] article number 
+	\item[clipprj.rotated] 1 if rotated, otherwise 0. 
+	\item[clipprj.description] list of descriptions (see Terminal). 
+	\item[clipprj.ECADdescription] list of descriptions (see Terminal). 
+	\item[clipprj.comment] comment 
+	\item[clipprj.doNotCorrect] 1 if auto-correction should ignore this element during check otherwise 0 
+	\item[clipprj.objId] external ID (use by external programs to recognize element) 
+\end{description}
+
+\subsection{clipprj.blockingSurface}
+ 
+Blocking Surface describes the following \verb|<p>| attributes: 
+
+\begin{description}
+	\item[clipprj.width] is width [mm] 
+	\item[clipprj.comment] comment 
+	\item[clipprj.doNotCorrect] 1 if auto-correction should ignore this element during check otherwise 0 
+	\item[clipprj.objId] external ID (use by external programs to recognize element) 
+\end{description}
+
+\subsection{clipprj.supportTrestle}
+ 
+Support Trestle describes the following \verb|<p>| attributes: 
+
+\begin{description}
+	\item[clipprj.articleNumber] article number 
+	\item[clipprj.rotated] 1 if rotated, otherwise 0. 
+	\item[clipprj.comment] comment 
+	\item[clipprj.doNotCorrect] 1 if auto-correction should ignore this element during check otherwise 0 
+	\item[clipprj.objId] external ID (use by external programs to recognize element) 
+\end{description}
+
+\subsection{clipprj.partitionPlate}
+ 
+Partition Plate describes the following \verb|<p>| attributes: 
+
+\begin{description}
+	\item[clipprj.articleNumber] article number 
+	\item[clipprj.rotated] 1 if rotated, otherwise 0. 
+	\item[clipprj.comment] comment 
+	\item[clipprj.doNotCorrect] 1 if auto-correction should ignore this element during check otherwise 0 
+	\item[clipprj.objId] external ID (use by external programs to recognize element) 
+\end{description}
+
+\subsection{clipprj.endCover}
+ 
+End Cover describes the following \verb|<p>| attributes: 
+
+\begin{description}
+	\item[clipprj.articleNumber] article number 
+	\item[clipprj.rotated] 1 if rotated, otherwise 0. 
+	\item[clipprj.comment] comment 
+	\item[clipprj.doNotCorrect] 1 if auto-correction should ignore this element during check otherwise 0 
+	\item[clipprj.objId] external ID (use by external programs to recognize element) 
+\end{description}
+
+\subsection{clipprj.distanceCover}
+ 
+Distance Cover describes the following \verb|<p>| attributes: 
+
+\begin{description}
+	\item[clipprj.articleNumber] article number 
+	\item[clipprj.rotated] 1 if rotated, otherwise 0. 
+	\item[clipprj.comment] comment 
+	\item[clipprj.doNotCorrect] 1 if auto-correction should ignore this element during check otherwise 0 
+	\item[clipprj.objId] external ID (use by external programs to recognize element) 
+\end{description}
+
+\subsection{clipprj.separatingPlate}
+ 
+Separating Plate describes the following \verb|<p>| attributes: 
+
+\begin{description}
+	\item[clipprj.articleNumber] article number 
+	\item[clipprj.rotated] 1 if rotated, otherwise 0. 
+	\item[clipprj.comment] comment 
+	\item[clipprj.doNotCorrect] 1 if auto-correction should ignore this element during check otherwise 0 
+	\item[clipprj.objId] external ID (use by external programs to recognize element) 
+\end{description}
+
+\subsection{clipprj.spacerPlate}
+ 
+Spacer Plate describes the following \verb|<p>| attributes: 
+
+\begin{description}
+	\item[clipprj.articleNumber] article number 
+	\item[clipprj.rotated] 1 if rotated, otherwise 0. 
+	\item[clipprj.comment] comment 
+	\item[clipprj.doNotCorrect] 1 if auto-correction should ignore this element during check otherwise 0 
+	\item[clipprj.objId] external ID (use by external programs to recognize element) 
+\end{description}
+
+\section{Object types \glqq{}Extras\grqq{}} 
+ 
+Second group of objects are Extras.
+Extras are objects that exists only with elements mounted on the rail – plus they have to be related to them.
+Extras with related elements have to be in the same location but not on the rail.
+
+\subsection{clipprj.bridge}
+ 
+Bridge describes the following \verb|<p>| attributes: 
+
+\begin{description}
+	\item[clipprj.articleNumber] article number 
+	\item[clipprj.comment] comment 
+	\item[clipprj.closed] 1 if closed otherwise 0 
+	\item[clipprj.coordinates] list of coordinates.
+	Every coordinate use two fields separated by semicolon as: x – coordinate;y – coordinate.
+	For Bridge is possibility to set terminal levels instead of coordinates (e.g. \verb|O1;U1|).
+	\item[clipprj.ECADcoordinates] can be used as alternative to clipprj.coordinates.
+	Attribute can has only one terminal level for all connected terminals.
+	In this case levels are represent by number (e.g.\ 1 instead of O1).
+	\item[clipprj.connectionpoints] list of terminals connectionId attribute values.
+	Can be used as alternative to reference mechanism to indicate connected terminals.
+	\item[clipprj.objId] external ID (use by external programs to recognize element) 
+\end{description}
+
+\subsection{clipprj.neutralbusbar}
+ 
+Neutral busbar describes the following \verb|<p>| attributes: 
+
+\begin{description}
+	\item[clipprj.articleNumber] article number 
+	\item[clipprj.comment] comment 
+	\item[clipprj.objId] external ID (use by external programs to recognize element) 
+\end{description}
+
+\subsection{clipprj.plug}
+ 
+Plug (Module plug or Modular test plug) describes the following \verb|<p>| attributes: 
+
+\begin{description}
+	\item[clipprj.articleNumber] article number for first plug part. 
+	\item[clipprj.constructionArticles] article numbers for next plug parts separated by semicolon. 
+	\item[clipprj.coordinates] list of y – coordinates [mm] for every plug part coordinate
+	\item[clipprj.name] module name 
+	\item[clipprj.description] list of descriptions (see Terminal) 
+	\item[clipprj.ECADdescription] list of descriptions (see Terminal) 
+	\item[clipprj.comment] comment 
+	\item[clipprj.objId] external ID (use by external programs to recognize element) 
+\end{description}
+
+\subsection{clipprj.safetySwitchPlug}
+ 
+Safety switch plug describes the following \verb|<p>| attributes: 
+
+\begin{description}
+	\item[clipprj.articleNumber] article number 
+	\item[clipprj.comment] comment 
+	\item[clipprj.coordinates] y – coordinate [mm] 
+	\item[clipprj.levelPosition] position plug on the basis element,
+	\begin{itemize}
+		\item 0 for plug inserted from left edge of basis or
+		\item 1 for plug inserted on second position of basis.
+	\end{itemize} 
+	\item[clipprj.objId] external ID (use by external programs to recognize element) 
+\end{description}
+
+\subsection{clipprj.svpPlug}
+
+Defines plug for Surge Voltage Protection element.
+
+Surge voltage protection plug describes the following \verb|<p>| attributes: 
+
+\begin{description}
+	\item[clipprj.articleNumber] article number 
+	\item[clipprj.comment] comment 
+	\item[clipprj.coordinates] x and y coordinates [mm] separated by semicolon.
+	Format is: \verb|x;y|
+	\item[clipprj.objId] external ID (use by external programs to recognize element)
+\end{description}
+
+\subsection{clipprj.plcPlug}
+
+Defines plug for PLC element.
+
+PLC Relais plug describes the following \verb|<p>| attributes: 
+
+\begin{description}
+	\item[clipprj.articleNumber] article number 
+	\item[clipprj.comment] comment 
+	\item[clipprj.coordinates] x and y coordinates [mm] separated by semicolon.
+	Format is: \verb|x;y|
+	\item[clipprj.objId] external ID (use by external programs to recognize element)
+\end{description}
+
+\subsection{clipprj.cable}
+
+Defines cable for Automation element.
+
+Cable describes the following \verb|<p>| attributes: 
+
+\begin{description}
+	\item[clipprj.articleNumber] article number 
+	\item[clipprj.comment] comment 
+	\item[clipprj.coordinates] x and y coordinates [mm] separated by semicolon.
+	Format is: \verb|x;y|
+	\item[clipprj.objId] external ID (use by external programs to recognize element)
+\end{description}
+
+\subsection{clipprj.accessory}
+ 
+Accessory describes the following \verb|<p>| attributes: 
+
+\begin{description}
+	\item[clipprj.articleNumber] article number 
+	\item[clipprj.comment] comment 
+	\item[clipprj.coordinates] x and y coordinates [mm] separated by semicolon.
+	Format is: \verb|x;y|
+	\item[clipprj.description] list of descriptions (see Terminal) 
+	\item[clipprj.ECADdescription] list of descriptions (see Terminal) 
+	\item[clipprj.objId] external ID (use by external programs to recognize element) 
+\end{description}
+
+\verb|clipprj.accessory| is used in references \verb|<r>| name to indicate reference element. 
+
+\section{Object properties}
+
+\subsection{Article number}
+
+\begin{description}
+	\item[Name] clipprj.articleNumber
+	\item[Scope] General
+\end{description}
+
+\subsection{Rotation}
+
+\begin{description}
+	\item[Name] clipprj.rotated
+	\item[Scope] General
+	\item[Valid values]
+	\begin{description}
+		\item[1] element is flipped on rail vertically
+		\item[0] element is not flipped vertically
+	\end{description}
+\end{description}
+
+\subsection{Rotation horizontal}
+
+\begin{description}
+	\item[Name] clipprj.rotated90
+	\item[Scope] General
+	\item[Valid values]
+	\begin{description}
+		\item[1] element is flipped on rail horizontally
+		\item[0] element is not flipped horizontally
+	\end{description}
+\end{description}
+
+\emph{Note:} This property is suitable only for some elements
+
+\subsection{Comment}
+
+Add comment for element.
+
+\begin{description}
+	\item[Name] clipprj.comment
+	\item[Scope] General
+\end{description}
+
+\subsection{Description}
+
+\begin{description}
+	\item[Name] clipprj.description
+	\item[Scope] General
+\end{description}
+
+Add descriptions for elements displayed as labels.
+Best matching will be used for product data in CLIPPROJECT database.
+There may be several description and each one use 8 fields separated by semicolons:
+
+\verb|level;x-coord;y-coord;description;direction;height;align;color;|
+
+Where:
+
+\begin{description}
+	\item[level] id of description
+	\item[x-coord, y-coord] position of description label on device in mm related to top-left corner
+	\item[description] label text.
+	\item[direction] text rotation, valid values:
+	\begin{description}
+		\item[L] left ($0^\circ$)
+		\item[R] right ($180^\circ$)
+		\item[U] up ($90^\circ$)
+		\item[D] down ($270^\circ$)
+	\end{description}
+	\item[height] font size.
+	\item[align] text align, valid values:
+	\begin{description}
+		\item[0] left
+		\item[1] center
+	\end{description}
+	\item[color] label color (background of the text), valid values:
+	\begin{description}
+		\item[0] white
+		\item[1] red
+		\item[2] blue
+		\item[3] yellow
+		\item[4] green
+		\item[5] violet
+		\item[6] orange
+	\end{description}
+	Example: \verb|O1;3.10;2.20;L1;R;3.00;1;0;O2;3.10;2.20;L2;R;3.00;1;0;|
+	Definition of 2 descriptions
+	It is allowed to omit the x and y coordinates.
+	In such case coordinates will be read from database for current product.
+	Example: \verb|O1;;;txt;R;3.00;1;0;|
+\end{description}
+
+\subsection{ECAD description}
+
+\begin{description}
+	\item[Name] clipprj.ECADdescription
+	\item[Scope] General
+\end{description}
+
+Can be used as alternative to clipprj.description.
+Every description use two fields separate by semicolon as: \verb|level;description|
+
+Where:
+
+\begin{description}
+	\item[level] id of description
+	\item[description] label text.
+\end{description}
+
+\subsection{Object Id}
+
+External ID, to be used by external programs to identify object
+
+\begin{description}
+	\item[Name] clipprj.objId
+	\item[Scope] General
+\end{description}
+
+\subsection{Do-Not-Correct}
+
+Information for auto-correction that object should not be modified or removed.
+
+\begin{description}
+	\item[Name] clipprj.doNotCorrect
+	\item[Scope] General
+\end{description}
+
+Valid values:
+
+\begin{description}
+	\item[1] auto-correction should ignore this element
+	\item[0] default behavior
+\end{description}
+
+\subsection{Element Width}
+
+Width of the element in mm.
+Width makes terminal strip longer.\\
+
+\begin{description}
+	\item[Name] clipprj.width
+	\item[Scope] General
+\end{description}
+
+\subsection{Element Height}
+
+Hegiht of the element in mm.
+
+\begin{description}
+	\item[Name] clipprj.height
+	\item[Scope] General
+\end{description}
+
+\subsection{Element Depth}
+
+Depth of the element in mm.
+
+\begin{description}
+	\item[Name] clipprj.depth
+	\item[Scope] General
+\end{description}
+
+\subsection{Mounting 2D bitmap}
+
+Bitmap file name to be used for black box object.
+It is displayed in 2D-Editor.
+File must exist in Graphics folder.
+
+\begin{description}
+	\item[Name] clipprj.bmpFile
+	\item[Scope] General
+\end{description}
+
+\subsection{Vertical inserting point}
+
+Inserting point on rail in mm
+
+\begin{description}
+	\item[Name] clipprj.insertPoint
+	\item[Scope] General
+\end{description}
+
+\subsection{Name}
+
+Name of the object.
+Used also as a label description if there is no Description property.
+
+\begin{description}
+	\item[Name] clipprj.name
+	\item[Scope] General
+\end{description}
+
+\subsection{Potential}
+
+Define potential type of terminal.
+Can be empty.
+
+\begin{description}
+	\item[Name] clipprj.potentialType
+	\item[Scope] Terminal
+\end{description}
+
+Valid values:
+
+\begin{description}
+	\item[Other]
+	\item[N]
+	\item[PE]
+	\item[SH]
+\end{description}
+
+\subsection{Connection points}
+
+Number of connection points defined by terminal function.
+Can be empty.
+
+\begin{description}
+	\item[Name] clipprj.connectionPoints
+	\item[Scope] Terminal
+\end{description}
+
+Valid values:
+
+\begin{description}
+	\item[0-n] Numbers only
+\end{description}
+
+\subsection{Minimum required connection points}
+
+Number of connection points from schematic.
+Can be empty.\\
+
+\begin{description}
+	\item[Name] clipprj.reqConnectionPoints
+	\item[Scope] Terminal
+\end{description}
+
+Valid values:
+
+\begin{description}
+	\item[0-n] Numbers only
+\end{description}
+
+\subsection{Cross section}
+
+Cross section for terminal function in $mm^2$
+
+\begin{description}
+	\item[Name] clipprj.crossSection
+	\item[Scope] Terminal
+\end{description}
+
+\subsection{Wire section required}
+
+Wire cross section required from schematic in $mm^2$
+
+\begin{description}
+	\item[Name] clipprj.
+	maxWireSection
+	\item[Scope] Terminal
+\end{description}
+
+\subsection{Terminal category}
+
+Terminal function type.
+Can be empty.
+Valid values: (numbers only 0--5).
+
+\begin{description}
+	\item[Name] clipprj.terminalFunction
+	\item[Scope] Terminal
+\end{description}
+
+Valid values:
+
+\begin{description}
+	\item[0] Feed-through terminal
+	\item[1] Isolating terminal
+	\item[2] Switching terminal
+	\item[3] Diode terminal
+	\item[4] Fused terminal
+	\item[5] Resistance terminal
+\end{description}
+
+\subsection{Terminal with LED}
+
+Has terminal LED or not.
+Can be empty.
+Valid values: (numbers only).\\
+
+\begin{description}
+	\item[Name] clipprj.hasLED
+	\item[Scope] Terminal
+\end{description}
+
+Valid values:
+
+\begin{description}
+	\item[0] no
+	\item[1] yes
+	\item[-1] not specified
+\end{description}
+
+\subsection{Saddle jumper}
+
+Has terminal saddle jumper or not.
+Can be empty.
+Valid values: (numbers only).
+
+\begin{description}
+	\item[Name] clipprj.hasSaddleJumper
+	\item[Scope] Terminal
+\end{description}
+
+Valid values:
+
+\begin{description}
+	\item[0] no
+	\item[1] yes
+	\item[-1] not specified
+\end{description}
+
+\subsection{Level}
+
+Number of levels for terminal.
+Valid values: (numbers only) 1-n.
+
+\begin{description}
+	\item[Name] clipprj.level
+	\item[Scope] Terminal
+\end{description}
+
+\subsection{Terminal open/closed}
+
+Has terminal open right side.
+Can be empty.
+Valid values: (numbers only).
+
+\begin{description}
+	\item[Name] clipprj.closed
+	\item[Scope] Terminal
+\end{description}
+
+Valid values:
+
+\begin{description}
+	\item[0] open
+	\item[1] close
+\end{description}
+
+\subsection{Bridge connection id}
+
+Id used by bridges in clipprj.connectionpoints attribute.
+
+\begin{description}
+	\item[Name] clipprj.connectionId
+	\item[Scope] Terminal
+\end{description}
+
+\subsection{Rail length}
+
+Length of the rail in mm.
+Default value is 2000 mm.
+
+\begin{description}
+	\item[Name] clipprj.length
+	\item[Scope] Rail
+\end{description}
+
+\subsection{Cut Edge}
+
+Edge of cut in mm.
+Default value is 0 mm.
+
+\begin{description}
+	\item[Name] clipprj.edgeOfCut
+	\item[Scope] Rail
+\end{description}
+
+\subsection{Space left}
+
+Space between left edge of the rail and first element.
+
+\begin{description}
+	\item[Name] clipprj.spaceLeft
+	\item[Scope] Rail
+\end{description}
+
+\subsection{List of holes}
+
+\begin{description}
+	\item[Name] clipprj.drillHoles
+	\item[Scope] Rail
+\end{description}
+
+Define holes to drill in not perforated rail.
+It should not be used for perforated rails.
+Each one hole use 4 fields separated by semicolons: \verb|distance;x-size;y-size;type|
+
+Where:
+
+\begin{description}
+	\item[distance] distance from left edge of rail
+	\item[x-size, y-size] dimension of a hole in mm
+	\item[type] one of follows values:
+	\begin{description}
+		\item[0] hole
+		\item[1] nut
+		\item[2] screw
+	\end{description}
+\end{description}
+
+Example: \verb|50;5.0;5.0;0;450;5.0;5.0;0|
+
+\subsection{Drill type}
+
+Information what types of drill holes is used in Clip Project: standard or special.
+It is only for unperforated rails.
+See also clipprj.drillHoles.
+Valid values: (numbers only).
+
+\begin{description}
+	\item[Name] clipprj.drillType
+	\item[Scope] Rail
+	\item[Valid values] 0--1 Numbers only
+	\begin{description}
+		\item[0] special drill holes
+		\item[1] standard drill holes
+	\end{description}
+\end{description}
+
+\subsection{End caps}
+
+Article number of end caps for rail to be added.
+If not give, no end caps will be added for rail.
+
+\begin{description}
+	\item[Name] clipprj.endCap
+	\item[Scope] Rail
+\end{description}
+
+\subsection{Bridge open/closed}
+
+Is bridge open or close.
+Applicable only for some type of bridges.
+
+\begin{description}
+	\item[Name] clipprj.closed
+	\item[Scope] Accessories
+	\item[Valid values] 0--1 Numbers only
+	\begin{description}
+		\item[0] open
+		\item[1] close
+	\end{description}
+\end{description}
+
+\subsection{Coordinates}
+
+Defines list of coordinates needed for positioning bridge or accessory on terminals.
+Best matching will be used for product data in CLIPPROJECT database.
+
+\begin{description}
+	\item[Name] clipprj.coordinates
+	\item[Scope] Accessories
+\end{description}
+
+Two formats are allowed here:
+
+\begin{enumerate}
+	\item Defining points.
+	Each coordinate use 2 fields separated by semicolon as: \verb|x-coord;y-coord|, where x-coord and y-coord are the position of the bridge or accessory on terminal in mm.
+	Example: \verb|0.50;27.80|.
+	\item Specifying level for bridges.
+	Instead of giving position in mm a level identifier can be provided.
+	Level name refers to CLIP PROJECT database and specific level must exist.
+	Examples: \verb|O1|, \verb|O2|, \verb|M1|, \verb|M3|, \verb|U1|, etc.
+\end{enumerate}
+
+\subsection{ECAD Coordinates}
+
+Specify level for bridges to set.
+Can be used as an alternative to clipprj.coordinates to defining bridge position.
+
+\begin{description}
+	\item[Name] clipprj.ECADcoordinates
+	\item[Scope] Accessories
+	\item[Valid values] (numbers only) 1-n
+\end{description}
+
+\subsection{Connected terminals ids}
+
+List of terminals ids specified by clipprj.connectionId property of terminals.
+Can be used as alternative to reference mechanism to indicate connected terminals.\\
+
+\begin{description}
+	\item[Name] clipprj.connectionpoints
+	\item[Scope] Accessories
+\end{description}
+
+Example: \verb|5;7| – connect 2 terminals with ids (clipprj.connectionId) 5 and 7.
+
+\subsection{Consrtuction articles}
+
+\begin{description}
+	\item[Name] clipprj.constructionArticles
+	\item[Scope] Accessories
+\end{description}
+
+List of additional article numbers needed for assembly module plug.
+Not accessible for all types of plugs.
+
+Example:
+
+\begin{lstlisting}[%
+	label={lst:xml_article_assembly},
+	caption={Example of an article assembly},
+	language=XML,
+]
+<o name="DPB Ex" type="clipprj.plug" id="9">
+<pl>
+	<p name="clipprj.articleNumber">3054040</p>
+	<p name="clipprj.connectionId">6</p>
+	<p name="clipprj.connectionpoints">5;7;8</p>
+	<p name="clipprj.constructionArticles">3054079;3054105;</p>
+	<p name="clipprj.coordinates">-2;</p>
+	<p name="clipprj.id">7</p>
+</pl>
+</o>
+\end{lstlisting}
+
+Module plug in example above is made of 3 article numbers.
+
+\subsection{Plug level position}
+
+Specify plug position on the basis element (terminal), related to the top of
+basis element or left side.
+
+\begin{description}
+	\item[Name] clipprj.levelPosition
+	\item[Scope] Accessories
+	\item[Valid values] (numbers only) 0-n, where n depends of type of element.
+	Usually n is 0, 1, 2 or 3.
+\end{description}
+
+\subsection{Customer}
+
+Customer name to be used only as a property of shopping cart.
+
+\begin{description}
+	\item[Name] clipprj.customer
+	\item[Scope] Other
+\end{description}
+
+\section{EPLAN P8 properties}
+\label{sec:p8_properties}
+
+\subsection{1100 - Higher-level function (main identifier)}
+
+\begin{description}
+	\item[Category] Devices
+	\item[Field type] Monolingual text
+	\item[Index (max.)] no
+	\item[Read only] yes
+	\item[API-Define] \verb|DESIGNATION_PLANT|
+	\item[Prefix] \verb|=|
+	\item[Usage] Pages; Base class for functions; Connections; Part references (summarized representation types); Part references; Segments (pre-planning)
+\end{description}
+
+\subsection{1200 - Mounting location (main identifier)}
+
+\begin{description}
+	\item[Category] Devices
+	\item[Field type] Monolingual text
+	\item[Index (max.)] no
+	\item[Read only] yes
+	\item[API-Define] \verb|DESIGNATION_LOCATION|
+	\item[Prefix] \verb|+|
+	\item[Usage] Pages; Base class for functions; Connections; Part references (summarized representation types); Part references; Segments (pre-planning)
+\end{description}
+
+\subsection{1300 - Functional assignment (main identifier)}
+
+\begin{description}
+	\item[Category] Devices
+	\item[Field type] Monolingual text
+	\item[Index (max.)] no
+	\item[Read only] yes
+	\item[API-Define] \verb|DESIGNATION_FUNCTIONALASSIGNMENT|
+	\item[Prefix] \verb|==|
+	\item[Usage] Pages; Base class for functions; Connections; Part references (summarized representation types); Part references; Segments (pre-planning)
+\end{description}
+
+\subsection{1400 - Installation site (main identifier)}
+
+\begin{description}
+	\item[Category] Devices
+	\item[Field type] Monolingual text
+	\item[Index (max.)] no
+	\item[Read only] yes
+	\item[API-Define] \verb|DESIGNATION_PLACEOFINSTALLATION|
+	\item[Prefix] \verb|++|
+	\item[Usage] Pages; Base class for functions; Connections; Part references (summarized representation types); Part references; Segments (pre-planning)
+\end{description}
+
+\chapter{Example project}
+
+\lstinputlisting[%
+	label={lst:xml_example_project},
+	caption={Example data structure of one rail},
+	language=XML,
+]{ECAD-Export-ExampleProject.xml}
+
+The project contains one rail.
+On the rail there are two terminals and one End bracket.
+The End bracket has a reference \verb|<r>| to accessory.
+\verb|<r>| rid indicates in reference list to \verb|<ref>| with id equal $0$.
+Reference \verb|<ref>| maps $id=0$ to $oid=5$ where oid is \verb|<o>| id.
+Thus End bracket has one accessory (KLM 2).
+
+Terminals has reference rid = 1 to one accessory.
+Reference maps id to object id ($oid=6$).
+Object with $id=6$ indicates bridge (FB 2--6).
+
+\chapter{Remarks}
+
+Some attributes must use specific number of fields separated by semicolon. 
+ECAD allows to use two equivalent notations of attributes e.g.\ A;B;C or A;B;C; - for three fields attributes.
+
+It does mean that any character or characters after semicolon is treated like one field e.g.\ A;B; + \glqq{}space or any whitespace character\grqq{} is three fields attribute!
+
+% --------------------------------------------------------------
+% Die Verzeichnisüberischten
+\listoffigures
+%\listoftables
+\lstlistoflistings
+
+%\bibliographystyle{babplain}
+%\bibliography{ECAD-Export}
+
+\end{document}
