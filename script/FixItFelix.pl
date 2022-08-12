@@ -2,6 +2,14 @@
 use strict;
 use warnings FATAL => 'all';
 
+use XML::Parser;
+use XML::Encoding;
+use XML::Entities;
+use XML::LibXML;
+use XML::Twig;
+
+use JSON;
+
 use ALX::EN81346;
 
 use Log::Log4perl;
