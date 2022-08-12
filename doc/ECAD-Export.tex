@@ -412,7 +412,15 @@ The following attributes may be used:
 	\item[id] unique id of the object
 \end{description}
 
-Location describes the following \verb|<p>| attributes: \emph{no properties}
+Location describes the following \verb|<p>| attributes:
+
+\begin{description}
+	\item[{NO\textunderscore SELECTED\textunderscore RAIL}] Not yet analysed, function is currently still unknown
+	\item[clipprj.type] Themes to be always $110$
+	\item[p8.locationId] EPLAN defines some numerical property identifier.
+	A complete list containing the identifier can be found at \verb|https://www.eplan.help/help/platform/2.5/de-DE/help/Content/htm/properties_o_main.htm|.
+	The property identifier used to specify location information as also described in the section \ref{sec:p8_properties}.
+\end{description}
 
 \subsection{clipprj.rail}
 
@@ -1415,6 +1423,57 @@ Customer name to be used only as a property of shopping cart.
 \begin{description}
 	\item[Name] clipprj.customer
 	\item[Scope] Other
+\end{description}
+
+\section{EPLAN P8 properties}
+\label{sec:p8_properties}
+
+\subsection{1100 - Higher-level function (main identifier)}
+
+\begin{description}
+	\item[Category] Devices
+	\item[Field type] Monolingual text
+	\item[Index (max.)] no
+	\item[Read only] yes
+	\item[API-Define] \verb|DESIGNATION_PLANT|
+	\item[Prefix] \verb|=|
+	\item[Usage] Pages; Base class for functions; Connections; Part references (summarized representation types); Part references; Segments (pre-planning)
+\end{description}
+
+\subsection{1200 - Mounting location (main identifier)}
+
+\begin{description}
+	\item[Category] Devices
+	\item[Field type] Monolingual text
+	\item[Index (max.)] no
+	\item[Read only] yes
+	\item[API-Define] \verb|DESIGNATION_LOCATION|
+	\item[Prefix] \verb|+|
+	\item[Usage] Pages; Base class for functions; Connections; Part references (summarized representation types); Part references; Segments (pre-planning)
+\end{description}
+
+\subsection{1300 - Functional assignment (main identifier)}
+
+\begin{description}
+	\item[Category] Devices
+	\item[Field type] Monolingual text
+	\item[Index (max.)] no
+	\item[Read only] yes
+	\item[API-Define] \verb|DESIGNATION_FUNCTIONALASSIGNMENT|
+	\item[Prefix] \verb|==|
+	\item[Usage] Pages; Base class for functions; Connections; Part references (summarized representation types); Part references; Segments (pre-planning)
+\end{description}
+
+\subsection{1400 - Installation site (main identifier)}
+
+\begin{description}
+	\item[Category] Devices
+	\item[Field type] Monolingual text
+	\item[Index (max.)] no
+	\item[Read only] yes
+	\item[API-Define] \verb|DESIGNATION_PLACEOFINSTALLATION|
+	\item[Prefix] \verb|++|
+	\item[Usage] Pages; Base class for functions; Connections; Part references (summarized representation types); Part references; Segments (pre-planning)
 \end{description}
 
 \chapter{Example project}
