@@ -25,7 +25,7 @@ Log::Log4perl->init("conf/log.ini");
 my $logger = Log::Log4perl->get_logger();
 
 # TODO: Should be passed as command line parameter
-my $opt_source_file = File::Spec->rel2abs('untracked/ecad-export.xml');
+my $opt_source_file = File::Spec->rel2abs(join(' ', @ARGV));
 my $opt_target_file = undef;
 {
     my ($name,$path,$suffix) = fileparse($opt_source_file,('.xml'));
