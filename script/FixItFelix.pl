@@ -8,6 +8,9 @@ use XML::Entities;
 use XML::LibXML;
 use XML::Twig;
 
+use File::Spec;
+use File::Basename;
+
 use JSON;
 
 use ALX::EN81346;
@@ -22,8 +25,13 @@ Log::Log4perl->init("conf/log.ini");
 my $logger = Log::Log4perl->get_logger();
 
 # TODO: Should be passed as command line parameter
-my $opt_source_file = 'untracked/ecad-export.xml';
-my $opt_target_file = 'untracked/ecad-export.fixed.xml';
+my $opt_source_file = File::Spec->rel2abs('untracked/ecad-export.xml');
+my $opt_target_file = undef;
+{
+    my ($name,$path,$suffix) = fileparse($opt_source_file,('.xml'));
+    $opt_target_file = File::Spec->catfile($path, "${name}_fixed${suffix}");
+}
+
 my $opt_configuration_file = 'conf/alx-ecad.conf';
 my $opt_compact_terminals = 1; # Removing end brackets, inside continuous terminal strips
 
