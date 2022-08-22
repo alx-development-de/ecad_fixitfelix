@@ -24,8 +24,12 @@ use Data::Dumper;
 Log::Log4perl->init("conf/log.ini");
 my $logger = Log::Log4perl->get_logger();
 
-# TODO: Should be passed as command line parameter
+# The source file must be passed as command line parameter
 my $opt_source_file = File::Spec->rel2abs(join(' ', @ARGV));
+# Testing if a valid filename has been provided by the command line option
+$logger->logdie("The provided parameter [$opt_source_file] seems not to be a valid file")
+    unless (-f $opt_source_file);
+# Generating the target file name
 my $opt_target_file = undef;
 {
     my ($name,$path,$suffix) = fileparse($opt_source_file,('.xml'));
