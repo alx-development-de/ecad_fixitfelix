@@ -125,9 +125,11 @@ sub add_parameter($$$;) {
     $logger->debug("Parameter [$key]->[$value] added");
 }
 
-sub parse_substructure($;) {
+sub parse_substructure($;$) {
     # The parent object
     my XML::Twig::Elt $parent = shift();
+    # The active location id for the structure element
+    my $active_location_id =shift();
 
     # Iterating the projects substructure objects
     if (my @object_list = $parent->children('ol')) {
@@ -150,9 +152,16 @@ sub parse_substructure($;) {
                     # Building the location id and adding the result to the
                     # parameter list
                     my $location_id = $parameters{'alx.location.prefix'}.$name;
+
                     if( ALX::EN81346::is_valid($location_id) ) {
                         $logger->debug("Location id [$location_id] identified");
-                        &add_parameter($object, 'alx.location.id', $location_id);
+
+                        # The location must be concatenated with the already available
+                        # TODO: Should be implemented mor stable with checks
+                        $active_location_id .= $location_id;
+
+                        &add_parameter($object, 'alx.location.id', $active_location_id);
+                        $logger->debug("Location id has been set to [$active_location_id]");
                     }
                 }
             }
@@ -188,7 +197,7 @@ sub parse_substructure($;) {
             }
 
             # Recursive parsing the substructure
-            &parse_substructure($object);
+            &parse_substructure($object, $active_location_id);
         }
     }
 }
