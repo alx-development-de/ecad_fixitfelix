@@ -128,8 +128,8 @@ sub add_parameter($$$;) {
 sub parse_substructure($;$) {
     # The parent object
     my XML::Twig::Elt $parent = shift();
-    # The active location id for the structure element
-    my $active_location_id =shift();
+    # The parents location id for the structure element
+    my $parent_location_id =shift();
 
     # Iterating the projects substructure objects
     if (my @object_list = $parent->children('ol')) {
@@ -137,6 +137,9 @@ sub parse_substructure($;$) {
         foreach my $object (@objects) {
             my $type = $object->att('type');
             $logger->debug("Object of type [$type] identified");
+
+            # This ist the active location id
+            my $active_location_id = $parent_location_id;
 
             # Analyzing the location id and fixing it in the XML export
             if($type eq 'clipprj.location') {
@@ -157,7 +160,7 @@ sub parse_substructure($;$) {
                         $logger->debug("Location id [$location_id] identified");
 
                         # The location must be concatenated with the already available
-                        # TODO: Should be implemented mor stable with checks
+                        # TODO: Must be fixed, cause the last element duplicates while concatenation
                         $active_location_id .= $location_id;
 
                         &add_parameter($object, 'alx.location.id', $active_location_id);
