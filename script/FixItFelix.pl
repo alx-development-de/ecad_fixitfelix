@@ -98,6 +98,8 @@ sub get_parameters($;) {
         # Looking if there are some properties which should be automatically build
         # by some rules
         foreach my $source_parameter (keys( %{$configuration_data{'parameters'}} )) {
+            # Skip this, if there is no fitting parameter available to build the rule
+            next unless defined($parameters{$source_parameter});
             $logger->debug("Automatic parameter generation for [$source_parameter] identified");
             foreach my $target_parameter (keys( %{$configuration_data{'parameters'}{$source_parameter}} )) {
                 if( my $value = $configuration_data{'parameters'}{$source_parameter}{$target_parameter}{$parameters{$source_parameter}} ) {
@@ -138,6 +140,9 @@ sub parse_substructure($;$) {
             my $type = $object->att('type');
             $logger->debug("Object of type [$type] identified");
 
+            # Parsing the available parameters
+            my %parameters = get_parameters($object);
+
             # This ist the active location id
             my $active_location_id = $parent_location_id;
 
@@ -145,9 +150,6 @@ sub parse_substructure($;$) {
             if($type eq 'clipprj.location') {
                 my $name = $object->att('name');
                 $logger->debug("Location [$name] identified");
-
-                # Parsing the available parameters
-                my %parameters = get_parameters($object);
 
                 # Building the EN81346 conform identifier and adding this to the
                 # parameters list
