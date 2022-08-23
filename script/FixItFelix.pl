@@ -38,7 +38,7 @@ my $opt_target_file = undef;
 
 my $opt_configuration_file = 'conf/alx-ecad.conf';
 my $opt_compact_terminals = 1; # Removing end brackets, inside continuous terminal strips
-
+my $opt_compact_identifier = 1; # Compacting the identifier according the EN81346 rules
 # Internally used state flags for process control
 my %global_state_flags = (
                 'space_active' => undef,
@@ -168,6 +168,23 @@ sub parse_substructure($;$) {
                         &add_parameter($object, 'alx.location.id', $active_location_id);
                         $logger->debug("Location id has been set to [$active_location_id]");
                     }
+                }
+            }
+
+            # Shorten the location id if configured and the 'targets# parameter is available for
+            # this object
+            if( $opt_compact_identifier == 1 && defined($parameters{'clipprj.targets'}) ) {
+                # The minus 1 parameter is used to preserve trailing empty elements
+                if( my @targets = split(/;/, $parameters{'clipprj.targets'}, -1) ) {
+                    $logger->debug("Compacting reference ids based on [$active_location_id]");
+                    for my $i (0 .. $#targets) {
+                        next unless( $targets[$i] ); # Skipping, if target is not defined
+                        $logger->debug("Compacting reference id [".$targets[$i]."] to [$active_location_id]");
+                        # TODO: A function, which is compacting the reference ids has to be implemented
+                        $targets[$i] = $active_location_id;
+                    }
+                    # Writing the change parameter to the parameters list
+                    &add_parameter($object, 'alx.targets', join(';', @targets));
                 }
             }
 
