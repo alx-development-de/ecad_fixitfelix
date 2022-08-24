@@ -174,17 +174,24 @@ sub parse_substructure($;$) {
             # Shorten the location id if configured and the 'targets# parameter is available for
             # this object
             if( $opt_compact_identifier == 1 && defined($parameters{'clipprj.targets'}) ) {
+                # Backing up the original parameters
+                &add_parameter($object, 'alx.targets.original', $parameters{'clipprj.targets'});
+                &add_parameter($object, 'alx.targets.base', $active_location_id);
                 # The minus 1 parameter is used to preserve trailing empty elements
                 if( my @targets = split(/;/, $parameters{'clipprj.targets'}, -1) ) {
                     $logger->debug("Compacting reference ids based on [$active_location_id]");
                     for my $i (0 .. $#targets) {
                         next unless( $targets[$i] ); # Skipping, if target is not defined
                         $logger->debug("Compacting reference id [".$targets[$i]."] to [$active_location_id]");
-                        # TODO: A function, which is compacting the reference ids has to be implemented
-                        $targets[$i] = $active_location_id;
+
+                        # Compacting the string on given base
+                        my $compacted_string = ALX::EN81346::base($active_location_id, $targets[$i]);
+                        $logger->debug("Compacting reference results to [$compacted_string]");
+                        $targets[$i] = $compacted_string;
                     }
                     # Writing the change parameter to the parameters list
-                    &add_parameter($object, 'alx.targets', join(';', @targets));
+                    # TODO: Must be a replacement like "set" instead of "add"
+                    &add_parameter($object, 'clipprj.targets', join(';', @targets));
                 }
             }
 
