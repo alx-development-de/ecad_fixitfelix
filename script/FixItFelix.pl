@@ -37,7 +37,7 @@ my $opt_target_file = undef;
 }
 
 my $opt_configuration_file = 'conf/alx-ecad.conf';
-my $opt_compact_terminals = 1; # Removing end brackets, inside continuous terminal strips
+my $opt_compact_terminals = 0; # Removing end brackets, inside continuous terminal strips
 my $opt_compact_identifier = 1; # Compacting the identifier according the EN81346 rules
 # Internally used state flags for process control
 my %global_state_flags = (
@@ -84,11 +84,11 @@ sub get_parameters($;) {
     my %parameters;
 
     # Parsing the parameters
-    my $parameter_list = $parent->first_child_matches('pl');
+    my $parameter_list = $parent->first_child('pl');
     if(defined $parameter_list) {
-        my @parameters = $parameter_list->children('p');
-        $logger->debug("[".scalar(@parameters)."] Parameter entries found");
-        foreach my $parameter (@parameters) {
+        my @parameter_array = $parameter_list->children('p');
+        $logger->debug("[".scalar(@parameter_array)."] Parameter entries found");
+        foreach my $parameter (@parameter_array) {
             my $name = $parameter->att('name');
             my $value = $parameter->text_only;
             $logger->debug("Parameter [$name]->[$value] identified");
@@ -112,6 +112,27 @@ sub get_parameters($;) {
         }
     }
     return %parameters;
+}
+
+sub get_references($;) {
+    # The parent object
+    my XML::Twig::Elt $parent = shift();
+    my %references;
+
+    # Parsing the references
+    my $reference_list = $parent->first_child('rl');
+    if(defined $reference_list) {
+        $logger->debug("Reference list found");
+        my @reference_array = $reference_list->children('r');
+        $logger->debug("[".scalar(@reference_array)."] Reference entries found");
+        foreach my $reference (@reference_array) {
+            my $name = $reference->att('name');
+            my $reference_id = $reference->att('rid');
+            $logger->debug("Reference [$reference_id]->[$name] identified");
+            $references{$reference_id} = $name;
+        }
+    }
+    return %references;
 }
 
 sub add_parameter($$$;) {
@@ -142,6 +163,8 @@ sub parse_substructure($;$) {
 
             # Parsing the available parameters
             my %parameters = get_parameters($object);
+            # Parsing possible object references
+            my %references = get_references($object);
 
             # This ist the active location id
             my $active_location_id = $parent_location_id;
