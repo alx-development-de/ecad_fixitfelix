@@ -140,6 +140,17 @@ sub add_parameter($$$;) {
     my($key, $value) = @_;
 
     if( my $parameter_list = $parent->first_child('pl') ) {
+        my @parameter_array = $parameter_list->children('p');
+
+        # Removing the parameter if existing to avoid duplicates
+        foreach my $parameter (@parameter_array) {
+            # Looking if the parameter is already existing
+            if( $parameter->att('name') eq $key ) {
+                $parameter->cut();
+                $logger->debug("Parameter [$key] removed");
+            }
+        }
+
         # Generating a new XML parameter element and adding this to the ECAD XML file
         my $elt= XML::Twig::Elt->new( 'p' => { 'name' => $key }, $value);
         $elt->paste( last_child => $parameter_list);
