@@ -139,13 +139,12 @@ sub add_parameter($$$;) {
     my XML::Twig::Elt $parent = shift();
     my($key, $value) = @_;
 
-    # TODO: Should prove, if the given parent is a valid object (<o>) element
-    my $parameter_list = $parent->first_child_matches('pl');
-
-    # Generating a new XML parameter element and adding this to the ECAD XML file
-    my $elt= XML::Twig::Elt->new( 'p' => { 'name' => $key }, $value);
-    $elt->paste( last_child => $parameter_list);
-    $logger->debug("Parameter [$key]->[$value] added");
+    if( my $parameter_list = $parent->first_child('pl') ) {
+        # Generating a new XML parameter element and adding this to the ECAD XML file
+        my $elt= XML::Twig::Elt->new( 'p' => { 'name' => $key }, $value);
+        $elt->paste( last_child => $parameter_list);
+        $logger->debug("Parameter [$key]->[$value] added");
+    }
 }
 
 sub parse_substructure($;$) {
