@@ -56,7 +56,37 @@ $logger->info("Parsing source file [$opt_source_file]");
 my $twig=XML::Twig->new( pretty_print => 'nice' );
 $twig->parsefile($opt_source_file);
 
-my XML::Twig::Elt $root = $twig->root; # Getting the root element, which is the <pbf>
+# Getting the root element, which is the <pbf>
+my XML::Twig::Elt $root = $twig->root;
+
+# Looking up the references and building a reference table
+my %xml_references;
+{
+    $logger->debug("Loading reference structure");
+    my @references = $root->descendants('ref');
+    $logger->debug(scalar(@references)." Reference entries found");
+
+    # First we build a reverse ordered structure to be able to find the
+    # matching item fast
+    my %reverse_references;
+    foreach my $reference (@references) {
+        $xml_references{$reference->att('id')} = $reference->att('oid');
+        my $refid = $reference->att('id');
+        $reverse_references{$reference->att('oid')} = $refid;
+        $logger->debug("[$refid]->[$xml_references{$refid}] Reference entry found");
+    }
+
+    # Let's load all the objects and build the resulting reference tree
+    my @all_objects = $root->descendants('o');
+    foreach my $object (@all_objects) {
+        my $object_id = $object->att('id');
+        if(defined($reverse_references{$object_id})) {
+            $xml_references{$reverse_references{$object_id}} = $object;
+        }
+    }
+    $logger->debug(scalar(keys(%xml_references))." Reference entries added to matching table");
+}
+
 # There should only be one project inside an export file per definition,
 # but in this implementation we're open for multi-project structures.
 $logger->info("Inspection project structure");
@@ -206,15 +236,16 @@ sub parse_substructure($;$) {
 
             # Shorten the location id if configured and the 'targets# parameter is available for
             # this object
-            if( $opt_compact_identifier == 1 && defined($parameters{'clipprj.targets'}) ) {
+            if( $opt_compact_identifier == 1 && defined($parameters{'clipprj.ECADdescription'}) ) {
                 # Backing up the original parameters
-                &add_parameter($object, 'alx.targets.original', $parameters{'clipprj.targets'});
-                &add_parameter($object, 'alx.targets.base', $active_location_id);
+                &add_parameter($object, 'alx.ECADdescription.original', $parameters{'clipprj.ECADdescription'});
+                &add_parameter($object, 'alx.EN81346.base', $active_location_id);
                 # The minus 1 parameter is used to preserve trailing empty elements
-                if( my @targets = split(/;/, $parameters{'clipprj.targets'}, -1) ) {
+                if( my @targets = split(/;/, $parameters{'clipprj.ECADdescription'}, -1) ) {
                     $logger->debug("Compacting reference ids based on [$active_location_id]");
                     for my $i (0 .. $#targets) {
-                        next unless( $targets[$i] ); # Skipping, if target is not defined
+                        # Skipping, if target is not defined or not a valid identifier
+                        next unless( defined($targets[$i]) && ALX::EN81346::is_valid($targets[$i]) );
                         $logger->debug("Compacting reference id [".$targets[$i]."] to [$active_location_id]");
 
                         # Compacting the string on given base
@@ -224,7 +255,7 @@ sub parse_substructure($;$) {
                     }
                     # Writing the change parameter to the parameters list
                     # TODO: Must be a replacement like "set" instead of "add"
-                    &add_parameter($object, 'clipprj.targets', join(';', @targets));
+                    &add_parameter($object, 'clipprj.ECADdescription', join(';', @targets));
                 }
             }
 
