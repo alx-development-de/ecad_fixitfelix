@@ -1,0 +1,3842 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pbf version="2.1"
+	lang="de_DE"
+	format="clipprj"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="pbf.xsd">
+<o name="001-Terminal-References" type="clipprj.project" id="0">
+<pl>
+	<p name="clipprj.eplanProject">Unbenannt</p>
+	<p name="p8.p8version">2.9.4;Platform</p>
+</pl>
+<ol>
+	<o name="100910" type="clipprj.location" id="1">
+	<pl>
+		<p name="NO_SELECTED_RAIL">1</p>
+		<p name="clipprj.type">110</p>
+		<p name="p8.locationId">1300;</p>
+	</pl>
+	<ol>
+		<o name="MLA10" type="clipprj.location" id="2">
+		<pl>
+			<p name="NO_SELECTED_RAIL">1</p>
+			<p name="clipprj.type">110</p>
+			<p name="p8.locationId">1100;</p>
+		</pl>
+		<ol>
+			<o name="CAB" type="clipprj.location" id="3">
+			<pl>
+				<p name="NO_SELECTED_RAIL">1</p>
+				<p name="clipprj.type">110</p>
+				<p name="p8.locationId">1400;</p>
+			</pl>
+			<ol>
+				<o name="100MCC01" type="clipprj.location" id="4">
+				<pl>
+					<p name="NO_SELECTED_RAIL">1</p>
+					<p name="clipprj.type">110</p>
+					<p name="p8.locationId">1200;</p>
+				</pl>
+				<ol>
+					<o name="-U2-UR1" type="clipprj.rail" id="5">
+					<pl>
+					<p name="clipprj.articleDesignation">NS 35/15 PERF 2000MM</p>
+					<p name="clipprj.blockDistance">10</p>
+					<p name="clipprj.connectionId">1</p>
+					<p name="clipprj.edgeOfCut">0</p>
+					<p name="clipprj.extrasArtnums">3022218;0811969</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.length">1095</p>
+					<p name="clipprj.name">-U2-UR1</p>
+					<p name="clipprj.spaceLeft">15.000</p>
+					<p name="p8.dbObjId">178/16764</p>
+					</pl>
+					<ol>
+					<o name="" type="clipprj.mountingSpacingLeft" id="6">
+					<pl>
+					<p name="clipprj.articleNumber"></p>
+					<p name="clipprj.connectionId">2</p>
+					<p name="clipprj.id">0</p>
+					<p name="clipprj.isClipProjectDevice">1</p>
+					<p name="clipprj.width">15.000</p>
+					</pl>
+					</o>
+					<o name="-XCV1.1" type="clipprj.endBracket" id="7">
+					<pl>
+					<p name="clipprj.articleNumber">3022218</p>
+					<p name="clipprj.comment">Erdschlusswächter
+ASi 01.1</p>
+					<p name="clipprj.connectionId">3</p>
+					<p name="clipprj.depth">55.600</p>
+					<p name="clipprj.height">35.500</p>
+					<p name="clipprj.id">1</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">9.500</p>
+					<p name="p8.dbObjId">17/12478</p>
+					</pl>
+					<rl>
+					<r name="clipprj.accessory" index="0" rid="0"/>
+					</rl>
+					</o>
+					<o name="1" type="clipprj.terminal" id="8">
+					<pl>
+					<p name="clipprj.ECADdescription">1;1;1;1;1;1</p>
+					<p name="clipprj.articleNumber">3209510</p>
+					<p name="clipprj.comment">Erdschlusswächter
+ASi 01.1</p>
+					<p name="clipprj.connectionId">5</p>
+					<p name="clipprj.connectionPoints">2</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">48.600</p>
+					<p name="clipprj.description">O1;002,60;002,20;1;R;02.2;1;00;M1;002,60;019,20;1;R;02.2;1;00;U1;002,60;046,50;1;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.500</p>
+					<p name="clipprj.id">2</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.reqConnectionPoints">1</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">==100910=MLA10++CAB+100MCC01-XCV1.1:1:;;;;;;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12478</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="2" type="clipprj.terminal" id="9">
+					<pl>
+					<p name="clipprj.ECADdescription">1;2;1;2;1;2</p>
+					<p name="clipprj.articleNumber">3209510</p>
+					<p name="clipprj.comment">Erdschlusswächter
+ASi 01.1</p>
+					<p name="clipprj.connectionId">6</p>
+					<p name="clipprj.connectionPoints">2</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">48.600</p>
+					<p name="clipprj.description">O1;002,60;002,20;2;R;02.2;1;00;M1;002,60;019,20;2;R;02.2;1;00;U1;002,60;046,50;2;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.500</p>
+					<p name="clipprj.id">3</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.reqConnectionPoints">1</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">==100910=MLA10++CAB+100MCC01-XCV1.1:2:;;;;;;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12479</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="3" type="clipprj.terminal" id="10">
+					<pl>
+					<p name="clipprj.ECADdescription">1;3;1;3;1;3</p>
+					<p name="clipprj.articleNumber">3209510</p>
+					<p name="clipprj.comment">Erdschlusswächter
+ASi 01.1</p>
+					<p name="clipprj.connectionId">7</p>
+					<p name="clipprj.connectionPoints">2</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">48.600</p>
+					<p name="clipprj.description">O1;002,60;002,20;3;R;02.2;1;00;M1;002,60;019,20;3;R;02.2;1;00;U1;002,60;046,50;3;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.500</p>
+					<p name="clipprj.id">4</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.reqConnectionPoints">1</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">==100910=MLA10++CAB+100MCC01-XCV1.1:3:;;;;;;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12481</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="4" type="clipprj.terminal" id="11">
+					<pl>
+					<p name="clipprj.ECADdescription">1;4;1;4;1;4</p>
+					<p name="clipprj.articleNumber">3209510</p>
+					<p name="clipprj.comment">Erdschlusswächter
+ASi 01.1</p>
+					<p name="clipprj.connectionId">8</p>
+					<p name="clipprj.connectionPoints">2</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">48.600</p>
+					<p name="clipprj.description">O1;002,60;002,20;4;R;02.2;1;00;M1;002,60;019,20;4;R;02.2;1;00;U1;002,60;046,50;4;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.500</p>
+					<p name="clipprj.id">5</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.reqConnectionPoints">1</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">==100910=MLA10++CAB+100MCC01-XCV1.1:4:;;;;;;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12482</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="5" type="clipprj.terminal" id="12">
+					<pl>
+					<p name="clipprj.ECADdescription">1;5;1;5;1;5</p>
+					<p name="clipprj.articleNumber">3209510</p>
+					<p name="clipprj.comment">Erdschlusswächter
+ASi 01.1</p>
+					<p name="clipprj.connectionId">9</p>
+					<p name="clipprj.connectionPoints">2</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">48.600</p>
+					<p name="clipprj.description">O1;002,60;002,20;5;R;02.2;1;00;M1;002,60;019,20;5;R;02.2;1;00;U1;002,60;046,50;5;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.500</p>
+					<p name="clipprj.id">6</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12483</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="6" type="clipprj.terminal" id="13">
+					<pl>
+					<p name="clipprj.ECADdescription">1;6;1;6;1;6</p>
+					<p name="clipprj.articleNumber">3209510</p>
+					<p name="clipprj.comment">Erdschlusswächter
+ASi 01.1</p>
+					<p name="clipprj.connectionId">10</p>
+					<p name="clipprj.connectionPoints">2</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">48.600</p>
+					<p name="clipprj.description">O1;002,60;002,20;6;R;02.2;1;00;M1;002,60;019,20;6;R;02.2;1;00;U1;002,60;046,50;6;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.500</p>
+					<p name="clipprj.id">7</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12484</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="7" type="clipprj.terminal" id="14">
+					<pl>
+					<p name="clipprj.ECADdescription">1;7;1;7;1;7</p>
+					<p name="clipprj.articleNumber">3209510</p>
+					<p name="clipprj.comment">Erdschlusswächter
+ASi 01.1</p>
+					<p name="clipprj.connectionId">11</p>
+					<p name="clipprj.connectionPoints">2</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">48.600</p>
+					<p name="clipprj.description">O1;002,60;002,20;7;R;02.2;1;00;M1;002,60;019,20;7;R;02.2;1;00;U1;002,60;046,50;7;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.500</p>
+					<p name="clipprj.id">8</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12485</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="8" type="clipprj.terminal" id="15">
+					<pl>
+					<p name="clipprj.ECADdescription">1;8;1;8;1;8</p>
+					<p name="clipprj.articleNumber">3209510</p>
+					<p name="clipprj.comment">Erdschlusswächter
+ASi 01.1</p>
+					<p name="clipprj.connectionId">12</p>
+					<p name="clipprj.connectionPoints">2</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">48.600</p>
+					<p name="clipprj.description">O1;002,60;002,20;8;R;02.2;1;00;M1;002,60;019,20;8;R;02.2;1;00;U1;002,60;046,50;8;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.500</p>
+					<p name="clipprj.id">9</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12486</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="9" type="clipprj.terminal" id="16">
+					<pl>
+					<p name="clipprj.ECADdescription">1;9;1;9;1;9</p>
+					<p name="clipprj.articleNumber">3209510</p>
+					<p name="clipprj.comment">Erdschlusswächter
+ASi 01.1</p>
+					<p name="clipprj.connectionId">13</p>
+					<p name="clipprj.connectionPoints">2</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">48.600</p>
+					<p name="clipprj.description">O1;002,60;002,20;9;R;02.2;1;00;M1;002,60;019,20;9;R;02.2;1;00;U1;002,60;046,50;9;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.500</p>
+					<p name="clipprj.id">10</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12487</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="10" type="clipprj.terminal" id="17">
+					<pl>
+					<p name="clipprj.ECADdescription">1;10;1;10;1;10</p>
+					<p name="clipprj.articleNumber">3209510</p>
+					<p name="clipprj.comment">Erdschlusswächter
+ASi 01.1</p>
+					<p name="clipprj.connectionId">14</p>
+					<p name="clipprj.connectionPoints">2</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">48.600</p>
+					<p name="clipprj.description">O1;002,60;002,20;10;R;02.2;1;00;M1;002,60;019,20;10;R;02.2;1;00;U1;002,60;046,50;10;R;02.2;1;00</p>
+					<p name="clipprj.extrasArtnums">3030417;3022218</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.500</p>
+					<p name="clipprj.id">11</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12488</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="-XCV1.1" type="clipprj.endCover" id="18">
+					<pl>
+					<p name="clipprj.articleNumber">3030417</p>
+					<p name="clipprj.comment">Erdschlusswächter
+ASi 01.1</p>
+					<p name="clipprj.connectionId">15</p>
+					<p name="clipprj.depth">48.600</p>
+					<p name="clipprj.height">0.000</p>
+					<p name="clipprj.id">12</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">2.200</p>
+					<p name="p8.dbObjId">17/12488</p>
+					</pl>
+					</o>
+					<o name="-XCV1.1" type="clipprj.endBracket" id="19">
+					<pl>
+					<p name="clipprj.articleNumber">3022218</p>
+					<p name="clipprj.comment">Erdschlusswächter
+ASi 01.1</p>
+					<p name="clipprj.connectionId">16</p>
+					<p name="clipprj.depth">55.600</p>
+					<p name="clipprj.height">35.500</p>
+					<p name="clipprj.id">13</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">9.500</p>
+					<p name="p8.dbObjId">17/12488</p>
+					</pl>
+					</o>
+					<o name="" type="clipprj.blockingSurface" id="20">
+					<pl>
+					<p name="clipprj.articleNumber"></p>
+					<p name="clipprj.connectionId">17</p>
+					<p name="clipprj.id">14</p>
+					<p name="clipprj.isClipProjectDevice">1</p>
+					<p name="clipprj.width">10.000</p>
+					</pl>
+					</o>
+					<o name="-X8.5" type="clipprj.endBracket" id="21">
+					<pl>
+					<p name="clipprj.articleNumber">3022218</p>
+					<p name="clipprj.connectionId">18</p>
+					<p name="clipprj.depth">55.600</p>
+					<p name="clipprj.height">35.500</p>
+					<p name="clipprj.id">15</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">9.500</p>
+					<p name="p8.dbObjId">17/12909</p>
+					</pl>
+					<rl>
+					<r name="clipprj.accessory" index="0" rid="1"/>
+					</rl>
+					</o>
+					<o name="+1" type="clipprj.terminal" id="22">
+					<pl>
+					<p name="clipprj.ECADdescription">1;+1;1;+1;1;+1</p>
+					<p name="clipprj.articleNumber">3209578</p>
+					<p name="clipprj.connectionId">20</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">72.200</p>
+					<p name="clipprj.description">O1;002,60;002,20;+1;R;02.2;1;00;M1;002,60;031,10;+1;R;02.2;1;00;U1;002,60;070,10;+1;R;02.2;1;00</p>
+					<p name="clipprj.extrasArtnums">3030190</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.800</p>
+					<p name="clipprj.id">16</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">2.500</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.reqConnectionPoints">4</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">;;;;==100910=910++CAB+100MCC01-X8.5:+1:;;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12909</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					<rl>
+					<r name="clipprj.accessory" index="0" rid="2"/>
+					</rl>
+					</o>
+					<o name="+2" type="clipprj.terminal" id="23">
+					<pl>
+					<p name="clipprj.ECADdescription">1;+2;1;+2;1;+2</p>
+					<p name="clipprj.articleNumber">3209578</p>
+					<p name="clipprj.connectionId">22</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">72.200</p>
+					<p name="clipprj.description">O1;002,60;002,20;+2;R;02.2;1;00;M1;002,60;031,10;+2;R;02.2;1;00;U1;002,60;070,10;+2;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.800</p>
+					<p name="clipprj.id">17</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">2.500</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.reqConnectionPoints">4</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">==100910=910++CAB+100MCC01-X8.5:+2:;;;;==100910=910++CAB+100MCC01-X8.5:+2:;==100910=910++CAB+100MCC01-X8.5:+2:;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12910</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					<rl>
+					<r name="clipprj.accessory" index="0" rid="2"/>
+					</rl>
+					</o>
+					<o name="+3" type="clipprj.terminal" id="24">
+					<pl>
+					<p name="clipprj.ECADdescription">1;+3;1;+3;1;+3</p>
+					<p name="clipprj.articleNumber">3209578</p>
+					<p name="clipprj.connectionId">23</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">72.200</p>
+					<p name="clipprj.description">O1;002,60;002,20;+3;R;02.2;1;00;M1;002,60;031,10;+3;R;02.2;1;00;U1;002,60;070,10;+3;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.800</p>
+					<p name="clipprj.id">18</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">2.500</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.reqConnectionPoints">4</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">==100910=910++CAB+100MCC01-X8.5:+3:;;;;==100910=910++CAB+100MCC01-X8.5:+3:;;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12911</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					<rl>
+					<r name="clipprj.accessory" index="0" rid="2"/>
+					</rl>
+					</o>
+					<o name="+4" type="clipprj.terminal" id="25">
+					<pl>
+					<p name="clipprj.ECADdescription">1;+4;1;+4;1;+4</p>
+					<p name="clipprj.articleNumber">3209578</p>
+					<p name="clipprj.connectionId">24</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">72.200</p>
+					<p name="clipprj.description">O1;002,60;002,20;+4;R;02.2;1;00;M1;002,60;031,10;+4;R;02.2;1;00;U1;002,60;070,10;+4;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.800</p>
+					<p name="clipprj.id">19</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">2.500</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.reqConnectionPoints">4</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">==100910=910++CAB+100MCC01-X8.5:+4:;;;;==100910=910++CAB+100MCC01-X8.5:+4:;;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12919</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					<rl>
+					<r name="clipprj.accessory" index="0" rid="2"/>
+					</rl>
+					</o>
+					<o name="+5" type="clipprj.terminal" id="26">
+					<pl>
+					<p name="clipprj.ECADdescription">1;+5;1;+5;1;+5</p>
+					<p name="clipprj.articleNumber">3209578</p>
+					<p name="clipprj.connectionId">25</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">72.200</p>
+					<p name="clipprj.description">O1;002,60;002,20;+5;R;02.2;1;00;M1;002,60;031,10;+5;R;02.2;1;00;U1;002,60;070,10;+5;R;02.2;1;00</p>
+					<p name="clipprj.extrasArtnums">3030514</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.800</p>
+					<p name="clipprj.id">20</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">2.500</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.reqConnectionPoints">4</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">==100910=910++CAB+100MCC01-X8.5:+5:;;;;;;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12918</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					<rl>
+					<r name="clipprj.accessory" index="0" rid="2"/>
+					</rl>
+					</o>
+					<o name="-X8.5" type="clipprj.endCover" id="27">
+					<pl>
+					<p name="clipprj.articleNumber">3030514</p>
+					<p name="clipprj.connectionId">26</p>
+					<p name="clipprj.depth">72.200</p>
+					<p name="clipprj.height">0.000</p>
+					<p name="clipprj.id">21</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">2.200</p>
+					<p name="p8.dbObjId">17/12918</p>
+					</pl>
+					</o>
+					<o name="-1" type="clipprj.terminal" id="28">
+					<pl>
+					<p name="clipprj.ECADdescription">1;-1;1;-1;1;-1</p>
+					<p name="clipprj.articleNumber">3209578</p>
+					<p name="clipprj.connectionId">27</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">72.200</p>
+					<p name="clipprj.description">O1;002,60;002,20;-1;R;02.2;1;00;M1;002,60;031,10;-1;R;02.2;1;00;U1;002,60;070,10;-1;R;02.2;1;00</p>
+					<p name="clipprj.extrasArtnums">3030190</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.800</p>
+					<p name="clipprj.id">22</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">2.500</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.reqConnectionPoints">4</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">;;;;==100910=910++CAB+100MCC01-X8.5:-1:;;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12913</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					<rl>
+					<r name="clipprj.accessory" index="0" rid="3"/>
+					</rl>
+					</o>
+					<o name="-2" type="clipprj.terminal" id="29">
+					<pl>
+					<p name="clipprj.ECADdescription">1;-2;1;-2;1;-2</p>
+					<p name="clipprj.articleNumber">3209578</p>
+					<p name="clipprj.connectionId">29</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">72.200</p>
+					<p name="clipprj.description">O1;002,60;002,20;-2;R;02.2;1;00;M1;002,60;031,10;-2;R;02.2;1;00;U1;002,60;070,10;-2;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.800</p>
+					<p name="clipprj.id">23</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">2.500</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.reqConnectionPoints">4</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">==100910=910++CAB+100MCC01-X8.5:-2:;;;;==100910=910++CAB+100MCC01-X8.5:-2:;==100910=910++CAB+100MCC01-X8.5:-2:;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12914</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					<rl>
+					<r name="clipprj.accessory" index="0" rid="3"/>
+					</rl>
+					</o>
+					<o name="-3" type="clipprj.terminal" id="30">
+					<pl>
+					<p name="clipprj.ECADdescription">1;-3;1;-3;1;-3</p>
+					<p name="clipprj.articleNumber">3209578</p>
+					<p name="clipprj.connectionId">30</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">72.200</p>
+					<p name="clipprj.description">O1;002,60;002,20;-3;R;02.2;1;00;M1;002,60;031,10;-3;R;02.2;1;00;U1;002,60;070,10;-3;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.800</p>
+					<p name="clipprj.id">24</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">2.500</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.reqConnectionPoints">4</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">==100910=910++CAB+100MCC01-X8.5:-3:;;;;==100910=910++CAB+100MCC01-X8.5:-3:;;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12915</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					<rl>
+					<r name="clipprj.accessory" index="0" rid="3"/>
+					</rl>
+					</o>
+					<o name="-4" type="clipprj.terminal" id="31">
+					<pl>
+					<p name="clipprj.ECADdescription">1;-4;1;-4;1;-4</p>
+					<p name="clipprj.articleNumber">3209578</p>
+					<p name="clipprj.connectionId">31</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">72.200</p>
+					<p name="clipprj.description">O1;002,60;002,20;-4;R;02.2;1;00;M1;002,60;031,10;-4;R;02.2;1;00;U1;002,60;070,10;-4;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.800</p>
+					<p name="clipprj.id">25</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">2.500</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.reqConnectionPoints">4</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">==100910=910++CAB+100MCC01-X8.5:-4:;;;;==100910=910++CAB+100MCC01-X8.5:-4:;;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12917</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					<rl>
+					<r name="clipprj.accessory" index="0" rid="3"/>
+					</rl>
+					</o>
+					<o name="-5" type="clipprj.terminal" id="32">
+					<pl>
+					<p name="clipprj.ECADdescription">1;-5;1;-5;1;-5</p>
+					<p name="clipprj.articleNumber">3209578</p>
+					<p name="clipprj.connectionId">32</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">72.200</p>
+					<p name="clipprj.description">O1;002,60;002,20;-5;R;02.2;1;00;M1;002,60;031,10;-5;R;02.2;1;00;U1;002,60;070,10;-5;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.800</p>
+					<p name="clipprj.id">26</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">2.500</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.reqConnectionPoints">4</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">==100910=910++CAB+100MCC01-X8.5:-5:;;;;==100910=910++CAB+100MCC01-X8.5:-5:;;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12916</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					<rl>
+					<r name="clipprj.accessory" index="0" rid="3"/>
+					</rl>
+					</o>
+					<o name="PE5" type="clipprj.terminal" id="33">
+					<pl>
+					<p name="clipprj.ECADdescription">1;PE5;1;PE5;1;PE5</p>
+					<p name="clipprj.articleNumber">3209594</p>
+					<p name="clipprj.connectionId">33</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">72.200</p>
+					<p name="clipprj.description">O1;002,60;002,20;PE5;R;02.2;1;00;M1;002,60;031,10;PE5;R;02.2;1;00;U1;002,60;070,10;PE5;R;02.2;1;00</p>
+					<p name="clipprj.extrasArtnums">3030514;3022218</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.800</p>
+					<p name="clipprj.id">27</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">2.500</p>
+					<p name="clipprj.potentialType">PE</p>
+					<p name="clipprj.reqConnectionPoints">4</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12912</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="-X8.5" type="clipprj.endCover" id="34">
+					<pl>
+					<p name="clipprj.articleNumber">3030514</p>
+					<p name="clipprj.connectionId">34</p>
+					<p name="clipprj.depth">72.200</p>
+					<p name="clipprj.height">0.000</p>
+					<p name="clipprj.id">28</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">2.200</p>
+					<p name="p8.dbObjId">17/12912</p>
+					</pl>
+					</o>
+					<o name="-X8.5" type="clipprj.endBracket" id="35">
+					<pl>
+					<p name="clipprj.articleNumber">3022218</p>
+					<p name="clipprj.connectionId">35</p>
+					<p name="clipprj.depth">55.600</p>
+					<p name="clipprj.height">35.500</p>
+					<p name="clipprj.id">29</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">9.500</p>
+					<p name="p8.dbObjId">17/12912</p>
+					</pl>
+					</o>
+					<o name="" type="clipprj.blockingSurface" id="36">
+					<pl>
+					<p name="clipprj.articleNumber"></p>
+					<p name="clipprj.connectionId">36</p>
+					<p name="clipprj.id">30</p>
+					<p name="clipprj.isClipProjectDevice">1</p>
+					<p name="clipprj.width">10.000</p>
+					</pl>
+					</o>
+					<o name="-X11" type="clipprj.endBracket" id="37">
+					<pl>
+					<p name="clipprj.articleNumber">3022218</p>
+					<p name="clipprj.comment">Not-Halt (CH1)
+Lehrbereich</p>
+					<p name="clipprj.connectionId">37</p>
+					<p name="clipprj.depth">55.600</p>
+					<p name="clipprj.height">35.500</p>
+					<p name="clipprj.id">31</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">9.500</p>
+					<p name="p8.dbObjId">17/14064</p>
+					</pl>
+					<rl>
+					<r name="clipprj.accessory" index="0" rid="4"/>
+					</rl>
+					</o>
+					<o name="1" type="clipprj.terminal" id="38">
+					<pl>
+					<p name="clipprj.ECADdescription">2;2;1;1</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Not-Halt (CH1)
+Lehrbereich</p>
+					<p name="clipprj.connectionId">39</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;2;R;02.2;1;00;M1;002,60;053,20;1;R;02.2;1;00</p>
+					<p name="clipprj.extrasArtnums">3030161</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">32</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/14064</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					<rl>
+					<r name="clipprj.accessory" index="0" rid="5"/>
+					</rl>
+					</o>
+					<o name="3" type="clipprj.terminal" id="39">
+					<pl>
+					<p name="clipprj.ECADdescription">2;4;1;3</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Not-Halt (CH2)
+Lehrbereich</p>
+					<p name="clipprj.connectionId">41</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;4;R;02.2;1;00;M1;002,60;053,20;3;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">33</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">1</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/14066</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					<rl>
+					<r name="clipprj.accessory" index="0" rid="5"/>
+					</rl>
+					</o>
+					<o name="PE5" type="clipprj.terminal" id="40">
+					<pl>
+					<p name="clipprj.ECADdescription">2;PE6;1;PE5</p>
+					<p name="clipprj.articleNumber">3209620</p>
+					<p name="clipprj.comment">Not-Halt (CH2)
+Lehrbereich</p>
+					<p name="clipprj.connectionId">42</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;PE6;R;02.2;1;00;M1;002,60;053,20;PE5;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">34</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">PE</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/14069</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="7" type="clipprj.terminal" id="41">
+					<pl>
+					<p name="clipprj.ECADdescription">2;8;1;7</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Not-Halt 1
+extern (CH1)</p>
+					<p name="clipprj.connectionId">43</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;8;R;02.2;1;00;M1;002,60;053,20;7;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">35</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/14095</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="9" type="clipprj.terminal" id="42">
+					<pl>
+					<p name="clipprj.ECADdescription">2;10;1;9</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Not-Halt 1
+extern (CH2)</p>
+					<p name="clipprj.connectionId">44</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;10;R;02.2;1;00;M1;002,60;053,20;9;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">36</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/14097</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="PE11" type="clipprj.terminal" id="43">
+					<pl>
+					<p name="clipprj.ECADdescription">2;PE12;1;PE11</p>
+					<p name="clipprj.articleNumber">3209620</p>
+					<p name="clipprj.comment">Not-Halt 1
+extern (CH2)</p>
+					<p name="clipprj.connectionId">45</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;PE12;R;02.2;1;00;M1;002,60;053,20;PE11;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">37</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">PE</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/14111</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="13" type="clipprj.terminal" id="44">
+					<pl>
+					<p name="clipprj.ECADdescription">2;14;1;13</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Not-Halt 2
+extern (CH1)</p>
+					<p name="clipprj.connectionId">46</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;14;R;02.2;1;00;M1;002,60;053,20;13;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">38</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/14099</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="15" type="clipprj.terminal" id="45">
+					<pl>
+					<p name="clipprj.ECADdescription">2;16;1;15</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Not-Halt 2
+extern (CH2)</p>
+					<p name="clipprj.connectionId">47</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;16;R;02.2;1;00;M1;002,60;053,20;15;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">39</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/14101</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="PE17" type="clipprj.terminal" id="46">
+					<pl>
+					<p name="clipprj.ECADdescription">2;PE18;1;PE17</p>
+					<p name="clipprj.articleNumber">3209620</p>
+					<p name="clipprj.comment">Not-Halt 2
+extern (CH2)</p>
+					<p name="clipprj.connectionId">48</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;PE18;R;02.2;1;00;M1;002,60;053,20;PE17;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">40</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">PE</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/14093</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="19" type="clipprj.terminal" id="47">
+					<pl>
+					<p name="clipprj.ECADdescription">2;20;1;19</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Not-Halt 1
+extern (CH1)</p>
+					<p name="clipprj.connectionId">49</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;20;R;02.2;1;00;M1;002,60;053,20;19;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">41</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/14146</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="21" type="clipprj.terminal" id="48">
+					<pl>
+					<p name="clipprj.ECADdescription">2;22;1;21</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Not-Halt 1
+extern (CH2)</p>
+					<p name="clipprj.connectionId">50</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;22;R;02.2;1;00;M1;002,60;053,20;21;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">42</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/14148</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="PE23" type="clipprj.terminal" id="49">
+					<pl>
+					<p name="clipprj.ECADdescription">2;PE24;1;PE23</p>
+					<p name="clipprj.articleNumber">3209620</p>
+					<p name="clipprj.comment">Not-Halt 1
+extern (CH2)</p>
+					<p name="clipprj.connectionId">51</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;PE24;R;02.2;1;00;M1;002,60;053,20;PE23;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">43</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">PE</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/14154</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="25" type="clipprj.terminal" id="50">
+					<pl>
+					<p name="clipprj.ECADdescription">2;26;1;25</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Not-Halt 2
+extern (CH1)</p>
+					<p name="clipprj.connectionId">52</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;26;R;02.2;1;00;M1;002,60;053,20;25;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">44</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/14150</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="27" type="clipprj.terminal" id="51">
+					<pl>
+					<p name="clipprj.ECADdescription">2;28;1;27</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Not-Halt 2
+extern (CH2)</p>
+					<p name="clipprj.connectionId">53</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;28;R;02.2;1;00;M1;002,60;053,20;27;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">45</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/14152</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="PE29" type="clipprj.terminal" id="52">
+					<pl>
+					<p name="clipprj.ECADdescription">2;PE30;1;PE29</p>
+					<p name="clipprj.articleNumber">3209620</p>
+					<p name="clipprj.comment">Not-Halt 2
+extern (CH2)</p>
+					<p name="clipprj.connectionId">54</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;PE30;R;02.2;1;00;M1;002,60;053,20;PE29;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">46</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">PE</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/14144</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="31" type="clipprj.terminal" id="53">
+					<pl>
+					<p name="clipprj.ECADdescription">2;32;1;31</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Not-Halt 1
+extern (CH1)</p>
+					<p name="clipprj.connectionId">55</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;32;R;02.2;1;00;M1;002,60;053,20;31;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">47</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/14199</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="33" type="clipprj.terminal" id="54">
+					<pl>
+					<p name="clipprj.ECADdescription">2;34;1;33</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Not-Halt 1
+extern (CH2)</p>
+					<p name="clipprj.connectionId">56</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;34;R;02.2;1;00;M1;002,60;053,20;33;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">48</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/14201</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="PE35" type="clipprj.terminal" id="55">
+					<pl>
+					<p name="clipprj.ECADdescription">2;PE36;1;PE35</p>
+					<p name="clipprj.articleNumber">3209620</p>
+					<p name="clipprj.comment">Not-Halt 1
+extern (CH2)</p>
+					<p name="clipprj.connectionId">57</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;PE36;R;02.2;1;00;M1;002,60;053,20;PE35;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">49</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">PE</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/14215</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="37" type="clipprj.terminal" id="56">
+					<pl>
+					<p name="clipprj.ECADdescription">2;38;1;37</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Not-Halt 2
+extern (CH1)</p>
+					<p name="clipprj.connectionId">58</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;38;R;02.2;1;00;M1;002,60;053,20;37;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">50</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/14203</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="39" type="clipprj.terminal" id="57">
+					<pl>
+					<p name="clipprj.ECADdescription">2;40;1;39</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Not-Halt 2
+extern (CH2)</p>
+					<p name="clipprj.connectionId">59</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;40;R;02.2;1;00;M1;002,60;053,20;39;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">51</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/14205</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="PE41" type="clipprj.terminal" id="58">
+					<pl>
+					<p name="clipprj.ECADdescription">2;PE42;1;PE41</p>
+					<p name="clipprj.articleNumber">3209620</p>
+					<p name="clipprj.comment">Not-Halt 2
+extern (CH2)</p>
+					<p name="clipprj.connectionId">60</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;PE42;R;02.2;1;00;M1;002,60;053,20;PE41;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">52</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">PE</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/14197</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="43" type="clipprj.terminal" id="59">
+					<pl>
+					<p name="clipprj.ECADdescription">2;44;1;43</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Not-Halt 1
+extern (CH1)</p>
+					<p name="clipprj.connectionId">61</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;44;R;02.2;1;00;M1;002,60;053,20;43;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">53</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/14250</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="45" type="clipprj.terminal" id="60">
+					<pl>
+					<p name="clipprj.ECADdescription">2;46;1;45</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Not-Halt 1
+extern (CH2)</p>
+					<p name="clipprj.connectionId">62</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;46;R;02.2;1;00;M1;002,60;053,20;45;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">54</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/14252</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="PE47" type="clipprj.terminal" id="61">
+					<pl>
+					<p name="clipprj.ECADdescription">2;PE48;1;PE47</p>
+					<p name="clipprj.articleNumber">3209620</p>
+					<p name="clipprj.comment">Not-Halt 1
+extern (CH2)</p>
+					<p name="clipprj.connectionId">63</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;PE48;R;02.2;1;00;M1;002,60;053,20;PE47;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">55</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">PE</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/14258</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="49" type="clipprj.terminal" id="62">
+					<pl>
+					<p name="clipprj.ECADdescription">2;50;1;49</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Not-Halt 2
+extern (CH1)</p>
+					<p name="clipprj.connectionId">64</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;50;R;02.2;1;00;M1;002,60;053,20;49;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">56</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/14254</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="51" type="clipprj.terminal" id="63">
+					<pl>
+					<p name="clipprj.ECADdescription">2;52;1;51</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Not-Halt 2
+extern (CH2)</p>
+					<p name="clipprj.connectionId">65</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;52;R;02.2;1;00;M1;002,60;053,20;51;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">57</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/14256</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="PE53" type="clipprj.terminal" id="64">
+					<pl>
+					<p name="clipprj.ECADdescription">2;PE54;1;PE53</p>
+					<p name="clipprj.articleNumber">3209620</p>
+					<p name="clipprj.comment">Not-Halt 2
+extern (CH2)</p>
+					<p name="clipprj.connectionId">66</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;PE54;R;02.2;1;00;M1;002,60;053,20;PE53;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">58</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">PE</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/14248</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="55" type="clipprj.terminal" id="65">
+					<pl>
+					<p name="clipprj.ECADdescription">2;56;1;55</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Reserve</p>
+					<p name="clipprj.connectionId">67</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;56;R;02.2;1;00;M1;002,60;053,20;55;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">59</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">1</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12979</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="57" type="clipprj.terminal" id="66">
+					<pl>
+					<p name="clipprj.ECADdescription">2;58;1;57</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Reserve</p>
+					<p name="clipprj.connectionId">68</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;58;R;02.2;1;00;M1;002,60;053,20;57;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">60</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">1</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12960</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="59" type="clipprj.terminal" id="67">
+					<pl>
+					<p name="clipprj.ECADdescription">2;60;1;59</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Reserve</p>
+					<p name="clipprj.connectionId">69</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;60;R;02.2;1;00;M1;002,60;053,20;59;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">61</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">1</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12962</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="PE61" type="clipprj.terminal" id="68">
+					<pl>
+					<p name="clipprj.ECADdescription">2;PE62;1;PE61</p>
+					<p name="clipprj.articleNumber">3209620</p>
+					<p name="clipprj.comment">Reserve</p>
+					<p name="clipprj.connectionId">70</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;PE62;R;02.2;1;00;M1;002,60;053,20;PE61;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">62</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">PE</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12958</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="63" type="clipprj.terminal" id="69">
+					<pl>
+					<p name="clipprj.ECADdescription">2;64;1;63</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Not-Halt
+(CH1)</p>
+					<p name="clipprj.connectionId">71</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;64;R;02.2;1;00;M1;002,60;053,20;63;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">63</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12966</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="65" type="clipprj.terminal" id="70">
+					<pl>
+					<p name="clipprj.ECADdescription">2;66;1;65</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Not-Halt
+(CH2)</p>
+					<p name="clipprj.connectionId">72</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;66;R;02.2;1;00;M1;002,60;053,20;65;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">64</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12968</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="67" type="clipprj.terminal" id="71">
+					<pl>
+					<p name="clipprj.ECADdescription">2;68;1;67</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Not-Halt Lampe</p>
+					<p name="clipprj.connectionId">73</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;68;R;02.2;1;00;M1;002,60;053,20;67;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">65</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12970</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="PE69" type="clipprj.terminal" id="72">
+					<pl>
+					<p name="clipprj.ECADdescription">2;PE70;1;PE69</p>
+					<p name="clipprj.articleNumber">3209620</p>
+					<p name="clipprj.comment">Not-Halt Lampe</p>
+					<p name="clipprj.connectionId">74</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;PE70;R;02.2;1;00;M1;002,60;053,20;PE69;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">66</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">PE</p>
+					<p name="clipprj.reqConnectionPoints">1</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12964</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="71" type="clipprj.terminal" id="73">
+					<pl>
+					<p name="clipprj.ECADdescription">2;72;1;71</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Reserve</p>
+					<p name="clipprj.connectionId">75</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;72;R;02.2;1;00;M1;002,60;053,20;71;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">67</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">1</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/13030</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="73" type="clipprj.terminal" id="74">
+					<pl>
+					<p name="clipprj.ECADdescription">2;74;1;73</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Reserve</p>
+					<p name="clipprj.connectionId">76</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;74;R;02.2;1;00;M1;002,60;053,20;73;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">68</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">1</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/13019</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="75" type="clipprj.terminal" id="75">
+					<pl>
+					<p name="clipprj.ECADdescription">2;76;1;75</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Reserve</p>
+					<p name="clipprj.connectionId">77</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;76;R;02.2;1;00;M1;002,60;053,20;75;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">69</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">1</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/13021</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="PE77" type="clipprj.terminal" id="76">
+					<pl>
+					<p name="clipprj.ECADdescription">2;PE78;1;PE77</p>
+					<p name="clipprj.articleNumber">3209620</p>
+					<p name="clipprj.comment">Reserve</p>
+					<p name="clipprj.connectionId">78</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;PE78;R;02.2;1;00;M1;002,60;053,20;PE77;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">70</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">PE</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/13017</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="79" type="clipprj.terminal" id="77">
+					<pl>
+					<p name="clipprj.ECADdescription">2;80;1;79</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Reserve</p>
+					<p name="clipprj.connectionId">79</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;80;R;02.2;1;00;M1;002,60;053,20;79;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">71</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">1</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/13033</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="81" type="clipprj.terminal" id="78">
+					<pl>
+					<p name="clipprj.ECADdescription">2;82;1;81</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Reserve</p>
+					<p name="clipprj.connectionId">80</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;82;R;02.2;1;00;M1;002,60;053,20;81;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">72</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">1</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/13035</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="83" type="clipprj.terminal" id="79">
+					<pl>
+					<p name="clipprj.ECADdescription">2;84;1;83</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Reserve</p>
+					<p name="clipprj.connectionId">81</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;84;R;02.2;1;00;M1;002,60;053,20;83;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">73</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">1</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/13037</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="PE85" type="clipprj.terminal" id="80">
+					<pl>
+					<p name="clipprj.ECADdescription">2;PE86;1;PE85</p>
+					<p name="clipprj.articleNumber">3209620</p>
+					<p name="clipprj.comment">Reserve</p>
+					<p name="clipprj.connectionId">82</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;PE86;R;02.2;1;00;M1;002,60;053,20;PE85;R;02.2;1;00</p>
+					<p name="clipprj.extrasArtnums">3038503;3022218</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">74</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">PE</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/13031</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="-X11" type="clipprj.endCover" id="81">
+					<pl>
+					<p name="clipprj.articleNumber">3038503</p>
+					<p name="clipprj.comment">Reserve</p>
+					<p name="clipprj.connectionId">83</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.height">0.000</p>
+					<p name="clipprj.id">75</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">2.200</p>
+					<p name="p8.dbObjId">17/13031</p>
+					</pl>
+					</o>
+					<o name="-X11" type="clipprj.endBracket" id="82">
+					<pl>
+					<p name="clipprj.articleNumber">3022218</p>
+					<p name="clipprj.comment">Reserve</p>
+					<p name="clipprj.connectionId">84</p>
+					<p name="clipprj.depth">55.600</p>
+					<p name="clipprj.height">35.500</p>
+					<p name="clipprj.id">76</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">9.500</p>
+					<p name="p8.dbObjId">17/13031</p>
+					</pl>
+					</o>
+					<o name="" type="clipprj.blockingSurface" id="83">
+					<pl>
+					<p name="clipprj.articleNumber"></p>
+					<p name="clipprj.connectionId">85</p>
+					<p name="clipprj.id">77</p>
+					<p name="clipprj.isClipProjectDevice">1</p>
+					<p name="clipprj.width">191.850</p>
+					</pl>
+					</o>
+					<o name="-X8" type="clipprj.endBracket" id="84">
+					<pl>
+					<p name="clipprj.articleNumber">3022218</p>
+					<p name="clipprj.connectionId">86</p>
+					<p name="clipprj.depth">55.600</p>
+					<p name="clipprj.height">35.500</p>
+					<p name="clipprj.id">78</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">9.500</p>
+					<p name="p8.dbObjId">17/13835</p>
+					</pl>
+					<rl>
+					<r name="clipprj.accessory" index="0" rid="6"/>
+					</rl>
+					</o>
+					<o name="+1" type="clipprj.terminal" id="85">
+					<pl>
+					<p name="clipprj.ECADdescription">1;+1;1;+1;1;+1</p>
+					<p name="clipprj.articleNumber">3209578</p>
+					<p name="clipprj.connectionId">88</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">72.200</p>
+					<p name="clipprj.description">O1;002,60;002,20;+1;R;02.2;1;00;M1;002,60;031,10;+1;R;02.2;1;00;U1;002,60;070,10;+1;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.800</p>
+					<p name="clipprj.id">79</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">2.500</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.reqConnectionPoints">4</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">==100910=MLA10++CAB+100MCC01-X8:+1:;;;;==100910=MLA10++CAB+100MCC01-X8:+1:;;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/13835</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="-1" type="clipprj.terminal" id="86">
+					<pl>
+					<p name="clipprj.ECADdescription">1;-1;1;-1;1;-1</p>
+					<p name="clipprj.articleNumber">3209578</p>
+					<p name="clipprj.connectionId">89</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">72.200</p>
+					<p name="clipprj.description">O1;002,60;002,20;-1;R;02.2;1;00;M1;002,60;031,10;-1;R;02.2;1;00;U1;002,60;070,10;-1;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.800</p>
+					<p name="clipprj.id">80</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">2.500</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.reqConnectionPoints">4</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">==100910=MLA10++CAB+100MCC01-X8:-1:;;;;==100910=MLA10++CAB+100MCC01-X8:-1:;==100910=MLA10++CAB+100MCC01-X8:-1:;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/13833</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="+2" type="clipprj.terminal" id="87">
+					<pl>
+					<p name="clipprj.ECADdescription">1;+2;1;+2;1;+2</p>
+					<p name="clipprj.articleNumber">3209578</p>
+					<p name="clipprj.connectionId">90</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">72.200</p>
+					<p name="clipprj.description">O1;002,60;002,20;+2;R;02.2;1;00;M1;002,60;031,10;+2;R;02.2;1;00;U1;002,60;070,10;+2;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.800</p>
+					<p name="clipprj.id">81</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">2.500</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.reqConnectionPoints">4</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">==100910=MLA10++CAB+100MCC01-X8:+2:;;;;==100910=MLA10++CAB+100MCC01-X8:+2:;;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/13863</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="-2" type="clipprj.terminal" id="88">
+					<pl>
+					<p name="clipprj.ECADdescription">1;-2;1;-2;1;-2</p>
+					<p name="clipprj.articleNumber">3209578</p>
+					<p name="clipprj.connectionId">91</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">72.200</p>
+					<p name="clipprj.description">O1;002,60;002,20;-2;R;02.2;1;00;M1;002,60;031,10;-2;R;02.2;1;00;U1;002,60;070,10;-2;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.800</p>
+					<p name="clipprj.id">82</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">2.500</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.reqConnectionPoints">4</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">==100910=MLA10++CAB+100MCC01-X8:-2:;;;;==100910=MLA10++CAB+100MCC01-X8:-2:;==100910=MLA10++CAB+100MCC01-X8:-2:;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/13862</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="PE3" type="clipprj.terminal" id="89">
+					<pl>
+					<p name="clipprj.ECADdescription">1;PE3;1;PE3;1;PE3</p>
+					<p name="clipprj.articleNumber">3209594</p>
+					<p name="clipprj.connectionId">92</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">72.200</p>
+					<p name="clipprj.description">O1;002,60;002,20;PE3;R;02.2;1;00;M1;002,60;031,10;PE3;R;02.2;1;00;U1;002,60;070,10;PE3;R;02.2;1;00</p>
+					<p name="clipprj.extrasArtnums">3030514;3022218</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.800</p>
+					<p name="clipprj.id">83</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">2.500</p>
+					<p name="clipprj.potentialType">PE</p>
+					<p name="clipprj.reqConnectionPoints">4</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">;;;;==100910=MLA10++CAB+100MCC01-X8:PE3:;;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/13836</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="-X8" type="clipprj.endCover" id="90">
+					<pl>
+					<p name="clipprj.articleNumber">3030514</p>
+					<p name="clipprj.connectionId">93</p>
+					<p name="clipprj.depth">72.200</p>
+					<p name="clipprj.height">0.000</p>
+					<p name="clipprj.id">84</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">2.200</p>
+					<p name="p8.dbObjId">17/13836</p>
+					</pl>
+					</o>
+					<o name="-X8" type="clipprj.endBracket" id="91">
+					<pl>
+					<p name="clipprj.articleNumber">3022218</p>
+					<p name="clipprj.connectionId">94</p>
+					<p name="clipprj.depth">55.600</p>
+					<p name="clipprj.height">35.500</p>
+					<p name="clipprj.id">85</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">9.500</p>
+					<p name="p8.dbObjId">17/13836</p>
+					</pl>
+					</o>
+					<o name="" type="clipprj.blockingSurface" id="92">
+					<pl>
+					<p name="clipprj.articleNumber"></p>
+					<p name="clipprj.connectionId">95</p>
+					<p name="clipprj.id">86</p>
+					<p name="clipprj.isClipProjectDevice">1</p>
+					<p name="clipprj.width">10.000</p>
+					</pl>
+					</o>
+					<o name="-X10" type="clipprj.endBracket" id="93">
+					<pl>
+					<p name="clipprj.articleNumber">3022218</p>
+					<p name="clipprj.comment">Vorspannsignal</p>
+					<p name="clipprj.connectionId">96</p>
+					<p name="clipprj.depth">55.600</p>
+					<p name="clipprj.height">35.500</p>
+					<p name="clipprj.id">87</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">9.500</p>
+					<p name="p8.dbObjId">17/13090</p>
+					</pl>
+					<rl>
+					<r name="clipprj.accessory" index="0" rid="7"/>
+					</rl>
+					</o>
+					<o name="1" type="clipprj.terminal" id="94">
+					<pl>
+					<p name="clipprj.ECADdescription">2;2;1;1</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Vorspannsignal</p>
+					<p name="clipprj.connectionId">98</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;2;R;02.2;1;00;M1;002,60;053,20;1;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">88</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/13090</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="3" type="clipprj.terminal" id="95">
+					<pl>
+					<p name="clipprj.ECADdescription">2;4;1;3</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Kleine Lücke 1</p>
+					<p name="clipprj.connectionId">99</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;4;R;02.2;1;00;M1;002,60;053,20;3;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">89</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/13092</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="5" type="clipprj.terminal" id="96">
+					<pl>
+					<p name="clipprj.ECADdescription">2;6;1;5</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Große Lücke</p>
+					<p name="clipprj.connectionId">100</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;6;R;02.2;1;00;M1;002,60;053,20;5;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">90</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/13094</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="7" type="clipprj.terminal" id="97">
+					<pl>
+					<p name="clipprj.ECADdescription">2;8;1;7</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Spannungstisch
+Platte in Bearbeitung</p>
+					<p name="clipprj.connectionId">101</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;8;R;02.2;1;00;M1;002,60;053,20;7;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">91</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/13096</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="9" type="clipprj.terminal" id="98">
+					<pl>
+					<p name="clipprj.ECADdescription">2;10;1;9</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Störung
+Rail Switch</p>
+					<p name="clipprj.connectionId">102</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;10;R;02.2;1;00;M1;002,60;053,20;9;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">92</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/13132</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="11" type="clipprj.terminal" id="99">
+					<pl>
+					<p name="clipprj.ECADdescription">2;12;1;11</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">interessantes Glasbandstück
+zur Estimation</p>
+					<p name="clipprj.connectionId">103</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;12;R;02.2;1;00;M1;002,60;053,20;11;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">93</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/13134</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="13" type="clipprj.terminal" id="100">
+					<pl>
+					<p name="clipprj.ECADdescription">2;14;1;13</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Brechwalze heben
+manuell</p>
+					<p name="clipprj.connectionId">104</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;14;R;02.2;1;00;M1;002,60;053,20;13;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">94</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/13136</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="15" type="clipprj.terminal" id="101">
+					<pl>
+					<p name="clipprj.ECADdescription">2;16;1;15</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">interessantes Glasbandstück
+zum Spannungsmesstisch</p>
+					<p name="clipprj.connectionId">105</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;16;R;02.2;1;00;M1;002,60;053,20;15;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">95</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/13138</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="17" type="clipprj.terminal" id="102">
+					<pl>
+					<p name="clipprj.ECADdescription">2;18;1;17</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.comment">Brechwalze oben</p>
+					<p name="clipprj.connectionId">106</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;18;R;02.2;1;00;M1;002,60;053,20;17;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">96</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/13147</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="PE19" type="clipprj.terminal" id="103">
+					<pl>
+					<p name="clipprj.ECADdescription">2;PE20;1;PE19</p>
+					<p name="clipprj.articleNumber">3209620</p>
+					<p name="clipprj.comment">Brechwalze oben</p>
+					<p name="clipprj.connectionId">107</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;PE20;R;02.2;1;00;M1;002,60;053,20;PE19;R;02.2;1;00</p>
+					<p name="clipprj.extrasArtnums">3038503;3022218</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">97</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">PE</p>
+					<p name="clipprj.reqConnectionPoints">1</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/13130</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="-X10" type="clipprj.endCover" id="104">
+					<pl>
+					<p name="clipprj.articleNumber">3038503</p>
+					<p name="clipprj.comment">Brechwalze oben</p>
+					<p name="clipprj.connectionId">108</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.height">0.000</p>
+					<p name="clipprj.id">98</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">2.200</p>
+					<p name="p8.dbObjId">17/13130</p>
+					</pl>
+					</o>
+					<o name="-X10" type="clipprj.endBracket" id="105">
+					<pl>
+					<p name="clipprj.articleNumber">3022218</p>
+					<p name="clipprj.comment">Brechwalze oben</p>
+					<p name="clipprj.connectionId">109</p>
+					<p name="clipprj.depth">55.600</p>
+					<p name="clipprj.height">35.500</p>
+					<p name="clipprj.id">99</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">9.500</p>
+					<p name="p8.dbObjId">17/13130</p>
+					</pl>
+					</o>
+					<o name="" type="clipprj.blockingSurface" id="106">
+					<pl>
+					<p name="clipprj.articleNumber"></p>
+					<p name="clipprj.connectionId">110</p>
+					<p name="clipprj.id">100</p>
+					<p name="clipprj.isClipProjectDevice">1</p>
+					<p name="clipprj.width">10.000</p>
+					</pl>
+					</o>
+					<o name="-X10.3" type="clipprj.endBracket" id="107">
+					<pl>
+					<p name="clipprj.articleNumber">3022218</p>
+					<p name="clipprj.comment">Sirene
+EIN</p>
+					<p name="clipprj.connectionId">111</p>
+					<p name="clipprj.depth">55.600</p>
+					<p name="clipprj.height">35.500</p>
+					<p name="clipprj.id">101</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">9.500</p>
+					<p name="p8.dbObjId">17/12947</p>
+					</pl>
+					<rl>
+					<r name="clipprj.accessory" index="0" rid="8"/>
+					</rl>
+					</o>
+					<o name="1" type="clipprj.terminal" id="108">
+					<pl>
+					<p name="clipprj.ECADdescription">1;1;1;1;1;1</p>
+					<p name="clipprj.articleNumber">3209510</p>
+					<p name="clipprj.comment">Sirene
+EIN</p>
+					<p name="clipprj.connectionId">113</p>
+					<p name="clipprj.connectionPoints">2</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">48.600</p>
+					<p name="clipprj.description">O1;002,60;002,20;1;R;02.2;1;00;M1;002,60;019,20;1;R;02.2;1;00;U1;002,60;046,50;1;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.500</p>
+					<p name="clipprj.id">102</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">==100910=MLA10++CAB+100MCC01-X10.3:1:;;;;==100910=MLA10++CAB+100MCC01-X10.3:1:;;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12947</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="2" type="clipprj.terminal" id="109">
+					<pl>
+					<p name="clipprj.ECADdescription">1;2;1;2;1;2</p>
+					<p name="clipprj.articleNumber">3209510</p>
+					<p name="clipprj.comment">Sirene
+EIN</p>
+					<p name="clipprj.connectionId">114</p>
+					<p name="clipprj.connectionPoints">2</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">48.600</p>
+					<p name="clipprj.description">O1;002,60;002,20;2;R;02.2;1;00;M1;002,60;019,20;2;R;02.2;1;00;U1;002,60;046,50;2;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.500</p>
+					<p name="clipprj.id">103</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">==100910=MLA10++CAB+100MCC01-X10.3:2:;;;;==100910=MLA10++CAB+100MCC01-X10.3:2:;;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12948</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="3" type="clipprj.terminal" id="110">
+					<pl>
+					<p name="clipprj.ECADdescription">1;3;1;3;1;3</p>
+					<p name="clipprj.articleNumber">3209510</p>
+					<p name="clipprj.comment">Sirene
+Störung</p>
+					<p name="clipprj.connectionId">115</p>
+					<p name="clipprj.connectionPoints">2</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">48.600</p>
+					<p name="clipprj.description">O1;002,60;002,20;3;R;02.2;1;00;M1;002,60;019,20;3;R;02.2;1;00;U1;002,60;046,50;3;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.500</p>
+					<p name="clipprj.id">104</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">==100910=MLA10++CAB+100MCC01-X10.3:3:;;;;==100910=MLA10++CAB+100MCC01-X10.3:3:;;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12950</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="4" type="clipprj.terminal" id="111">
+					<pl>
+					<p name="clipprj.ECADdescription">1;4;1;4;1;4</p>
+					<p name="clipprj.articleNumber">3209510</p>
+					<p name="clipprj.comment">Sirene
+Störung</p>
+					<p name="clipprj.connectionId">116</p>
+					<p name="clipprj.connectionPoints">2</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">48.600</p>
+					<p name="clipprj.description">O1;002,60;002,20;4;R;02.2;1;00;M1;002,60;019,20;4;R;02.2;1;00;U1;002,60;046,50;4;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.500</p>
+					<p name="clipprj.id">105</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.reqConnectionPoints">1</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">;;;;==100910=MLA10++CAB+100MCC01-X10.3:4:;;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/13164</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="PE5" type="clipprj.terminal" id="112">
+					<pl>
+					<p name="clipprj.ECADdescription">1;PE5;1;PE5;1;PE5</p>
+					<p name="clipprj.articleNumber">3209536</p>
+					<p name="clipprj.comment">Sirene
+Störung</p>
+					<p name="clipprj.connectionId">117</p>
+					<p name="clipprj.connectionPoints">2</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">48.500</p>
+					<p name="clipprj.description">O1;002,60;002,20;PE5;R;02.2;1;00;M1;002,60;019,20;PE5;R;02.2;1;00;U1;002,60;046,50;PE5;R;02.2;1;00</p>
+					<p name="clipprj.extrasArtnums">3030417;3022218</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.500</p>
+					<p name="clipprj.id">106</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">PE</p>
+					<p name="clipprj.reqConnectionPoints">1</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">;;;;==100910=MLA10++CAB+100MCC01-X10.3:PE5:;;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/12949</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="-X10.3" type="clipprj.endCover" id="113">
+					<pl>
+					<p name="clipprj.articleNumber">3030417</p>
+					<p name="clipprj.comment">Sirene
+Störung</p>
+					<p name="clipprj.connectionId">118</p>
+					<p name="clipprj.depth">48.600</p>
+					<p name="clipprj.height">0.000</p>
+					<p name="clipprj.id">107</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">2.200</p>
+					<p name="p8.dbObjId">17/12949</p>
+					</pl>
+					</o>
+					<o name="-X10.3" type="clipprj.endBracket" id="114">
+					<pl>
+					<p name="clipprj.articleNumber">3022218</p>
+					<p name="clipprj.comment">Sirene
+Störung</p>
+					<p name="clipprj.connectionId">119</p>
+					<p name="clipprj.depth">55.600</p>
+					<p name="clipprj.height">35.500</p>
+					<p name="clipprj.id">108</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">9.500</p>
+					<p name="p8.dbObjId">17/12949</p>
+					</pl>
+					</o>
+					<o name="" type="clipprj.blockingSurface" id="115">
+					<pl>
+					<p name="clipprj.articleNumber"></p>
+					<p name="clipprj.connectionId">120</p>
+					<p name="clipprj.id">109</p>
+					<p name="clipprj.isClipProjectDevice">1</p>
+					<p name="clipprj.width">10.000</p>
+					</pl>
+					</o>
+					<o name="-X8.1" type="clipprj.endBracket" id="116">
+					<pl>
+					<p name="clipprj.articleNumber">3022218</p>
+					<p name="clipprj.connectionId">121</p>
+					<p name="clipprj.depth">55.600</p>
+					<p name="clipprj.height">35.500</p>
+					<p name="clipprj.id">110</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">9.500</p>
+					<p name="p8.dbObjId">17/20614</p>
+					</pl>
+					<rl>
+					<r name="clipprj.accessory" index="0" rid="9"/>
+					<r name="clipprj.accessory" index="0" rid="10"/>
+					</rl>
+					</o>
+					<o name="1" type="clipprj.terminal" id="117">
+					<pl>
+					<p name="clipprj.ECADdescription">1;1;2;2;2;2;1;1</p>
+					<p name="clipprj.articleNumber">3211430</p>
+					<p name="clipprj.connectionId">124</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">68.000</p>
+					<p name="clipprj.description">O1;002,60;001,50;1;R;02.2;1;00;O2;002,60;020,00;2;R;02.2;1;00;U2;002,60;052,70;2;R;02.2;1;00;U1;002,60;066,10;1;R;02.2;1;00</p>
+					<p name="clipprj.extrasArtnums">3030174</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">47.500</p>
+					<p name="clipprj.id">111</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">3</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/20614</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					<rl>
+					<r name="clipprj.accessory" index="0" rid="11"/>
+					</rl>
+					</o>
+					<o name="5" type="clipprj.terminal" id="118">
+					<pl>
+					<p name="clipprj.ECADdescription">1;5;2;6;2;6;1;5</p>
+					<p name="clipprj.articleNumber">3211430</p>
+					<p name="clipprj.connectionId">126</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">68.000</p>
+					<p name="clipprj.description">O1;002,60;001,50;5;R;02.2;1;00;O2;002,60;020,00;6;R;02.2;1;00;U2;002,60;052,70;6;R;02.2;1;00;U1;002,60;066,10;5;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">47.500</p>
+					<p name="clipprj.id">112</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">3</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/20620</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					<rl>
+					<r name="clipprj.accessory" index="0" rid="11"/>
+					<r name="clipprj.accessory" index="0" rid="9"/>
+					</rl>
+					</o>
+					<o name="9" type="clipprj.terminal" id="119">
+					<pl>
+					<p name="clipprj.ECADdescription">1;9;2;10;2;10;1;9</p>
+					<p name="clipprj.articleNumber">3211430</p>
+					<p name="clipprj.connectionId">127</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">68.000</p>
+					<p name="clipprj.description">O1;002,60;001,50;9;R;02.2;1;00;O2;002,60;020,00;10;R;02.2;1;00;U2;002,60;052,70;10;R;02.2;1;00;U1;002,60;066,10;9;R;02.2;1;00</p>
+					<p name="clipprj.extrasArtnums">3211634</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">47.500</p>
+					<p name="clipprj.id">113</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">3</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/20626</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					<rl>
+					<r name="clipprj.accessory" index="0" rid="11"/>
+					<r name="clipprj.accessory" index="0" rid="9"/>
+					</rl>
+					</o>
+					<o name="-X8.1" type="clipprj.endCover" id="120">
+					<pl>
+					<p name="clipprj.articleNumber">3211634</p>
+					<p name="clipprj.connectionId">128</p>
+					<p name="clipprj.depth">68.000</p>
+					<p name="clipprj.height">47.500</p>
+					<p name="clipprj.id">114</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">2.200</p>
+					<p name="p8.dbObjId">17/20626</p>
+					</pl>
+					</o>
+					<o name="13" type="clipprj.terminal" id="121">
+					<pl>
+					<p name="clipprj.ECADdescription">1;13;1;13;1;13</p>
+					<p name="clipprj.articleNumber">3209510</p>
+					<p name="clipprj.connectionId">129</p>
+					<p name="clipprj.connectionPoints">2</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">48.600</p>
+					<p name="clipprj.description">O1;002,60;002,20;13;R;02.2;1;00;M1;002,60;019,20;13;R;02.2;1;00;U1;002,60;046,50;13;R;02.2;1;00</p>
+					<p name="clipprj.extrasArtnums">3030187</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.500</p>
+					<p name="clipprj.id">115</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.reqConnectionPoints">1</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">==100910=110003++CAB+100MCC01-X8.1:13:;;;;;;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/8389</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					<rl>
+					<r name="clipprj.accessory" index="0" rid="12"/>
+					</rl>
+					</o>
+					<o name="14" type="clipprj.terminal" id="122">
+					<pl>
+					<p name="clipprj.ECADdescription">1;14;1;14;1;14</p>
+					<p name="clipprj.articleNumber">3209510</p>
+					<p name="clipprj.connectionId">131</p>
+					<p name="clipprj.connectionPoints">2</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">48.600</p>
+					<p name="clipprj.description">O1;002,60;002,20;14;R;02.2;1;00;M1;002,60;019,20;14;R;02.2;1;00;U1;002,60;046,50;14;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.500</p>
+					<p name="clipprj.id">116</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.reqConnectionPoints">1</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">==100910=110003++CAB+100MCC01-X8.1:14:;;;;;;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/8393</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					<rl>
+					<r name="clipprj.accessory" index="0" rid="12"/>
+					</rl>
+					</o>
+					<o name="15" type="clipprj.terminal" id="123">
+					<pl>
+					<p name="clipprj.ECADdescription">1;15;1;15;1;15</p>
+					<p name="clipprj.articleNumber">3209510</p>
+					<p name="clipprj.connectionId">132</p>
+					<p name="clipprj.connectionPoints">2</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">48.600</p>
+					<p name="clipprj.description">O1;002,60;002,20;15;R;02.2;1;00;M1;002,60;019,20;15;R;02.2;1;00;U1;002,60;046,50;15;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.500</p>
+					<p name="clipprj.id">117</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.reqConnectionPoints">1</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">==100910=110003++CAB+100MCC01-X8.1:15:;;;;;;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/8394</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					<rl>
+					<r name="clipprj.accessory" index="0" rid="12"/>
+					</rl>
+					</o>
+					<o name="16" type="clipprj.terminal" id="124">
+					<pl>
+					<p name="clipprj.ECADdescription">1;16;1;16;1;16</p>
+					<p name="clipprj.articleNumber">3209510</p>
+					<p name="clipprj.connectionId">133</p>
+					<p name="clipprj.connectionPoints">2</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">48.600</p>
+					<p name="clipprj.description">O1;002,60;002,20;16;R;02.2;1;00;M1;002,60;019,20;16;R;02.2;1;00;U1;002,60;046,50;16;R;02.2;1;00</p>
+					<p name="clipprj.extrasArtnums">3030417;3022218</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.500</p>
+					<p name="clipprj.id">118</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/8395</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					<rl>
+					<r name="clipprj.accessory" index="0" rid="12"/>
+					</rl>
+					</o>
+					<o name="-X8.1" type="clipprj.endCover" id="125">
+					<pl>
+					<p name="clipprj.articleNumber">3030417</p>
+					<p name="clipprj.connectionId">134</p>
+					<p name="clipprj.depth">48.600</p>
+					<p name="clipprj.height">0.000</p>
+					<p name="clipprj.id">119</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">2.200</p>
+					<p name="p8.dbObjId">17/8395</p>
+					</pl>
+					</o>
+					<o name="-X8.1" type="clipprj.endBracket" id="126">
+					<pl>
+					<p name="clipprj.articleNumber">3022218</p>
+					<p name="clipprj.connectionId">135</p>
+					<p name="clipprj.depth">55.600</p>
+					<p name="clipprj.height">35.500</p>
+					<p name="clipprj.id">120</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">9.500</p>
+					<p name="p8.dbObjId">17/8395</p>
+					</pl>
+					</o>
+					<o name="" type="clipprj.blockingSurface" id="127">
+					<pl>
+					<p name="clipprj.articleNumber"></p>
+					<p name="clipprj.connectionId">136</p>
+					<p name="clipprj.id">121</p>
+					<p name="clipprj.isClipProjectDevice">1</p>
+					<p name="clipprj.width">10.000</p>
+					</pl>
+					</o>
+					<o name="-X67" type="clipprj.endBracket" id="128">
+					<pl>
+					<p name="clipprj.articleNumber">3022218</p>
+					<p name="clipprj.connectionId">137</p>
+					<p name="clipprj.depth">55.600</p>
+					<p name="clipprj.height">35.500</p>
+					<p name="clipprj.id">122</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">9.500</p>
+					<p name="p8.dbObjId">17/11754</p>
+					</pl>
+					<rl>
+					<r name="clipprj.accessory" index="0" rid="13"/>
+					</rl>
+					</o>
+					<o name="1" type="clipprj.terminal" id="129">
+					<pl>
+					<p name="clipprj.ECADdescription">2;2;1;1</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.connectionId">139</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;2;R;02.2;1;00;M1;002,60;053,20;1;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">123</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/11754</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="3" type="clipprj.terminal" id="130">
+					<pl>
+					<p name="clipprj.ECADdescription">2;4;1;3</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.connectionId">140</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;4;R;02.2;1;00;M1;002,60;053,20;3;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">124</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/11746</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="5" type="clipprj.terminal" id="131">
+					<pl>
+					<p name="clipprj.ECADdescription">2;6;1;5</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.connectionId">141</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;6;R;02.2;1;00;M1;002,60;053,20;5;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">125</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/11748</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="7" type="clipprj.terminal" id="132">
+					<pl>
+					<p name="clipprj.ECADdescription">2;8;1;7</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.connectionId">142</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;8;R;02.2;1;00;M1;002,60;053,20;7;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">126</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/11750</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="9" type="clipprj.terminal" id="133">
+					<pl>
+					<p name="clipprj.ECADdescription">2;10;1;9</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.connectionId">143</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;10;R;02.2;1;00;M1;002,60;053,20;9;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">127</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/11816</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="11" type="clipprj.terminal" id="134">
+					<pl>
+					<p name="clipprj.ECADdescription">2;12;1;11</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.connectionId">144</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;12;R;02.2;1;00;M1;002,60;053,20;11;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">128</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">1</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/11818</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="PE13" type="clipprj.terminal" id="135">
+					<pl>
+					<p name="clipprj.ECADdescription">2;PE14;1;PE13</p>
+					<p name="clipprj.articleNumber">3209620</p>
+					<p name="clipprj.connectionId">145</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;PE14;R;02.2;1;00;M1;002,60;053,20;PE13;R;02.2;1;00</p>
+					<p name="clipprj.extrasArtnums">3038503;3022218</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">129</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">PE</p>
+					<p name="clipprj.reqConnectionPoints">1</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/11773</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="-X67" type="clipprj.endCover" id="136">
+					<pl>
+					<p name="clipprj.articleNumber">3038503</p>
+					<p name="clipprj.connectionId">146</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.height">0.000</p>
+					<p name="clipprj.id">130</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">2.200</p>
+					<p name="p8.dbObjId">17/11773</p>
+					</pl>
+					</o>
+					<o name="-X67" type="clipprj.endBracket" id="137">
+					<pl>
+					<p name="clipprj.articleNumber">3022218</p>
+					<p name="clipprj.connectionId">147</p>
+					<p name="clipprj.depth">55.600</p>
+					<p name="clipprj.height">35.500</p>
+					<p name="clipprj.id">131</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">9.500</p>
+					<p name="p8.dbObjId">17/11773</p>
+					</pl>
+					</o>
+					<o name="" type="clipprj.blockingSurface" id="138">
+					<pl>
+					<p name="clipprj.articleNumber"></p>
+					<p name="clipprj.connectionId">148</p>
+					<p name="clipprj.id">132</p>
+					<p name="clipprj.isClipProjectDevice">1</p>
+					<p name="clipprj.width">10.000</p>
+					</pl>
+					</o>
+					<o name="-X14" type="clipprj.endBracket" id="139">
+					<pl>
+					<p name="clipprj.articleNumber">3022218</p>
+					<p name="clipprj.connectionId">149</p>
+					<p name="clipprj.depth">55.600</p>
+					<p name="clipprj.height">35.500</p>
+					<p name="clipprj.id">133</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">9.500</p>
+					<p name="p8.dbObjId">17/11897</p>
+					</pl>
+					<rl>
+					<r name="clipprj.accessory" index="0" rid="14"/>
+					</rl>
+					</o>
+					<o name="1" type="clipprj.terminal" id="140">
+					<pl>
+					<p name="clipprj.ECADdescription">2;2;1;1</p>
+					<p name="clipprj.articleNumber">3209604</p>
+					<p name="clipprj.connectionId">151</p>
+					<p name="clipprj.connectionPoints">2;2</p>
+					<p name="clipprj.crossSection">0.000;0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;2;R;02.2;1;00;M1;002,60;053,20;1;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0;0</p>
+					<p name="clipprj.hasSaddleJumper">1;1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">134</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000;4.000</p>
+					<p name="clipprj.potentialType">Other;Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0;0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/11897</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="PE3" type="clipprj.terminal" id="141">
+					<pl>
+					<p name="clipprj.ECADdescription">2;PE4;1;PE3</p>
+					<p name="clipprj.articleNumber">3209620</p>
+					<p name="clipprj.connectionId">152</p>
+					<p name="clipprj.connectionPoints">4</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.description">M2;002,60;043,20;PE4;R;02.2;1;00;M1;002,60;053,20;PE3;R;02.2;1;00</p>
+					<p name="clipprj.extrasArtnums">3038503;3022218</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">55.000</p>
+					<p name="clipprj.id">135</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">1</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">PE</p>
+					<p name="clipprj.reqConnectionPoints">1</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets"></p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/11893</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="-X14" type="clipprj.endCover" id="142">
+					<pl>
+					<p name="clipprj.articleNumber">3038503</p>
+					<p name="clipprj.connectionId">153</p>
+					<p name="clipprj.depth">78.000</p>
+					<p name="clipprj.height">0.000</p>
+					<p name="clipprj.id">136</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">2.200</p>
+					<p name="p8.dbObjId">17/11893</p>
+					</pl>
+					</o>
+					<o name="-X14" type="clipprj.endBracket" id="143">
+					<pl>
+					<p name="clipprj.articleNumber">3022218</p>
+					<p name="clipprj.connectionId">154</p>
+					<p name="clipprj.depth">55.600</p>
+					<p name="clipprj.height">35.500</p>
+					<p name="clipprj.id">137</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">9.500</p>
+					<p name="p8.dbObjId">17/11893</p>
+					</pl>
+					</o>
+					<o name="" type="clipprj.blockingSurface" id="144">
+					<pl>
+					<p name="clipprj.articleNumber"></p>
+					<p name="clipprj.connectionId">155</p>
+					<p name="clipprj.id">138</p>
+					<p name="clipprj.isClipProjectDevice">1</p>
+					<p name="clipprj.width">10.000</p>
+					</pl>
+					</o>
+					<o name="-X10.3" type="clipprj.endBracket" id="145">
+					<pl>
+					<p name="clipprj.articleNumber">3022218</p>
+					<p name="clipprj.comment">Sirene
+EIN</p>
+					<p name="clipprj.connectionId">156</p>
+					<p name="clipprj.depth">55.600</p>
+					<p name="clipprj.height">35.500</p>
+					<p name="clipprj.id">139</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">9.500</p>
+					<p name="p8.dbObjId">17/11931</p>
+					</pl>
+					<rl>
+					<r name="clipprj.accessory" index="0" rid="15"/>
+					</rl>
+					</o>
+					<o name="1" type="clipprj.terminal" id="146">
+					<pl>
+					<p name="clipprj.ECADdescription">1;1;1;1;1;1</p>
+					<p name="clipprj.articleNumber">3209510</p>
+					<p name="clipprj.comment">Sirene
+EIN</p>
+					<p name="clipprj.connectionId">158</p>
+					<p name="clipprj.connectionPoints">2</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">48.600</p>
+					<p name="clipprj.description">O1;002,60;002,20;1;R;02.2;1;00;M1;002,60;019,20;1;R;02.2;1;00;U1;002,60;046,50;1;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.500</p>
+					<p name="clipprj.id">140</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">==100910=119010++CAB+100MCC01-X10.3:1:;;;;==100910=119010++CAB+100MCC01-X10.3:1:;;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/11931</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="2" type="clipprj.terminal" id="147">
+					<pl>
+					<p name="clipprj.ECADdescription">1;2;1;2;1;2</p>
+					<p name="clipprj.articleNumber">3209510</p>
+					<p name="clipprj.comment">Sirene
+EIN</p>
+					<p name="clipprj.connectionId">159</p>
+					<p name="clipprj.connectionPoints">2</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">48.600</p>
+					<p name="clipprj.description">O1;002,60;002,20;2;R;02.2;1;00;M1;002,60;019,20;2;R;02.2;1;00;U1;002,60;046,50;2;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.500</p>
+					<p name="clipprj.id">141</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">==100910=119010++CAB+100MCC01-X10.3:2:;;;;==100910=119010++CAB+100MCC01-X10.3:2:;;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/11937</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="3" type="clipprj.terminal" id="148">
+					<pl>
+					<p name="clipprj.ECADdescription">1;3;1;3;1;3</p>
+					<p name="clipprj.articleNumber">3209510</p>
+					<p name="clipprj.comment">Sirene
+Störung</p>
+					<p name="clipprj.connectionId">160</p>
+					<p name="clipprj.connectionPoints">2</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">48.600</p>
+					<p name="clipprj.description">O1;002,60;002,20;3;R;02.2;1;00;M1;002,60;019,20;3;R;02.2;1;00;U1;002,60;046,50;3;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.500</p>
+					<p name="clipprj.id">142</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.reqConnectionPoints">2</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">==100910=119010++CAB+100MCC01-X10.3:3:;;;;==100910=119010++CAB+100MCC01-X10.3:3:;;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/11939</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="4" type="clipprj.terminal" id="149">
+					<pl>
+					<p name="clipprj.ECADdescription">1;4;1;4;1;4</p>
+					<p name="clipprj.articleNumber">3209510</p>
+					<p name="clipprj.comment">Sirene
+Störung</p>
+					<p name="clipprj.connectionId">161</p>
+					<p name="clipprj.connectionPoints">2</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">48.600</p>
+					<p name="clipprj.description">O1;002,60;002,20;4;R;02.2;1;00;M1;002,60;019,20;4;R;02.2;1;00;U1;002,60;046,50;4;R;02.2;1;00</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.500</p>
+					<p name="clipprj.id">143</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">Other</p>
+					<p name="clipprj.reqConnectionPoints">1</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">;;;;==100910=119010++CAB+100MCC01-X10.3:4:;;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/15545</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="PE5" type="clipprj.terminal" id="150">
+					<pl>
+					<p name="clipprj.ECADdescription">1;PE5;1;PE5;1;PE5</p>
+					<p name="clipprj.articleNumber">3209536</p>
+					<p name="clipprj.comment">Sirene
+Störung</p>
+					<p name="clipprj.connectionId">162</p>
+					<p name="clipprj.connectionPoints">2</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">48.500</p>
+					<p name="clipprj.description">O1;002,60;002,20;PE5;R;02.2;1;00;M1;002,60;019,20;PE5;R;02.2;1;00;U1;002,60;046,50;PE5;R;02.2;1;00</p>
+					<p name="clipprj.extrasArtnums">3030417;3022218</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.500</p>
+					<p name="clipprj.id">144</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">PE</p>
+					<p name="clipprj.reqConnectionPoints">1</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">;;;;==100910=119010++CAB+100MCC01-X10.3:PE5:;;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/11938</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="-X10.3" type="clipprj.endCover" id="151">
+					<pl>
+					<p name="clipprj.articleNumber">3030417</p>
+					<p name="clipprj.comment">Sirene
+Störung</p>
+					<p name="clipprj.connectionId">163</p>
+					<p name="clipprj.depth">48.600</p>
+					<p name="clipprj.height">0.000</p>
+					<p name="clipprj.id">145</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">2.200</p>
+					<p name="p8.dbObjId">17/11938</p>
+					</pl>
+					</o>
+					<o name="-X10.3" type="clipprj.endBracket" id="152">
+					<pl>
+					<p name="clipprj.articleNumber">3022218</p>
+					<p name="clipprj.comment">Sirene
+Störung</p>
+					<p name="clipprj.connectionId">164</p>
+					<p name="clipprj.depth">55.600</p>
+					<p name="clipprj.height">35.500</p>
+					<p name="clipprj.id">146</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">9.500</p>
+					<p name="p8.dbObjId">17/11938</p>
+					</pl>
+					</o>
+					<o name="" type="clipprj.blockingSurface" id="153">
+					<pl>
+					<p name="clipprj.articleNumber"></p>
+					<p name="clipprj.connectionId">165</p>
+					<p name="clipprj.id">147</p>
+					<p name="clipprj.isClipProjectDevice">1</p>
+					<p name="clipprj.width">16.000</p>
+					</pl>
+					</o>
+					<o name="-U2-XPE1" type="clipprj.endBracket" id="154">
+					<pl>
+					<p name="clipprj.articleNumber">3022218</p>
+					<p name="clipprj.connectionId">166</p>
+					<p name="clipprj.depth">55.600</p>
+					<p name="clipprj.height">35.500</p>
+					<p name="clipprj.id">148</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">9.500</p>
+					<p name="p8.dbObjId">17/20289</p>
+					</pl>
+					<rl>
+					<r name="clipprj.accessory" index="0" rid="16"/>
+					</rl>
+					</o>
+					<o name="PE" type="clipprj.terminal" id="155">
+					<pl>
+					<p name="clipprj.ECADdescription">1;PE;1;PE;1;PE</p>
+					<p name="clipprj.articleNumber">3209536</p>
+					<p name="clipprj.connectionId">168</p>
+					<p name="clipprj.connectionPoints">2</p>
+					<p name="clipprj.crossSection">0.000</p>
+					<p name="clipprj.depth">48.500</p>
+					<p name="clipprj.description">O1;002,60;002,20;PE;R;02.2;1;00;M1;002,60;019,20;PE;R;02.2;1;00;U1;002,60;046,50;PE;R;02.2;1;00</p>
+					<p name="clipprj.extrasArtnums">3030417;3022218</p>
+					<p name="clipprj.hasLED">0</p>
+					<p name="clipprj.hasSaddleJumper">1</p>
+					<p name="clipprj.height">36.500</p>
+					<p name="clipprj.id">149</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.level">0</p>
+					<p name="clipprj.maxWireSection">4.000</p>
+					<p name="clipprj.potentialType">PE</p>
+					<p name="clipprj.reqConnectionPoints">1</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.targets">==100910=MLA10++CAB+100MCC01-U2-XPE1:PE:;;;;;;;;</p>
+					<p name="clipprj.terminalFunction">0</p>
+					<p name="clipprj.width">5.200</p>
+					<p name="p8.dbObjId">17/20289</p>
+					<p name="p8.isMainTerminal">1</p>
+					</pl>
+					</o>
+					<o name="-U2-XPE1" type="clipprj.endCover" id="156">
+					<pl>
+					<p name="clipprj.articleNumber">3030417</p>
+					<p name="clipprj.connectionId">169</p>
+					<p name="clipprj.depth">48.600</p>
+					<p name="clipprj.height">0.000</p>
+					<p name="clipprj.id">150</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">2.200</p>
+					<p name="p8.dbObjId">17/20289</p>
+					</pl>
+					</o>
+					<o name="-U2-XPE1" type="clipprj.endBracket" id="157">
+					<pl>
+					<p name="clipprj.articleNumber">3022218</p>
+					<p name="clipprj.connectionId">170</p>
+					<p name="clipprj.depth">55.600</p>
+					<p name="clipprj.height">35.500</p>
+					<p name="clipprj.id">151</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="clipprj.rotated">0</p>
+					<p name="clipprj.width">9.500</p>
+					<p name="p8.dbObjId">17/20289</p>
+					</pl>
+					</o>
+					<o name="" type="clipprj.mountingSpacingRight" id="158">
+					<pl>
+					<p name="clipprj.articleNumber"></p>
+					<p name="clipprj.connectionId">171</p>
+					<p name="clipprj.id">152</p>
+					<p name="clipprj.isClipProjectDevice">1</p>
+					<p name="clipprj.width">3.35</p>
+					</pl>
+					</o>
+					</ol>
+					</o>
+					<o name="KLM 3" type="clipprj.accessory" id="159">
+					<pl>
+					<p name="clipprj.ECADdescription">0;==100910=MLA10++CAB+100MCC01-XCV1.1</p>
+					<p name="clipprj.articleNumber">0811969</p>
+					<p name="clipprj.connectionId">4</p>
+					<p name="clipprj.connectionpoints">3</p>
+					<p name="clipprj.coordinates">0.50;27.80</p>
+					<p name="clipprj.description">X0;000000;000000;==100910=MLA10++CAB+100MCC01-XCV1.1;U;02.2;1;00</p>
+					<p name="clipprj.id">159</p>
+					<p name="clipprj.isClipProjectDevice">1</p>
+					</pl>
+					</o>
+					<o name="KLM 3" type="clipprj.accessory" id="160">
+					<pl>
+					<p name="clipprj.ECADdescription">0;==100910=MLA10++CAB+100MCC01-X8.5</p>
+					<p name="clipprj.articleNumber">0811969</p>
+					<p name="clipprj.connectionId">19</p>
+					<p name="clipprj.connectionpoints">18</p>
+					<p name="clipprj.coordinates">0.50;27.80</p>
+					<p name="clipprj.description">X0;000000;000000;==100910=MLA10++CAB+100MCC01-X8.5;U;02.2;1;00</p>
+					<p name="clipprj.id">160</p>
+					<p name="clipprj.isClipProjectDevice">1</p>
+					</pl>
+					</o>
+					<o name="FBS  5-5" type="clipprj.bridge" id="161">
+					<pl>
+					<p name="clipprj.articleNumber">3030190</p>
+					<p name="clipprj.connectionId">21</p>
+					<p name="clipprj.connectionpoints">20;22;23;24;25</p>
+					<p name="clipprj.coordinates">2.60;38.70;2.60;38.70;2.60;38.70;2.60;38.70;2.60;38.70</p>
+					<p name="clipprj.id">157</p>
+					<p name="clipprj.insertionLevel">M1</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="p8.bridgeType">7</p>
+					</pl>
+					</o>
+					<o name="FBS  5-5" type="clipprj.bridge" id="162">
+					<pl>
+					<p name="clipprj.articleNumber">3030190</p>
+					<p name="clipprj.connectionId">28</p>
+					<p name="clipprj.connectionpoints">27;29;30;31;32</p>
+					<p name="clipprj.coordinates">2.60;38.70;2.60;38.70;2.60;38.70;2.60;38.70;2.60;38.70</p>
+					<p name="clipprj.id">158</p>
+					<p name="clipprj.insertionLevel">M1</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="p8.bridgeType">7</p>
+					</pl>
+					</o>
+					<o name="KLM 3" type="clipprj.accessory" id="163">
+					<pl>
+					<p name="clipprj.ECADdescription">0;==100910=MLA10++CAB+100MCC01-X11</p>
+					<p name="clipprj.articleNumber">0811969</p>
+					<p name="clipprj.connectionId">38</p>
+					<p name="clipprj.connectionpoints">37</p>
+					<p name="clipprj.coordinates">0.50;27.80</p>
+					<p name="clipprj.description">X0;000000;000000;==100910=MLA10++CAB+100MCC01-X11;U;02.2;1;00</p>
+					<p name="clipprj.id">161</p>
+					<p name="clipprj.isClipProjectDevice">1</p>
+					</pl>
+					</o>
+					<o name="FBS  2-5" type="clipprj.bridge" id="164">
+					<pl>
+					<p name="clipprj.articleNumber">3030161</p>
+					<p name="clipprj.connectionId">40</p>
+					<p name="clipprj.connectionpoints">39;41</p>
+					<p name="clipprj.coordinates">2.60;12.00;2.60;12.00</p>
+					<p name="clipprj.id">153</p>
+					<p name="clipprj.insertionLevel">O1</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="p8.bridgeType">7</p>
+					</pl>
+					</o>
+					<o name="KLM 3" type="clipprj.accessory" id="165">
+					<pl>
+					<p name="clipprj.ECADdescription">0;==100910=MLA10++CAB+100MCC01-X8</p>
+					<p name="clipprj.articleNumber">0811969</p>
+					<p name="clipprj.connectionId">87</p>
+					<p name="clipprj.connectionpoints">86</p>
+					<p name="clipprj.coordinates">0.50;27.80</p>
+					<p name="clipprj.description">X0;000000;000000;==100910=MLA10++CAB+100MCC01-X8;U;02.2;1;00</p>
+					<p name="clipprj.id">162</p>
+					<p name="clipprj.isClipProjectDevice">1</p>
+					</pl>
+					</o>
+					<o name="KLM 3" type="clipprj.accessory" id="166">
+					<pl>
+					<p name="clipprj.ECADdescription">0;==100910=MLA10++CAB+100MCC01-X10</p>
+					<p name="clipprj.articleNumber">0811969</p>
+					<p name="clipprj.connectionId">97</p>
+					<p name="clipprj.connectionpoints">96</p>
+					<p name="clipprj.coordinates">0.50;27.80</p>
+					<p name="clipprj.description">X0;000000;000000;==100910=MLA10++CAB+100MCC01-X10;U;02.2;1;00</p>
+					<p name="clipprj.id">163</p>
+					<p name="clipprj.isClipProjectDevice">1</p>
+					</pl>
+					</o>
+					<o name="KLM 3" type="clipprj.accessory" id="167">
+					<pl>
+					<p name="clipprj.ECADdescription">0;==100910=MLA10++CAB+100MCC01-X10.3</p>
+					<p name="clipprj.articleNumber">0811969</p>
+					<p name="clipprj.connectionId">112</p>
+					<p name="clipprj.connectionpoints">111</p>
+					<p name="clipprj.coordinates">0.50;27.80</p>
+					<p name="clipprj.description">X0;000000;000000;==100910=MLA10++CAB+100MCC01-X10.3;U;02.2;1;00</p>
+					<p name="clipprj.id">164</p>
+					<p name="clipprj.isClipProjectDevice">1</p>
+					</pl>
+					</o>
+					<o name="EPLAN-Brücke" type="clipprj.bridge" id="168">
+					<pl>
+					<p name="clipprj.connectionId">122</p>
+					<p name="clipprj.connectionpoints">121;126;127</p>
+					<p name="clipprj.id">155</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="p8.bridgeType">7</p>
+					</pl>
+					</o>
+					<o name="KLM 3" type="clipprj.accessory" id="169">
+					<pl>
+					<p name="clipprj.ECADdescription">0;==100910=MLA10++CAB+100MCC01-X8.1</p>
+					<p name="clipprj.articleNumber">0811969</p>
+					<p name="clipprj.connectionId">123</p>
+					<p name="clipprj.connectionpoints">121</p>
+					<p name="clipprj.coordinates">0.50;27.80</p>
+					<p name="clipprj.description">X0;000000;000000;==100910=MLA10++CAB+100MCC01-X8.1;U;02.2;1;00</p>
+					<p name="clipprj.id">165</p>
+					<p name="clipprj.isClipProjectDevice">1</p>
+					</pl>
+					</o>
+					<o name="FBS  3-5" type="clipprj.bridge" id="170">
+					<pl>
+					<p name="clipprj.articleNumber">3030174</p>
+					<p name="clipprj.connectionId">125</p>
+					<p name="clipprj.connectionpoints">124;126;127</p>
+					<p name="clipprj.coordinates">2.60;16.40;2.60;16.40;2.60;16.40</p>
+					<p name="clipprj.id">154</p>
+					<p name="clipprj.insertionLevel">O1</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="p8.bridgeType">7</p>
+					</pl>
+					</o>
+					<o name="FBS  4-5" type="clipprj.bridge" id="171">
+					<pl>
+					<p name="clipprj.articleNumber">3030187</p>
+					<p name="clipprj.connectionId">130</p>
+					<p name="clipprj.connectionpoints">129;131;132;133</p>
+					<p name="clipprj.coordinates">2.60;26.80;2.60;26.80;2.60;26.80;2.60;26.80</p>
+					<p name="clipprj.id">156</p>
+					<p name="clipprj.insertionLevel">M1</p>
+					<p name="clipprj.isClipProjectDevice">0</p>
+					<p name="p8.bridgeType">7</p>
+					</pl>
+					</o>
+					<o name="KLM 3" type="clipprj.accessory" id="172">
+					<pl>
+					<p name="clipprj.ECADdescription">0;==100910=MLA10++CAB+100MCC01-X67</p>
+					<p name="clipprj.articleNumber">0811969</p>
+					<p name="clipprj.connectionId">138</p>
+					<p name="clipprj.connectionpoints">137</p>
+					<p name="clipprj.coordinates">0.50;27.80</p>
+					<p name="clipprj.description">X0;000000;000000;==100910=MLA10++CAB+100MCC01-X67;U;02.2;1;00</p>
+					<p name="clipprj.id">166</p>
+					<p name="clipprj.isClipProjectDevice">1</p>
+					</pl>
+					</o>
+					<o name="KLM 3" type="clipprj.accessory" id="173">
+					<pl>
+					<p name="clipprj.ECADdescription">0;==100910=MLA10++CAB+100MCC01-X14</p>
+					<p name="clipprj.articleNumber">0811969</p>
+					<p name="clipprj.connectionId">150</p>
+					<p name="clipprj.connectionpoints">149</p>
+					<p name="clipprj.coordinates">0.50;27.80</p>
+					<p name="clipprj.description">X0;000000;000000;==100910=MLA10++CAB+100MCC01-X14;U;02.2;1;00</p>
+					<p name="clipprj.id">167</p>
+					<p name="clipprj.isClipProjectDevice">1</p>
+					</pl>
+					</o>
+					<o name="KLM 3" type="clipprj.accessory" id="174">
+					<pl>
+					<p name="clipprj.ECADdescription">0;==100910=MLA10++CAB+100MCC01-X10.3</p>
+					<p name="clipprj.articleNumber">0811969</p>
+					<p name="clipprj.connectionId">157</p>
+					<p name="clipprj.connectionpoints">156</p>
+					<p name="clipprj.coordinates">0.50;27.80</p>
+					<p name="clipprj.description">X0;000000;000000;==100910=MLA10++CAB+100MCC01-X10.3;U;02.2;1;00</p>
+					<p name="clipprj.id">168</p>
+					<p name="clipprj.isClipProjectDevice">1</p>
+					</pl>
+					</o>
+					<o name="KLM 3" type="clipprj.accessory" id="175">
+					<pl>
+					<p name="clipprj.ECADdescription">0;==100910=MLA10++CAB+100MCC01-U2-XPE1</p>
+					<p name="clipprj.articleNumber">0811969</p>
+					<p name="clipprj.connectionId">167</p>
+					<p name="clipprj.connectionpoints">166</p>
+					<p name="clipprj.coordinates">0.50;27.80</p>
+					<p name="clipprj.description">X0;000000;000000;==100910=MLA10++CAB+100MCC01-U2-XPE1;U;02.2;1;00</p>
+					<p name="clipprj.id">169</p>
+					<p name="clipprj.isClipProjectDevice">1</p>
+					</pl>
+					</o>
+				</ol>
+				</o>
+			</ol>
+			</o>
+		</ol>
+		</o>
+	</ol>
+	</o>
+</ol>
+</o>
+<refs>
+<ref id="0" oid="159"/>
+<ref id="1" oid="160"/>
+<ref id="2" oid="161"/>
+<ref id="3" oid="162"/>
+<ref id="4" oid="163"/>
+<ref id="5" oid="164"/>
+<ref id="6" oid="165"/>
+<ref id="7" oid="166"/>
+<ref id="8" oid="167"/>
+<ref id="9" oid="168"/>
+<ref id="10" oid="169"/>
+<ref id="11" oid="170"/>
+<ref id="12" oid="171"/>
+<ref id="13" oid="172"/>
+<ref id="14" oid="173"/>
+<ref id="15" oid="174"/>
+<ref id="16" oid="175"/>
+</refs>
+</pbf>

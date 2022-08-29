@@ -66,25 +66,109 @@ my %xml_references;
     my @references = $root->descendants('ref');
     $logger->debug(scalar(@references)." Reference entries found");
 
+    # For a fast iteration over all objects, we keep them in an array
+     my @all_objects = $root->descendants('o');
+
     # First we build a reverse ordered structure to be able to find the
     # matching item fast
-    my %reverse_references;
-    foreach my $reference (@references) {
-        $xml_references{$reference->att('id')} = $reference->att('oid');
-        my $refid = $reference->att('id');
-        $reverse_references{$reference->att('oid')} = $refid;
-        $logger->debug("[$refid]->[$xml_references{$refid}] Reference entry found");
-    }
+    {
+        my %forward_references;
+        foreach my $reference (@references) {
+            my $object_id = $reference->att('oid');
+            my $reference_id = $reference->att('id');
+            $forward_references{$reference_id} = $object_id;
+            $logger->debug("[$reference_id]->[$object_id] Reference entry found");
+        }
 
-    # Let's load all the objects and build the resulting reference tree
-    my @all_objects = $root->descendants('o');
-    foreach my $object (@all_objects) {
-        my $object_id = $object->att('id');
-        if(defined($reverse_references{$object_id})) {
-            $xml_references{$reverse_references{$object_id}} = $object;
+        # Let's load all the objects and build the resulting reference tree
+        my %reverse_references = reverse %forward_references;
+        foreach my $object (@all_objects) {
+            my $object_id = $object->att('id');
+            my $reference_id = $reverse_references{$object_id};
+            if(defined($reference_id)) {
+                my $target_type = $object->att('type');
+                $logger->debug("Reference [$reference_id]->TARGET:[$object_id]-[$target_type] updated");
+                $xml_references{$reference_id}{'target'} = \$object;
+            }
+        }
+
+        # Now inspecting the objects to identify the source objects
+        $logger->debug("Inspecting the reference source structure");
+        foreach my $object (@all_objects) {
+            if( my %references = &get_references($object)) {
+                my $object_id = $object->att('id');
+                foreach my $reference_id (keys(%references)) {
+                    my $source_type = $object->att('type');
+                    $logger->debug("Reference [$reference_id]->SOURCE:[$object_id]-[$source_type] updated");
+                    $xml_references{$reference_id}{'source'} = \$object;
+                }
+            }
         }
     }
     $logger->debug(scalar(keys(%xml_references))." Reference entries added to matching table");
+
+    # Now iterating over all references and cleaning the EN81346 information
+    foreach my $reference_id (keys(%xml_references)) {
+        my $target_object = ${$xml_references{$reference_id}{'target'}};
+        my $target_type = $target_object->att('type');
+
+        if($target_type eq 'clipprj.accessory') {
+            my %target_parameter = &get_parameters($target_object);
+            my $target_en81346_id = ( split /;/, $target_parameter{'clipprj.description'} )[3];
+
+            $logger->debug("Inspecting reference [$reference_id] with ECAD reference [$target_en81346_id]");
+
+            # We need to iterate over the siblings of the source until we find a valid description
+            # and the type is terminal. Sometimes there is no clipprj.targets specification in the
+            # whole terminal block. In this case nothing will be changed
+            my $source_object = ${$xml_references{$reference_id}{'source'}};
+            my $source_en81346_id;
+            my $lookup_object = $source_object;
+            my $lookup_type = "clipprj.terminal";
+            while( ($lookup_type eq "clipprj.terminal") &! $source_en81346_id ) {
+                my %source_parameter = &get_parameters($lookup_object);
+                $source_en81346_id = $source_parameter{'clipprj.targets'};
+
+                # Setting the lookup_object to the next sibling for the next loop
+                $lookup_object = $lookup_object->next_sibling('o');
+                $lookup_type = $lookup_object->att('type');
+            }
+
+            # Compacting the source id
+            {
+                # Splitting the input string at either colon or semicolon and then filtering
+                # only valid reference ids. In the regular expression for the filter, the minus
+                # has been explicitly put to the end of the match to avoid a positive match, if
+                # the terminal name contains any plus signs.
+                my @ids = grep(/[+=]+[0-9a-zA-Z.]+-+[0-9a-zA-Z.]+/, split(/[:;]/, $source_en81346_id));
+                my %unique_ids; foreach (@ids) { $unique_ids{$_}++; }
+                my $unique_id_count = scalar(keys(%unique_ids));
+                if($unique_id_count == 1) {
+                    $source_en81346_id = (keys(%unique_ids))[0];
+                    if( $source_en81346_id ne $target_en81346_id ) {
+                        $logger->info(sprintf("Reference [%3d] source [%s] => target [%s]",
+                            $reference_id,
+                            $source_en81346_id,
+                            $target_en81346_id
+                        ));
+                        my @target_string_elements = split /;/, $target_parameter{'clipprj.description'};
+                        $target_string_elements[3] = $source_en81346_id;
+                        # TODO: Writing the result into the target parameters
+                        &add_parameter($target_object, 'clipprj.description', join(';', @target_string_elements));
+                    } else {
+                        $logger->info(sprintf("Reference [%3d] source and target are the same",
+                            $reference_id
+                        ));
+                    }
+                } else {
+                    $logger->warn(sprintf("Reference [%3d] ID is not unique! [%s] Different IDs detected",
+                        $reference_id,
+                        $unique_id_count
+                    ));
+                }
+            }
+        }
+    }
 }
 
 # There should only be one project inside an export file per definition,
