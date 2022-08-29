@@ -267,6 +267,7 @@ sub get_references($;) {
 sub add_parameter($$$;) {
     my XML::Twig::Elt $parent = shift();
     my($key, $value) = @_;
+    my $parent_id = $parent->att('id');
 
     if( my $parameter_list = $parent->first_child('pl') ) {
         my @parameter_array = $parameter_list->children('p');
@@ -283,7 +284,7 @@ sub add_parameter($$$;) {
         # Generating a new XML parameter element and adding this to the ECAD XML file
         my $elt= XML::Twig::Elt->new( 'p' => { 'name' => $key }, $value);
         $elt->paste( last_child => $parameter_list);
-        $logger->debug("Parameter [$key]->[$value] added");
+        $logger->info("Parameter [$key]->[$value] to object [$parent_id] added");
     }
 }
 
@@ -333,15 +334,14 @@ sub parse_substructure($;$) {
                 }
             }
 
-            # Shorten the location id if configured and the 'targets# parameter is available for
-            # this object
-            if( $opt_compact_identifier == 1 && defined($parameters{'clipprj.ECADdescription'}) ) {
+            # Shorten the location ID based on the clipprj.description
+            if( $opt_compact_identifier == 1 && defined($parameters{'clipprj.description'}) ) {
                 # Backing up the original parameters
-                &add_parameter($object, 'alx.ECADdescription.original', $parameters{'clipprj.ECADdescription'});
+                &add_parameter($object, 'alx.description.original', $parameters{'clipprj.description'});
                 &add_parameter($object, 'alx.EN81346.base', $active_location_id);
                 # The minus 1 parameter is used to preserve trailing empty elements
-                if( my @targets = split(/;/, $parameters{'clipprj.ECADdescription'}, -1) ) {
-                    $logger->debug("Compacting reference ids based on [$active_location_id]");
+                if( my @targets = split(/;/, $parameters{'clipprj.description'}, -1) ) {
+                    $logger->debug("Compacting reference IDs based on [$active_location_id]");
                     for my $i (0 .. $#targets) {
                         # Skipping, if target is not defined or not a valid identifier
                         next unless( defined($targets[$i]) && ALX::EN81346::is_valid($targets[$i]) );
@@ -353,7 +353,7 @@ sub parse_substructure($;$) {
                         $targets[$i] = $compacted_string;
                     }
                     # Writing the change parameter to the parameters list
-                    &add_parameter($object, 'clipprj.ECADdescription', join(';', @targets));
+                    &add_parameter($object, 'clipprj.description', join(';', @targets));
                 }
             }
 
