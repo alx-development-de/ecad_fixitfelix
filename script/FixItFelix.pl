@@ -19,9 +19,39 @@ use Log::Log4perl;
 use Log::Log4perl::Level;
 use Log::Log4perl::Logger;
 
-use Data::Dumper;
+use Getopt::Long;
 
-Log::Log4perl->init("conf/log.ini");
+use Data::Dumper; # TODO: Remove debug stuff
+
+# Processing the command line options
+GetOptions(
+    'loglevel=s'         => \(my $log_level = 'INFO'),
+    'compact_terminals'  => \(my $opt_compact_terminals = 0), # Removing end brackets, inside continuous terminal strips
+    'compact_identifier' =>  \(my $opt_compact_identifier = 0), # Compacting the identifier according the EN81346 rules
+) or die "Invalid options passed to $0\n";
+
+# Internally used state flags for process control
+my %global_state_flags = (
+                'space_active' => undef,
+                'last_bracket' => undef,
+            );
+
+# The configuration data hash is not primarily used to store a real configuration, it
+# contains format specific adaptions necessary to interpret the ECAD-XML the correct
+# way
+my %configuration_data = ("parameters" => {
+        "p8.locationId" => {
+            "alx.location.prefix" => {
+            "1100;" => "=",
+            "1200;" => "+",
+            "1400;" => "++",
+            "1300;" => "=="
+            }
+        }
+    });
+
+# Initializing the logging mechanism
+Log::Log4perl->easy_init( Log::Log4perl::Level::to_priority( uc($log_level) ) );
 my $logger = Log::Log4perl->get_logger();
 
 # The source file must be passed as command line parameter
@@ -35,21 +65,6 @@ my $opt_target_file = undef;
     my ($name,$path,$suffix) = fileparse($opt_source_file,('.xml'));
     $opt_target_file = File::Spec->catfile($path, "${name}_fixed${suffix}");
 }
-
-my $opt_configuration_file = 'conf/alx-ecad.conf';
-my $opt_compact_terminals = 0; # Removing end brackets, inside continuous terminal strips
-my $opt_compact_identifier = 1; # Compacting the identifier according the EN81346 rules
-# Internally used state flags for process control
-my %global_state_flags = (
-                'space_active' => undef,
-                'last_bracket' => undef,
-            );
-
-# Reading the configuration data from a JSON structured file.
-# TODO: Proof, if using AppConfig module is more useful for this
-open(FH, '<'.$opt_configuration_file) or die "Configuration [$opt_configuration_file] not readable or not existing!\n";
-my $data = join('', <FH>); close(FH); # Reading the complete file into a string
-my %configuration_data = %{decode_json( $data )};
 
 # Parsing the XML source
 $logger->info("Parsing source file [$opt_source_file]");
