@@ -155,7 +155,8 @@ my %xml_references;
                 # only valid reference ids. In the regular expression for the filter, the minus
                 # has been explicitly put to the end of the match to avoid a positive match, if
                 # the terminal name contains any plus signs.
-                my @ids = grep(/[+=]+[0-9a-zA-Z.]+-+[0-9a-zA-Z.]+/, split(/[:;]/, $source_en81346_id));
+                # TODO: The regular expression should be handled by the EN81346 lib instead of this code
+                my @ids = grep(/[+=]+[0-9a-zA-Z._]+-+[0-9a-zA-Z._]+/, split(/[:;]/, $source_en81346_id));
                 my %unique_ids; foreach (@ids) { $unique_ids{$_}++; }
                 my $unique_id_count = scalar(keys(%unique_ids));
                 if($unique_id_count == 1) {
