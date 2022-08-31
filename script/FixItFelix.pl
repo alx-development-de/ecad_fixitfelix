@@ -3,9 +3,7 @@ use strict;
 use warnings FATAL => 'all';
 
 use XML::Parser;
-use XML::Encoding;
-use XML::Entities;
-use XML::LibXML;
+use XML::Parser::Expat;
 use XML::Twig;
 
 use File::Spec;
@@ -127,6 +125,7 @@ my %xml_references;
         my $target_object = ${$xml_references{$reference_id}{'target'}};
         my $target_type = $target_object->att('type');
 
+        # TODO: Handling empty 'clipprj.description' fields
         if($target_type eq 'clipprj.accessory') {
             my %target_parameter = &get_parameters($target_object);
             my $target_en81346_id = ( split /;/, $target_parameter{'clipprj.description'} )[3];
@@ -150,7 +149,8 @@ my %xml_references;
             }
 
             # Compacting the source id
-            {
+            # In several cases no source could be found. In this case this part is ignored
+            if(defined $source_en81346_id){
                 # Splitting the input string at either colon or semicolon and then filtering
                 # only valid reference ids. In the regular expression for the filter, the minus
                 # has been explicitly put to the end of the match to avoid a positive match, if
@@ -393,16 +393,9 @@ sub parse_substructure($;$) {
     }
 }
 
-# my $input_string = "==200=A1.23=100==ABC+200-300";
-# $logger->info("Segmenting string value: [$input_string]");
-# my $identifier = ALX::EN81346::segments($input_string);
-# my $id_string = ALX::EN81346::to_string($identifier);
-# $logger->info("Resulting string value: [$id_string]");
-
 =head1 Fix-It-Felix
 
-	Control application for downloading, history management and cleaning
-	the 7up output structure from a 7up server system
+	Application which fixes the EN81346 handling in ECAD-XML data sets.
 
 =head2 SYNOPSIS
 
@@ -410,9 +403,9 @@ sub parse_substructure($;$) {
 
 Options:
 
-	-help		brief help message
-	-man		full documentation
-	-input=<file>	The input file which should be fixed
+	-help		        brief help message
+	-compact_terminals  Removing end brackets, inside continuous terminal strips
+    -compact_identifier Compacting the identifier according the EN81346 rules
 
 =head2 OPTIONS
 
@@ -422,31 +415,34 @@ Options:
 
 	Print a brief help message and exits.
 
-=item B<-man>
+=item B<-compact_terminals>
 
-	Prints the manual page and exits.
+	Often end brackets are added by default while exporting the data in the ECAD XML
+	format after each terminal strip (identified by the BMK). Activating this option
+	these end brackets are removed if there is no space between the bracket an the
+	next terminal strip. This is very useful to build a compact mounting rail containing
+	several terminal strips.
 
-=item B<-input>
+=item B<-compact_identifier>
 
-	With this option it is possible to define the input file, which
-	is used as source to be parsed and fixed
-
-=item B<-output>
-
-	An optional file name and path for the resulting archive
-	file. If not specified the archive will be stored with the
-	name of the documentation folder right beside the it.
+	The reference identifier is put on the labels fully qualified. If this option is
+	activated the reference identifier is compacted according the rules of EN81346 in
+	combination with the mounting rail on which the terminal strip is mounted.
 
 =back
 
 =head1 DESCRIPTION
 
-	This program is connecting to the 7up server specified in the 7up.ini
-	configuration and reading the archive structure and history.
+	This program fixes the EN81346 handling in ECAD-XML data sets which
+	are primarily used to handle terminal strips in worker assistance systems
+	from PHOENIX Contact.
 
-	You may store the structure as YAML encoded file for further processings
-	to the local filesystem, or directly pull actual archives from the server.
+	While exporting terminal strips from an ECAD system like ePlan for example
+	the terminal reference identifier is falsely changed to the identifier of
+	the mounting rail. If the location of the terminal differs to that of the
+	rail it is not used correctly.
 
-	Beside it is possible to clean up the server and remove old version of archives.
+	The program fixes the reference identifier and is able to do some more stuff
+	with the data like compacting the identifier on labels according the EN81346.
 
 =cut
