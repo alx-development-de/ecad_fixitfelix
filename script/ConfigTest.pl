@@ -14,6 +14,9 @@ use Config::General qw(ParseConfig SaveConfig SaveConfigString);
 
 use Data::Dumper; # TODO: Remove debug stuff
 
+# Reading the default configuration from the __DATA__ section
+# of this script
+my $default_config = do { local $/; <main::DATA> };
 # Loading the file based configuration
 my %options = ParseConfig(
     -ConfigFile => basename($0, qw(.pl .exe .bin)).'.cfg',
@@ -21,16 +24,7 @@ my %options = ParseConfig(
     -AutoTrue   => 1,
     -MergeDuplicateBlocks => 1,
     -MergeDuplicateOptions => 1,
-    -DefaultConfig => '
-        <log>
-            level=INFO
-        </log>
-
-        <files>
-            wiring = "./data/wiring.txt"
-            devices = "./data/devices.txt"
-        </files>
-    ',
+    -DefaultConfig => $default_config,
 );
 
 # Processing the command line options
@@ -55,3 +49,13 @@ $logger->debug("Device input file [$options{'files'}{'devices'}]");
 $logger->debug("Output file [$options{'files'}{'output'}]");
 
 print Dumper \%options;
+
+__DATA__
+<log>
+    level=INFO
+</log>
+
+<files>
+    wiring = "./data/wiring.txt"
+    devices = "./data/devices.txt"
+</files>
