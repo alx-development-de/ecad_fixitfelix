@@ -10,7 +10,7 @@ use Log::Log4perl::Level;
 use Log::Log4perl::Logger;
 
 use Getopt::Long;
-use Config::General qw(ParseConfig SaveConfig SaveConfigString);
+use Config::General qw(ParseConfig);
 
 use Data::Dumper; # TODO: Remove debug stuff
 
