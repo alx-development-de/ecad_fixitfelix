@@ -11,7 +11,7 @@
     <option name="nonInteractiveModeEnabled" value="false" />
     <option name="passParentEnvs" value="true" />
     <option name="perlParameters" value="" />
-    <option name="programParameters" value="--compact_identifier t/clipprj/003-Terminal-References.xml" />
+    <option name="programParameters" value="t/clipprj/003-Terminal-References.xml" />
     <option name="projectPathOnTarget" />
     <option name="scriptCharset" value="utf8" />
     <option name="scriptPath" value="$PROJECT_DIR$/script/FixItFelix.pl" />
