@@ -1,9 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="FixItFelix" type="#PerlConfigurationType" factoryName="Perl" show_console_on_std_err="false" show_console_on_std_out="false">
+  <configuration default="false" name="ConfigTest" type="#PerlConfigurationType" factoryName="Perl" show_console_on_std_err="false" show_console_on_std_out="false">
     <option name="allowRunningInParallel" value="false" />
     <option name="alternativeSdkName" />
     <option name="compileTimeBreakpointsEnabled" value="false" />
-    <option name="consoleCharset" value="UTF-8" />
+    <option name="consoleCharset" />
     <option name="envs">
       <map />
     </option>
@@ -11,10 +11,10 @@
     <option name="nonInteractiveModeEnabled" value="false" />
     <option name="passParentEnvs" value="true" />
     <option name="perlParameters" value="" />
-    <option name="programParameters" value="t/clipprj/003-Terminal-References.xml" />
+    <option name="programParameters" value="" />
     <option name="projectPathOnTarget" />
     <option name="scriptCharset" value="utf8" />
-    <option name="scriptPath" value="$PROJECT_DIR$/script/FixItFelix.pl" />
+    <option name="scriptPath" value="$PROJECT_DIR$/script/ConfigTest.pl" />
     <option name="selectedOptions">
       <list />
     </option>
