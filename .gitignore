@@ -3,8 +3,10 @@ untracked/
 
 ### Generated stuff ###
 t/clipprj/*_fixed.xml
-data/*_project.xls
-data/*_storage.xls
+data/*_project.xls*
+data/*_storage.xls*
+data/*_generated.xls*
+
 
 ### Intellij ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
@@ -48,3 +50,4 @@ MYMETA.*
 *.lol
 *.pdf
 *.synctex.gz
+
