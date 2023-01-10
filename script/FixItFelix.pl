@@ -11,7 +11,7 @@ use File::Basename;
 
 use JSON;
 
-use ALX::EN81346;
+use ECAD::EN81346;
 
 use Log::Log4perl;
 use Log::Log4perl::Level;
@@ -446,7 +446,7 @@ sub parse_substructure($;$) {
                     # parameter list
                     my $location_id = $parameters{'alx.location.prefix'} . $name;
 
-                    if (ALX::EN81346::is_valid($location_id)) {
+                    if (ECAD::EN81346::is_valid($location_id)) {
                         $logger->debug("Location id [$location_id] identified");
 
                         # The location must be concatenated with the already available
@@ -469,11 +469,11 @@ sub parse_substructure($;$) {
                     $logger->debug("Compacting reference IDs based on [$active_location_id]");
                     for my $i (0 .. $#targets) {
                         # Skipping, if target is not defined or not a valid identifier
-                        next unless (defined($targets[$i]) && ALX::EN81346::is_valid($targets[$i]));
+                        next unless (defined($targets[$i]) && ECAD::EN81346::is_valid($targets[$i]));
                         $logger->debug("Compacting reference id [" . $targets[$i] . "] to [$active_location_id]");
 
                         # Compacting the string on given base
-                        my $compacted_string = ALX::EN81346::base($active_location_id, $targets[$i]);
+                        my $compacted_string = ECAD::EN81346::base($active_location_id, $targets[$i]);
                         $logger->debug("Compacting reference results to [$compacted_string]");
                         $targets[$i] = $compacted_string;
                     }
