@@ -10,7 +10,7 @@
     <option name="initCode" value="" />
     <option name="nonInteractiveModeEnabled" value="false" />
     <option name="passParentEnvs" value="true" />
-    <option name="perlParameters" value="" />
+    <option name="perlParameters" value="-I../ecad_en81346/lib" />
     <option name="programParameters" value="t/clipprj/003-Terminal-References.xml" />
     <option name="projectPathOnTarget" />
     <option name="scriptCharset" value="utf8" />
