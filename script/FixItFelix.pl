@@ -23,6 +23,8 @@ use Pod::Usage;
 
 use Data::Dumper; # TODO: Remove debug stuff
 
+our $VERSION = "0.0.2";
+
 # Reading the default configuration from the __DATA__ section
 # of this script
 my $default_config = do {

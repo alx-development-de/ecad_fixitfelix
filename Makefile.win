@@ -1,0 +1,152 @@
+# This Makefile is for the FixItFelix application written in perl.
+
+OSNAME = MSWin32
+SHELL = C:\Windows\system32\cmd.exe
+
+# ---Perl local installation structure
+PERLDIST = C:/Strawberry
+PERLPREFIX = C:/Strawberry/perl
+SITEPREFIX = C:/Strawberry/perl/site
+VENDORPREFIX = C:/Strawberry/perl/vendor
+
+PERL_LIB = $(PERLPREFIX)/lib
+SITE_LIB = $(SITEPREFIX)/lib
+VENDOR_LIB = $(VENDORPREFIX)/lib
+
+PERL = "C:\Strawberry\perl\bin\perl.exe"
+
+# --- Application source section
+SCRIPTNAME = FixItFelix
+VERSION = 0.0.2
+
+# --- Where to build things (blib target)
+INST_SCRIPT = blib/script
+INST_BIN = blib/bin
+INST_LIB = blib/lib
+INST_DOC = blib/doc
+
+SRC_SCRIPT = script
+SRC_DOC = doc
+
+# --- External tools section
+TAR = tar
+TARFLAGS = cvf
+ZIP = zip
+ZIPFLAGS = -r
+COMPRESS = gzip --best
+SUFFIX = .gz
+SHAR = shar
+FIXIN = pl2bat.bat
+PP = pp -o
+
+# --- MExtUtils tools section
+CHMOD = $(PERL) -MExtUtils::Command -e chmod --
+CP = $(PERL) -MExtUtils::Command -e cp --
+MV = $(PERL) -MExtUtils::Command -e mv --
+RM_F = $(PERL) -MExtUtils::Command -e rm_f --
+RM_RF = $(PERL) -MExtUtils::Command -e rm_rf --
+TEST_F = $(PERL) -MExtUtils::Command -e test_f --
+TOUCH = $(PERL) -MExtUtils::Command -e touch --
+MKPATH = $(PERL) -MExtUtils::Command -e mkpath --
+EQUALIZE_TIMESTAMP = $(PERL) -MExtUtils::Command -e eqtime --
+FALSE = $(PERL)  -e "exit 1" --
+TRUE = $(PERL)  -e "exit 0" --
+ECHO = $(PERL) -l -e "binmode STDOUT, qq{:raw}; print qq{@ARGV}" --
+ECHO_N = $(PERL)  -e "print qq{@ARGV}" --
+DOC_INSTALL = $(PERL) -MExtUtils::Command::MM -e perllocal_install --
+UNINSTALL = $(PERL) -MExtUtils::Command::MM -e uninstall --
+WARN_IF_OLD_PACKLIST = $(PERL) -MExtUtils::Command::MM -e warn_if_old_packlist --
+CP_NONEMPTY = $(PERL) -MExtUtils::Command::MM -e cp_nonempty --
+
+NOOP = rem
+NOECHO = @
+DEV_NULL = > NUL
+
+DIRFILESEP = /
+DFSEP = $(DIRFILESEP)
+
+UMASK_NULL = umask 0
+PERM_DIR = 755
+PERM_RW = 644
+PERM_RWX = 755
+
+# --- Special targets section:
+.SUFFIXES : .pl .pm .dll
+.PHONY : all clean blibdirs libs script
+#.PHONY: all config static dynamic test linkext manifest blibdirs clean realclean disttest distdir pure_all subdirs clean_subdirs makemakerdflt manifypods realclean_subdirs subdirs_dynamic subdirs_pure_nolink subdirs_static subdirs-test_dynamic subdirs-test_static test_dynamic test_static
+
+all : blibdirs libs scripts compile
+	$(NOECHO) $(NOOP)
+
+# --- Updating the libraries from the current installed system
+LIBRARIES = $(INST_LIB)/LibXML.xs.dll $(INST_LIB)/LibXSLT.xs.xs.dll $(INST_LIB)/Expat.xs.dll $(INST_LIB)/Encode.xs.dll $(INST_LIB)/encoding.xs.dll $(INST_LIB)/Parser.xs.dll $(INST_LIB)/libexpat-1__.dll
+
+libs : $(LIBRARIES) blibdirs
+	$(NOECHO) $(ECHO) Copying the binaries from local perl installation into blib
+	$(NOECHO) $(NOOP)
+
+$(INST_LIB)/LibXML.xs.dll:: $(VENDOR_LIB)/auto/XML/LibXML/LibXML.xs.dll
+	$(NOECHO) $(CP) $< $@
+	
+$(INST_LIB)/LibXSLT.xs.xs.dll:: $(VENDOR_LIB)/auto/XML/LibXSLT/LibXSLT.xs.xs.dll
+	$(NOECHO) $(CP) $< $@
+
+$(INST_LIB)/Expat.xs.dll:: $(VENDOR_LIB)/auto/XML/Parser/Expat/Expat.xs.dll
+	$(NOECHO) $(CP) $< $@
+
+$(INST_LIB)/Encode.xs.dll:: C:/Strawberry/perl/lib/auto/Encode/Encode.xs.dll
+	$(NOECHO) $(CP) $< $@
+
+$(INST_LIB)/encoding.xs.dll:: $(PERL_LIB)/auto/PerlIO/encoding/encoding.xs.dll
+	$(NOECHO) $(CP) $< $@
+
+$(INST_LIB)/Parser.xs.dll:: $(VENDOR_LIB)/auto/HTML/Parser/Parser.xs.dll
+	$(NOECHO) $(CP) $< $@
+
+$(INST_LIB)/libexpat-1__.dll:: $(PERLDIST)/c/bin/libexpat-1__.dll
+	$(NOECHO) $(CP) $< $@
+
+# --- Building the local blib directory structure
+blibdirs : $(INST_LIB)$(DFSEP).exists $(INST_BIN)$(DFSEP).exists $(INST_SCRIPT)$(DFSEP).exists $(INST_DOC)$(DFSEP).exists
+	$(NOECHO) $(ECHO) Creating the blib directory structure
+	$(NOECHO) $(NOOP)
+
+$(INST_LIB)$(DFSEP).exists:: Makefile
+	$(NOECHO) $(MKPATH) $(INST_LIB)
+	$(NOECHO) $(CHMOD) $(PERM_DIR) $(INST_LIB)
+	$(NOECHO) $(TOUCH) $(INST_LIB)$(DFSEP).exists
+
+$(INST_BIN)$(DFSEP).exists:: Makefile
+	$(NOECHO) $(MKPATH) $(INST_BIN)
+	$(NOECHO) $(CHMOD) $(PERM_DIR) $(INST_BIN)
+	$(NOECHO) $(TOUCH) $(INST_BIN)$(DFSEP).exists
+
+$(INST_SCRIPT)$(DFSEP).exists:: Makefile
+	$(NOECHO) $(MKPATH) $(INST_SCRIPT)
+	$(NOECHO) $(CHMOD) $(PERM_DIR) $(INST_SCRIPT)
+	$(NOECHO) $(TOUCH) $(INST_SCRIPT)$(DFSEP).exists
+
+$(INST_DOC)$(DFSEP).exists:: Makefile
+	$(NOECHO) $(MKPATH) $(INST_DOC)
+	$(NOECHO) $(CHMOD) $(PERM_DIR) $(INST_DOC)
+	$(NOECHO) $(TOUCH) $(INST_DOC)$(DFSEP).exists
+
+# --- Building the scripts directory and copying the sources
+scripts : $(INST_SCRIPT)$(DFSEP).exists $(INST_SCRIPT)$(DFSEP)$(SCRIPTNAME).pl
+	$(NOECHO) $(ECHO) Copying the script sources
+	$(NOECHO) $(NOOP)
+
+$(INST_SCRIPT)$(DFSEP)$(SCRIPTNAME).pl:: $(SRC_SCRIPT)$(DFSEP)$(SCRIPTNAME).pl
+	$(NOECHO) $(CP) $< $@
+
+# --- Compiling the scripts into the resulting binary
+compile : $(INST_BIN)$(DFSEP).exists $(INST_BIN)$(DFSEP)$(SCRIPTNAME)-$(VERSION).exe
+	$(NOECHO) $(NOOP)
+
+$(INST_BIN)$(DFSEP)$(SCRIPTNAME)-$(VERSION).exe:: $(SRC_SCRIPT)$(DFSEP)$(SCRIPTNAME).pl
+	$(NOECHO) $(ECHO) Compiling the application binaries
+	$(NOECHO) $(PP) $@ -I $(INST_LIB) $(patsubst %, -l %, $(LIBRARIES)) $<
+
+clean :
+	$(NOECHO) $(ECHO) Cleaning up all generated files
+	- $(NOECHO) $(RM_RF) blib
