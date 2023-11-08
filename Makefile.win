@@ -15,9 +15,13 @@ VENDOR_LIB = $(VENDORPREFIX)/lib
 
 PERL = "C:\Strawberry\perl\bin\perl.exe"
 
-# --- Application source section
+# Get git commit version and date
+GIT_VERSION = $(shell git --no-pager describe --tags --always --dirty)
+GIT_DATE = $(firstword $(shell git --no-pager show --date=short --format="%ad" --name-only))
+
+# --- Application source section, including the version derived from the git tag
 SCRIPTNAME = FixItFelix
-VERSION = 0.0.2
+VERSION = $(GIT_VERSION)
 
 # --- Where to build things (blib target)
 INST_SCRIPT = blib/script
@@ -73,7 +77,6 @@ PERM_RWX = 755
 # --- Special targets section:
 .SUFFIXES : .pl .pm .dll
 .PHONY : all clean blibdirs libs script
-#.PHONY: all config static dynamic test linkext manifest blibdirs clean realclean disttest distdir pure_all subdirs clean_subdirs makemakerdflt manifypods realclean_subdirs subdirs_dynamic subdirs_pure_nolink subdirs_static subdirs-test_dynamic subdirs-test_static test_dynamic test_static
 
 all : blibdirs libs scripts compile
 	$(NOECHO) $(NOOP)
