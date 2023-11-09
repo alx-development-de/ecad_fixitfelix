@@ -135,7 +135,7 @@ $(INST_LIB)/ECAD/EN81346.pm : $(SRC_DEPS)/ecad_en81346/blib/lib/ECAD/EN81346.pm
 	$(NOECHO) $(MKPATH) $(shell dirname $@)
 	$(NOECHO) $(CHMOD) $(PERM_DIR) $(shell dirname $@)
 	$(NOECHO) $(TOUCH) $(shell dirname $@)$(DFSEP).exists
-	$(CP) $< $@
+	$(NOECHO) $(CP) $< $@
 
 # --- Building the local blib directory structure
 blibdirs : $(INST_LIB)$(DFSEP).exists $(INST_BIN)$(DFSEP).exists $(INST_SCRIPT)$(DFSEP).exists $(INST_DOC)$(DFSEP).exists
