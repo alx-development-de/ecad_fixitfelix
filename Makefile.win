@@ -30,6 +30,7 @@ INST_LIB = blib/lib
 INST_DOC = blib/doc
 
 SRC_SCRIPT = script
+SRC_DEPS = deps
 SRC_DOC = doc
 
 # --- External tools section
@@ -42,6 +43,7 @@ SUFFIX = .gz
 SHAR = shar
 FIXIN = pl2bat.bat
 PP = pp -o
+GIT = git
 
 # --- MExtUtils tools section
 CHMOD = $(PERL) -MExtUtils::Command -e chmod --
@@ -76,7 +78,7 @@ PERM_RWX = 755
 
 # --- Special targets section:
 .SUFFIXES : .pl .pm .dll
-.PHONY : all clean blibdirs libs script
+.PHONY : all clean blibdirs libs script deps
 
 all : blibdirs libs scripts compile
 	$(NOECHO) $(NOOP)
@@ -108,6 +110,32 @@ $(INST_LIB)/Parser.xs.dll:: $(VENDOR_LIB)/auto/HTML/Parser/Parser.xs.dll
 
 $(INST_LIB)/libexpat-1__.dll:: $(PERLDIST)/c/bin/libexpat-1__.dll
 	$(NOECHO) $(CP) $< $@
+
+# --- Building the dependend libraries
+deps : $(INST_LIB)/ECAD/EN81346.pm
+	$(NOECHO) $(ECHO) Installing dependencies
+	$(NOECHO) $(NOOP)
+
+$(SRC_DEPS)/ecad_en81346/.exists:: Makefile.win
+	$(NOECHO) $(MKPATH) $(SRC_DEPS)/ecad_en81346
+	$(NOECHO) $(CHMOD) $(PERM_DIR) $(SRC_DEPS)/ecad_en81346
+	$(NOECHO) $(GIT) clone --single-branch --branch main --depth 1 https://github.com/alx-development-de/ecad_en81346 $(SRC_DEPS)/ecad_en81346
+	$(NOECHO) $(TOUCH) $(SRC_DEPS)/ecad_en81346/.exists
+
+$(SRC_DEPS)$(DFSEP).exists:: Makefile.win
+	$(NOECHO) $(MKPATH) $(SRC_DEPS)
+	$(NOECHO) $(CHMOD) $(PERM_DIR) $(SRC_DEPS)
+	$(NOECHO) $(TOUCH) $(SRC_DEPS)$(DFSEP).exists
+
+$(SRC_DEPS)/ecad_en81346/blib/lib/ECAD/EN81346.pm : $(SRC_DEPS)$(DFSEP)ecad_en81346/.exists
+	$(NOECHO) ( cd $(SRC_DEPS)/ecad_en81346 && $(PERL) Makefile.PL )
+	$(NOECHO) $(MAKE) --directory $(SRC_DEPS)/ecad_en81346 all
+
+$(INST_LIB)/ECAD/EN81346.pm : $(SRC_DEPS)/ecad_en81346/blib/lib/ECAD/EN81346.pm
+	$(NOECHO) $(MKPATH) $(shell dirname $@)
+	$(NOECHO) $(CHMOD) $(PERM_DIR) $(shell dirname $@)
+	$(NOECHO) $(TOUCH) $(shell dirname $@)$(DFSEP).exists
+	$(CP) $< $@
 
 # --- Building the local blib directory structure
 blibdirs : $(INST_LIB)$(DFSEP).exists $(INST_BIN)$(DFSEP).exists $(INST_SCRIPT)$(DFSEP).exists $(INST_DOC)$(DFSEP).exists
@@ -146,10 +174,12 @@ $(INST_SCRIPT)$(DFSEP)$(SCRIPTNAME).pl:: $(SRC_SCRIPT)$(DFSEP)$(SCRIPTNAME).pl
 compile : $(INST_BIN)$(DFSEP).exists $(INST_BIN)$(DFSEP)$(SCRIPTNAME)-$(VERSION).exe
 	$(NOECHO) $(NOOP)
 
-$(INST_BIN)$(DFSEP)$(SCRIPTNAME)-$(VERSION).exe:: $(SRC_SCRIPT)$(DFSEP)$(SCRIPTNAME).pl
+$(INST_BIN)$(DFSEP)$(SCRIPTNAME)-$(VERSION).exe:: $(SRC_SCRIPT)$(DFSEP)$(SCRIPTNAME).pl $(INST_LIB)/ECAD/EN81346.pm
 	$(NOECHO) $(ECHO) Compiling the application binaries
 	$(NOECHO) $(PP) $@ -I $(INST_LIB) $(patsubst %, -l %, $(LIBRARIES)) $<
 
+# --- Cleaning up everything
 clean :
 	$(NOECHO) $(ECHO) Cleaning up all generated files
 	- $(NOECHO) $(RM_RF) blib
+	- $(NOECHO) $(RM_RF) deps
