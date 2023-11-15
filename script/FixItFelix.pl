@@ -13,7 +13,7 @@ use JSON;
 
 use ECAD::EN81346;
 
-use Log::Log4perl;
+use Log::Log4perl qw(:easy);
 use Log::Log4perl::Level;
 use Log::Log4perl::Logger;
 
@@ -38,6 +38,7 @@ my $conf = Config::General->new(
     -AutoTrue              => 1,
     -MergeDuplicateBlocks  => 1,
     -MergeDuplicateOptions => 1,
+	-InterPolateEnv		   => 1,
     -DefaultConfig         => $default_config,
 );
 my %options = $conf->getall;
@@ -46,7 +47,7 @@ my %options = $conf->getall;
 GetOptions(
     'help|?'             => \($options{'run'}{'help'}),
     'man'                => \($options{'run'}{'man'}),
-    'loglevel=s'         => \($options{'log'}{'level'}),
+    'loglevel=s'         => \($options{'log'}{'rootLogger'}),
     'compact_terminals'  => \($options{'compact'}{'terminals'} = 0),  # Removing end brackets, inside continuous terminal strips
     'compact_identifier' => \($options{'compact'}{'identifier'} = 0), # Compacting the identifier according the EN81346 rules
 ) or die "Invalid options passed to $0\n";
@@ -172,11 +173,31 @@ my %configuration_data = ("parameters" => {
 });
 
 # Initializing the logging mechanism
-Log::Log4perl->easy_init(Log::Log4perl::Level::to_priority(uc($options{'log'}{'level'})));
+my %log4perl_options = %{$options{'log'}};
+my $log4perl_conf = join("\n", map { "log4perl.$_ = $log4perl_options{$_}" } keys %log4perl_options);
+
+# SECURITY NOTE: Arbitrary perl code can be embedded in the config file. In the rare case where the people
+# who have access to your config file are different from the people who write your code and shouldn't have
+# execute rights, you might want to call $Log::Log4perl::Config->allow_code(0); before you call init().
+# This will prevent Log::Log4perl from executing any Perl code in the config file (including code for
+# custom conversion specifiers
+Log::Log4perl::Config->allow_code(0);
+
+# Changing the Signalhandler temporarily
+{
+    local $SIG{__WARN__} = sub {
+        # Here we setup the standard logging mechanism at info level
+		Log::Log4perl->easy_init(Log::Log4perl::Level::to_priority('INFO'));
+		WARN "Error in logging configuration, falling back to standard mode";
+    };
+    # Try loading the configuration. If failed, the default logging with easy_init is loaded while
+	# the warning message is catched
+	Log::Log4perl::init( \$log4perl_conf );
+}
 my $logger = Log::Log4perl->get_logger();
 
 # For debug reasons printing the configuration sources which have been parsed
-$logger->debug("Configuration file(s) parsed: [".join('], [', $conf->files())."]");
+$logger->info("Configuration file(s) parsed: [".join('], [', $conf->files())."]");
 
 # The source file must be passed as command line parameter
 my $opt_source_file = File::Spec->rel2abs(join(' ', @ARGV));
@@ -554,7 +575,12 @@ SOFTWARE.
 __DATA__
 
 <log>
-    level=INFO
+    rootLogger	= INFO, Screen
+	
+ 	appender.Screen         = Log::Log4perl::Appender::Screen
+	appender.Screen.stderr  = 0
+	appender.Screen.layout	= Log::Log4perl::Layout::PatternLayout
+	appender.Screen.layout.ConversionPattern = %d %5p %c - %m%n
 </log>
 
 <compact>
