@@ -18,7 +18,7 @@ use Log::Log4perl::Level;
 use Log::Log4perl::Logger;
 
 use Getopt::Long;
-use Config::General qw(ParseConfig);
+use Config::General;
 use Pod::Usage;
 
 use Data::Dumper; # TODO: Remove debug stuff
@@ -32,7 +32,7 @@ my $default_config = do {
     <main::DATA>
 };
 # Loading the file based configuration
-my %options = ParseConfig(
+my $conf = Config::General->new(
     -ConfigFile            => basename($0, qw(.pl .exe .bin)) . '.cfg',
     -ConfigPath            => [ "./", "./etc", "/etc" ],
     -AutoTrue              => 1,
@@ -40,6 +40,7 @@ my %options = ParseConfig(
     -MergeDuplicateOptions => 1,
     -DefaultConfig         => $default_config,
 );
+my %options = $conf->getall;
 
 # Processing the command line options
 GetOptions(
@@ -173,6 +174,9 @@ my %configuration_data = ("parameters" => {
 # Initializing the logging mechanism
 Log::Log4perl->easy_init(Log::Log4perl::Level::to_priority(uc($options{'log'}{'level'})));
 my $logger = Log::Log4perl->get_logger();
+
+# For debug reasons printing the configuration sources which have been parsed
+$logger->debug("Configuration file(s) parsed: [".join('], [', $conf->files())."]");
 
 # The source file must be passed as command line parameter
 my $opt_source_file = File::Spec->rel2abs(join(' ', @ARGV));

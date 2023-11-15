@@ -176,7 +176,7 @@ compile : $(INST_BIN)$(DFSEP).exists $(INST_BIN)$(DFSEP)$(SCRIPTNAME)-$(VERSION)
 
 $(INST_BIN)$(DFSEP)$(SCRIPTNAME)-$(VERSION).exe:: $(SRC_SCRIPT)$(DFSEP)$(SCRIPTNAME).pl $(INST_LIB)/ECAD/EN81346.pm
 	$(NOECHO) $(ECHO) Compiling the application binaries
-	$(NOECHO) $(PP) $@ -I $(INST_LIB) $(patsubst %, -l %, $(LIBRARIES)) $<
+	$(NOECHO) $(PP) $@ --cachedeps=$(SRC_DEPS)$(DFSEP)$(SCRIPTNAME).deps -I $(INST_LIB) $(patsubst %, -l %, $(LIBRARIES)) $<
 
 # --- Cleaning up everything
 clean :
