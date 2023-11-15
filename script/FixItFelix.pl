@@ -23,7 +23,7 @@ use Pod::Usage;
 
 use Data::Dumper; # TODO: Remove debug stuff
 
-our $VERSION = "0.0.2";
+our $VERSION = "0.1.0";
 
 # Reading the default configuration from the __DATA__ section
 # of this script
