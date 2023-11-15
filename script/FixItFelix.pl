@@ -48,8 +48,8 @@ GetOptions(
     'help|?'             => \($options{'run'}{'help'}),
     'man'                => \($options{'run'}{'man'}),
     'loglevel=s'         => \($options{'log'}{'rootLogger'}),
-    'compact_terminals'  => \($options{'compact'}{'terminals'} = 0),  # Removing end brackets, inside continuous terminal strips
-    'compact_identifier' => \($options{'compact'}{'identifier'} = 0), # Compacting the identifier according the EN81346 rules
+    'compact_terminals'  => \($options{'compact'}{'terminals'}),  # Removing end brackets, inside continuous terminal strips
+    'compact_identifier' => \($options{'compact'}{'identifier'}), # Compacting the identifier according the EN81346 rules
 ) or die "Invalid options passed to $0\n";
 
 # Show the help message if '--help' or '--?' if provided as command line parameter
