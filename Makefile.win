@@ -140,27 +140,7 @@ blibdirs : $(INST_LIB)$(DFSEP).exists $(INST_BIN)$(DFSEP).exists $(INST_SCRIPT)$
 	$(NOECHO) $(ECHO) Creating the blib directory structure
 	$(NOECHO) $(NOOP)
 
-$(INST_LIB)$(DFSEP).exists:: Makefile
-	$(NOECHO) $(MKPATH) $(@D)
-	$(NOECHO) $(CHMOD) $(PERM_DIR) $(@D)
-	$(NOECHO) $(TOUCH) $@
-
-$(INST_BIN)$(DFSEP).exists:: Makefile
-	$(NOECHO) $(MKPATH) $(@D)
-	$(NOECHO) $(CHMOD) $(PERM_DIR) $(@D)
-	$(NOECHO) $(TOUCH) $@
-
-$(INST_SCRIPT)$(DFSEP).exists:: Makefile
-	$(NOECHO) $(MKPATH) $(@D)
-	$(NOECHO) $(CHMOD) $(PERM_DIR) $(@D)
-	$(NOECHO) $(TOUCH) $@
-
-$(INST_DOC)$(DFSEP).exists:: Makefile
-	$(NOECHO) $(MKPATH) $(@D)
-	$(NOECHO) $(CHMOD) $(PERM_DIR) $(@D)
-	$(NOECHO) $(TOUCH) $@
-
-$(DIST_DIR)$(DFSEP).exists:: Makefile
+%.exists:: Makefile
 	$(NOECHO) $(MKPATH) $(@D)
 	$(NOECHO) $(CHMOD) $(PERM_DIR) $(@D)
 	$(NOECHO) $(TOUCH) $@
