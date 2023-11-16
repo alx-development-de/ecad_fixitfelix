@@ -28,16 +28,17 @@ INST_SCRIPT = blib/script
 INST_BIN = blib/bin
 INST_LIB = blib/lib
 INST_DOC = blib/doc
+DIST_DIR = blib/dist
 
 SRC_SCRIPT = script
 SRC_DEPS = deps
 SRC_DOC = doc
+SRC_ETC = etc
 
 # --- External tools section
 TAR = tar
 TARFLAGS = cvf
-ZIP = zip
-ZIPFLAGS = -r
+ZIP = 7z
 COMPRESS = gzip --best
 SUFFIX = .gz
 SHAR = shar
@@ -78,15 +79,15 @@ PERM_RWX = 755
 
 # --- Special targets section:
 .SUFFIXES : .pl .pm .dll
-.PHONY : all clean blibdirs libs script deps
+.PHONY : all clean build libs script deps blibdirs
 
-all : blibdirs libs scripts compile
+all : build
 	$(NOECHO) $(NOOP)
 
 # --- Updating the libraries from the current installed system
 LIBRARIES = $(INST_LIB)/LibXML.xs.dll $(INST_LIB)/LibXSLT.xs.xs.dll $(INST_LIB)/Expat.xs.dll $(INST_LIB)/Encode.xs.dll $(INST_LIB)/encoding.xs.dll $(INST_LIB)/Parser.xs.dll $(INST_LIB)/libexpat-1__.dll
 
-libs : $(LIBRARIES) blibdirs
+libs : blibdirs $(LIBRARIES)
 	$(NOECHO) $(ECHO) Copying the binaries from local perl installation into blib
 	$(NOECHO) $(NOOP)
 
@@ -112,14 +113,14 @@ $(INST_LIB)/libexpat-1__.dll:: $(PERLDIST)/c/bin/libexpat-1__.dll
 	$(NOECHO) $(CP) $< $@
 
 # --- Building the dependend libraries
-deps : $(INST_LIB)/ECAD/EN81346.pm
+deps : blibdirs $(INST_LIB)/ECAD/EN81346.pm
 	$(NOECHO) $(ECHO) Installing dependencies
 	$(NOECHO) $(NOOP)
 
 $(SRC_DEPS)/ecad_en81346/.exists:: Makefile.win
 	$(NOECHO) $(MKPATH) $(SRC_DEPS)/ecad_en81346
 	$(NOECHO) $(CHMOD) $(PERM_DIR) $(SRC_DEPS)/ecad_en81346
-	$(NOECHO) $(GIT) clone --single-branch --branch main --depth 1 https://github.com/alx-development-de/ecad_en81346 $(SRC_DEPS)/ecad_en81346
+	-$(NOECHO) $(GIT) clone --single-branch --branch main --depth 1 https://github.com/alx-development-de/ecad_en81346 $(SRC_DEPS)/ecad_en81346
 	$(NOECHO) $(TOUCH) $(SRC_DEPS)/ecad_en81346/.exists
 
 $(SRC_DEPS)$(DFSEP).exists:: Makefile.win
@@ -131,52 +132,77 @@ $(SRC_DEPS)/ecad_en81346/blib/lib/ECAD/EN81346.pm : $(SRC_DEPS)$(DFSEP)ecad_en81
 	$(NOECHO) ( cd $(SRC_DEPS)/ecad_en81346 && $(PERL) Makefile.PL )
 	$(NOECHO) $(MAKE) --directory $(SRC_DEPS)/ecad_en81346 all
 
-$(INST_LIB)/ECAD/EN81346.pm : $(SRC_DEPS)/ecad_en81346/blib/lib/ECAD/EN81346.pm
-	$(NOECHO) $(MKPATH) $(shell dirname $@)
-	$(NOECHO) $(CHMOD) $(PERM_DIR) $(shell dirname $@)
-	$(NOECHO) $(TOUCH) $(shell dirname $@)$(DFSEP).exists
+$(INST_LIB)/ECAD/EN81346.pm : $(SRC_DEPS)/ecad_en81346/blib/lib/ECAD/EN81346.pm $(INST_LIB)$(DFSEP).exists
 	$(NOECHO) $(CP) $< $@
 
 # --- Building the local blib directory structure
-blibdirs : $(INST_LIB)$(DFSEP).exists $(INST_BIN)$(DFSEP).exists $(INST_SCRIPT)$(DFSEP).exists $(INST_DOC)$(DFSEP).exists
+blibdirs : $(INST_LIB)$(DFSEP).exists $(INST_BIN)$(DFSEP).exists $(INST_SCRIPT)$(DFSEP).exists $(INST_DOC)$(DFSEP).exists $(DIST_DIR)$(DFSEP).exists
 	$(NOECHO) $(ECHO) Creating the blib directory structure
 	$(NOECHO) $(NOOP)
 
 $(INST_LIB)$(DFSEP).exists:: Makefile
-	$(NOECHO) $(MKPATH) $(INST_LIB)
-	$(NOECHO) $(CHMOD) $(PERM_DIR) $(INST_LIB)
-	$(NOECHO) $(TOUCH) $(INST_LIB)$(DFSEP).exists
+	$(NOECHO) $(MKPATH) $(@D)
+	$(NOECHO) $(CHMOD) $(PERM_DIR) $(@D)
+	$(NOECHO) $(TOUCH) $@
 
 $(INST_BIN)$(DFSEP).exists:: Makefile
-	$(NOECHO) $(MKPATH) $(INST_BIN)
-	$(NOECHO) $(CHMOD) $(PERM_DIR) $(INST_BIN)
-	$(NOECHO) $(TOUCH) $(INST_BIN)$(DFSEP).exists
+	$(NOECHO) $(MKPATH) $(@D)
+	$(NOECHO) $(CHMOD) $(PERM_DIR) $(@D)
+	$(NOECHO) $(TOUCH) $@
 
 $(INST_SCRIPT)$(DFSEP).exists:: Makefile
-	$(NOECHO) $(MKPATH) $(INST_SCRIPT)
-	$(NOECHO) $(CHMOD) $(PERM_DIR) $(INST_SCRIPT)
-	$(NOECHO) $(TOUCH) $(INST_SCRIPT)$(DFSEP).exists
+	$(NOECHO) $(MKPATH) $(@D)
+	$(NOECHO) $(CHMOD) $(PERM_DIR) $(@D)
+	$(NOECHO) $(TOUCH) $@
 
 $(INST_DOC)$(DFSEP).exists:: Makefile
-	$(NOECHO) $(MKPATH) $(INST_DOC)
-	$(NOECHO) $(CHMOD) $(PERM_DIR) $(INST_DOC)
-	$(NOECHO) $(TOUCH) $(INST_DOC)$(DFSEP).exists
+	$(NOECHO) $(MKPATH) $(@D)
+	$(NOECHO) $(CHMOD) $(PERM_DIR) $(@D)
+	$(NOECHO) $(TOUCH) $@
+
+$(DIST_DIR)$(DFSEP).exists:: Makefile
+	$(NOECHO) $(MKPATH) $(@D)
+	$(NOECHO) $(CHMOD) $(PERM_DIR) $(@D)
+	$(NOECHO) $(TOUCH) $@
 
 # --- Building the scripts directory and copying the sources
-scripts : $(INST_SCRIPT)$(DFSEP).exists $(INST_SCRIPT)$(DFSEP)$(SCRIPTNAME).pl
+scripts : blibdirs $(INST_SCRIPT)$(DFSEP).exists $(INST_SCRIPT)$(DFSEP)$(SCRIPTNAME).pl $(INST_BIN)$(DFSEP)$(SCRIPTNAME).bat $(INST_BIN)$(DFSEP)$(SCRIPTNAME)-$(VERSION).cfg
 	$(NOECHO) $(ECHO) Copying the script sources
 	$(NOECHO) $(NOOP)
 
+# Building the batch file for easier execution of the script
+$(INST_SCRIPT)$(DFSEP)$(SCRIPTNAME).bat :
+	$(NOECHO) $(ECHO) Generating $@
+	$(NOECHO) $(ECHO) "@echo off" > $@
+	$(NOECHO) $(ECHO) "rem The version of FixItFelix to run. This is usefull, if different" >> $@
+	$(NOECHO) $(ECHO) "rem versions are available and you may need to switch between them." >> $@
+	$(NOECHO) $(ECHO) ".\FixItFelix-$(VERSION).exe %%~$$PATH:1" >> $@
+
+# Copy the source perl scripts into the blib scripts dir
 $(INST_SCRIPT)$(DFSEP)$(SCRIPTNAME).pl:: $(SRC_SCRIPT)$(DFSEP)$(SCRIPTNAME).pl
 	$(NOECHO) $(CP) $< $@
 
+$(INST_BIN)$(DFSEP)$(SCRIPTNAME).bat:: $(INST_SCRIPT)$(DFSEP)$(SCRIPTNAME).bat
+	$(NOECHO) $(CP) $< $@
+
+$(INST_BIN)$(DFSEP)$(SCRIPTNAME)-$(VERSION).cfg:: $(SRC_ETC)$(DFSEP)$(SCRIPTNAME).cfg
+	$(NOECHO) $(CP) $< $@
+
+build : compile $(DIST_DIR)$(DFSEP)$(SCRIPTNAME)-$(VERSION).zip
+	$(NOECHO) $(NOOP)
+
+$(DIST_DIR)$(DFSEP)$(SCRIPTNAME)-$(VERSION).zip:: $(INST_BIN)$(DFSEP)$(SCRIPTNAME)-$(VERSION).exe $(INST_BIN)$(DFSEP)$(SCRIPTNAME)-$(VERSION).cfg $(INST_BIN)$(DFSEP)$(SCRIPTNAME).bat
+	$(NOECHO) $(ECHO) Building $@
+	cd $(<D) && $(ZIP) a $(@F) $(^F)
+	$(NOECHO) $(MV) $(<D)$(DFSEP)$(@F) $@
+
 # --- Compiling the scripts into the resulting binary
-compile : $(INST_BIN)$(DFSEP).exists $(INST_BIN)$(DFSEP)$(SCRIPTNAME)-$(VERSION).exe
+compile : scripts libs $(INST_BIN)$(DFSEP).exists $(INST_BIN)$(DFSEP)$(SCRIPTNAME)-$(VERSION).exe
 	$(NOECHO) $(NOOP)
 
 $(INST_BIN)$(DFSEP)$(SCRIPTNAME)-$(VERSION).exe:: $(SRC_SCRIPT)$(DFSEP)$(SCRIPTNAME).pl $(INST_LIB)/ECAD/EN81346.pm
 	$(NOECHO) $(ECHO) Compiling the application binaries
-	$(NOECHO) $(PP) $@ --cachedeps=$(SRC_DEPS)$(DFSEP)$(SCRIPTNAME).deps -I $(INST_LIB) $(patsubst %, -l %, $(LIBRARIES)) $<
+	$(NOECHO) $(PP) $@ --cachedeps=PAR.deps -I $(INST_LIB) $(patsubst %, -l %, $(LIBRARIES)) $<
 
 # --- Cleaning up everything
 clean :
