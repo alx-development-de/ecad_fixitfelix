@@ -133,6 +133,7 @@ $(SRC_DEPS)/ecad_en81346/blib/lib/ECAD/EN81346.pm : $(SRC_DEPS)$(DFSEP)ecad_en81
 	$(NOECHO) $(MAKE) --directory $(SRC_DEPS)/ecad_en81346 all
 
 $(INST_LIB)/ECAD/EN81346.pm : $(SRC_DEPS)/ecad_en81346/blib/lib/ECAD/EN81346.pm $(INST_LIB)$(DFSEP).exists
+	$(NOECHO) $(MKPATH) $(@D)
 	$(NOECHO) $(CP) $< $@
 
 # --- Building the local blib directory structure
