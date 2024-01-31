@@ -1,32 +1,29 @@
-.PHONY : all clean clean-temp
+DOCS = pdf/ECAD-Export.pdf
 
-all: pdf
+SRC_DIR   := src/
+BUILD_DIR := pdf/
 
-pdf: ECAD-Export.tex aux toc
-	pdflatex $<
-	# Run it twice to handle the page numbers correctly
-	pdflatex $<
+SRCS = $(wildcard $(SRC_DIR)*.tex)
+IMGS = $(wildcard src/*.png)
 
-aux: ECAD-Export.tex
-	pdflatex $<
+# You want latexmk to *always* run, because make does not have all the info.
+# Also, include non-file targets in .PHONY so they are run regardless of any
+# file of the given name existing.
+.PHONY: all checkdirs clean
 
-toc: ECAD-Export.tex
-	pdflatex $<
+# The first rule in a Makefile is the one executed by default ("make"). It
+# should always be the "all" rule, so that "make" and "make all" are identical.
+all: checkdirs $(DOCS)
 
-clean: clean-temp
-	-rm *.pdf
+# MAIN LATEXMK RULE
+$(BUILD_DIR)%.pdf: $(SRCS) $(IMGS)
+	latexmk -pdf -cd -lualatex -use-make $<
+	latexmk -c
 
-clean-temp:
-	-rm *.ps
-	-rm *.dvi
-	-rm *.toc
-	-rm *.aux
-	-rm *.log
-	-rm *.out
-	-rm *.lof
-	-rm *.bib~*
-	-rm *.bbl
-	-rm *.blg
-	-rm *.lol
-	-rm *.lot
-	-rm *.synctex.gz
+checkdirs: $(BUILD_DIR)
+
+$(BUILD_DIR):
+	@mkdir -p $@
+
+clean:
+	@rm -rf $(BUILD_DIR)

@@ -1,0 +1,9 @@
+@default_files = ('src/ECAD-Export.tex');
+
+$do_cd = 1;
+$out_dir = '../pdf';
+
+$pdf_mode = 1;        # tex -> pdf
+@generated_exts = (@generated_exts, 'synctex.gz');
+ 
+$clean_ext = "bbl nav out snm";
